@@ -8,11 +8,11 @@ hero:
   tagline: 网盘搜索、磁力搜索
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: PC端规则编写文档
+      link: /pc/
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 软件下载
+      link: /download
 
 features:
   - title: 灵活

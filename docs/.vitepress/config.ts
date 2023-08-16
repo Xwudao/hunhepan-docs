@@ -18,7 +18,12 @@ export default defineConfig({
           text: "全局变量",
           items: [
             { text: "加解密 crpto", link: "/pc/crypto" },
+            { text: "编码 encode", link: "/pc/encode" },
             { text: "缓存 cache", link: "/pc/cache" },
+            { text: "Cookie cookies", link: "/pc/cookies" },
+            { text: "网络请求 http", link: "/pc/http" },
+            { text: "HTML解析 html", link: "/pc/html" },
+            { text: "APP app", link: "/pc/app" },
           ],
         },
       ],
@@ -30,8 +35,6 @@ export default defineConfig({
       ],
     },
 
-    socialLinks: [
-      { icon: "github", link: "https://github.com/vuejs/vitepress" },
-    ],
+    socialLinks: [{ icon: "github", link: "https://github.com" }],
   },
 });
