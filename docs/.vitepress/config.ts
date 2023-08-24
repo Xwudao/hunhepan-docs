@@ -26,6 +26,12 @@ export default defineConfig({
             { text: "APP app", link: "/pc/app" },
           ],
         },
+        {
+          text: "获取网站Cookies",
+          items: [
+            { text: "浏览器器开发者控制台获取", link: "/pc/get-cookies-dev" },
+          ],
+        },
       ],
       "/android/": [
         {
