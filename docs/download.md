@@ -9,4 +9,6 @@
 
 ## PC端
 
-coming soon
+- https://wwhb.lanzouw.com/b038tvjef
+- https://pan.quark.cn/s/67ee4856c72e
+- https://www.123pan.com/s/zCHSVv-veYvd.html
