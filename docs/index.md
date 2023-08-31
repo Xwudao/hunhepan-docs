@@ -10,6 +10,9 @@ hero:
     - theme: brand
       text: PC端规则编写文档
       link: /pc/
+    - theme: brand
+      text: Android端规则编写文档
+      link: /android/
     - theme: alt
       text: 软件下载
       link: /download

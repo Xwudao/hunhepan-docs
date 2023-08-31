@@ -9,6 +9,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "首页", link: "/" },
+      { text: "Android端文档", link: "/android/" },
       { text: "PC端文档", link: "/pc/" },
     ],
 
@@ -43,12 +44,25 @@ export default defineConfig({
       ],
       "/android/": [
         {
-          text: "PC端文档",
-          items: [{ text: "算法", link: "/pc/algo" }],
+          text: "帮助说明",
+          items: [
+            { text: "使用帮助", link: "/android/usage" },
+          ],
+        },
+        {
+          text: "全局变量",
+          items: [
+            { text: "通用全局变量", link: "/android/common" },
+            { text: "网络 net", link: "/android/net" },
+            { text: "编码 encode", link: "/android/encode" },
+            { text: "加解密 encode", link: "/android/crypto" },
+          ],
         },
       ],
     },
 
-    socialLinks: [{ icon: "github", link: "https://github.com/Xwudao/hunhepan-pc" }],
+    socialLinks: [
+      { icon: "github", link: "https://github.com/Xwudao/hunhepan-pc" },
+    ],
   },
 });
