@@ -19,13 +19,12 @@ https://www.123pan.com/s/zCHSVv-veYvd.html
 
 解压后，双击 `start.bat` 即可运行。
 
-![](https://files.misiai.com/obsidian-images/202308/20230831193319-d1e381.png)
-
+![Alt text](/images/usage/image-3.png)
 
 
 会在CMD中显示如下信息：
 
-![](https://files.misiai.com/obsidian-images/202308/20230831193439-896233.png)
+![Alt text](/images/usage/image-4.png)
 
 上图选中的地方就是server的地址，复制到浏览器中打开即可。
 
@@ -36,7 +35,9 @@ https://www.123pan.com/s/zCHSVv-veYvd.html
 
 首次打开界面如下：
 
-![](https://files.misiai.com/obsidian-images/202308/20230831193716-3dd32a.png)
+
+![Alt text](/images/usage/image-5.png)
+
 
 按照提示，导入默认规则即可！
 
