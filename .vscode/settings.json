@@ -1,0 +1,5 @@
+{
+    "markdown.copyFiles.destination": {
+        "/docs/**/*": "/docs/public/images/${documentBaseName}/"
+    }
+}

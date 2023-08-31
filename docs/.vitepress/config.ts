@@ -15,6 +15,13 @@ export default defineConfig({
     sidebar: {
       "/pc/": [
         {
+          text: "使用帮助",
+          items: [
+            { text: "使用帮助", link: "/pc/usage" },
+            { text: "导入默认规则", link: "/pc/import-default-rule" },
+          ],
+        },
+        {
           text: "全局变量",
           items: [
             { text: "加解密 crpto", link: "/pc/crypto" },
@@ -42,6 +49,6 @@ export default defineConfig({
       ],
     },
 
-    socialLinks: [{ icon: "github", link: "https://github.com" }],
+    socialLinks: [{ icon: "github", link: "https://github.com/Xwudao/hunhepan-pc" }],
   },
 });
