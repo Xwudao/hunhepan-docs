@@ -16,4 +16,8 @@ https://www.123pan.com/s/zCHSVv-3NYvd.html
 
 ## PC端下载
 
-comin soon...
+https://wwhb.lanzouw.com/b038tvjef
+
+https://pan.quark.cn/s/67ee4856c72e
+
+https://www.123pan.com/s/zCHSVv-veYvd.html

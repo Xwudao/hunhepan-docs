@@ -45,9 +45,7 @@ export default defineConfig({
       "/android/": [
         {
           text: "帮助说明",
-          items: [
-            { text: "使用帮助", link: "/android/usage" },
-          ],
+          items: [{ text: "使用帮助", link: "/android/usage" }],
         },
         {
           text: "全局变量",
@@ -62,7 +60,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/Xwudao/hunhepan-pc" },
+      { icon: "github", link: "https://github.com/Xwudao/hunhepan-docs" },
     ],
   },
 });
