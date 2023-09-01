@@ -20,6 +20,7 @@ export default defineConfig({
           items: [
             { text: "使用帮助", link: "/pc/usage" },
             { text: "导入默认规则", link: "/pc/import-default-rule" },
+            { text: "JS引擎说明", link: "/pc/js-engine-usage" },
           ],
         },
         {
@@ -45,7 +46,10 @@ export default defineConfig({
       "/android/": [
         {
           text: "帮助说明",
-          items: [{ text: "使用帮助", link: "/android/usage" }],
+          items: [
+            { text: "使用帮助", link: "/android/usage" },
+            { text: "JS引擎说明", link: "/android/js-engine-usage" },
+          ],
         },
         {
           text: "全局变量",
