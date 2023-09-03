@@ -5,6 +5,7 @@ export default defineConfig({
   title: "混合盘规则文档",
   description:
     "混合盘是一个规则引擎，可以制作规则搜索资源，典型的是网盘、磁力搜索规则；本文档告诉用户如何编写规则；",
+  head: [["link", { rel: "icon", href: "/favicon.svg" }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -45,9 +46,7 @@ export default defineConfig({
       "/android/": [
         {
           text: "帮助说明",
-          items: [
-            { text: "使用帮助", link: "/android/usage" },
-          ],
+          items: [{ text: "使用帮助", link: "/android/usage" }],
         },
         {
           text: "全局变量",
