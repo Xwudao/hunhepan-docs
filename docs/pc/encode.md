@@ -2,9 +2,11 @@
 outline: deep
 ---
 
-# encode
+# 编码 encode
 
 `encode`提供如下常用的方法，用以对字符串进行编码和解码。
+
+## API
 
 ```js
 md5Encode(str string) string
@@ -31,5 +33,11 @@ sha512(str string) string
 hexToBytes(data string) ([]byte, error)
 ```
 
-> 以上方法名有些奇怪，这是为了尽量兼容android的api
+> 以上方法名有些奇怪，这是为了尽量兼容 android 的 api
 
+### 用法
+
+```js
+var res = encode.md5Encode("i love hhp");
+log.log(res); // 19c215287f52bd903b39bd62cce32b21
+```

@@ -21,6 +21,7 @@ export default defineConfig({
           items: [
             { text: "使用帮助", link: "/pc/usage" },
             { text: "导入默认规则", link: "/pc/import-default-rule" },
+            { text: "JS引擎说明", link: "/pc/js-engine-usage" },
           ],
         },
         {
@@ -46,7 +47,14 @@ export default defineConfig({
       "/android/": [
         {
           text: "帮助说明",
+<<<<<<< HEAD
           items: [{ text: "使用帮助", link: "/android/usage" }],
+=======
+          items: [
+            { text: "使用帮助", link: "/android/usage" },
+            { text: "JS引擎说明", link: "/android/js-engine-usage" },
+          ],
+>>>>>>> ab76d18bff8237ead17e8e1ad7bf121c705388bd
         },
         {
           text: "全局变量",
@@ -61,7 +69,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/Xwudao/hunhepan-pc" },
+      { icon: "github", link: "https://github.com/Xwudao/hunhepan-docs" },
     ],
   },
 });
