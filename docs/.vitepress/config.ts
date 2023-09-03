@@ -47,14 +47,10 @@ export default defineConfig({
       "/android/": [
         {
           text: "帮助说明",
-<<<<<<< HEAD
-          items: [{ text: "使用帮助", link: "/android/usage" }],
-=======
           items: [
             { text: "使用帮助", link: "/android/usage" },
             { text: "JS引擎说明", link: "/android/js-engine-usage" },
           ],
->>>>>>> ab76d18bff8237ead17e8e1ad7bf121c705388bd
         },
         {
           text: "全局变量",
