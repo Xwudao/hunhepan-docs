@@ -132,7 +132,6 @@ outline: deep
 
 ```http
 POST https://api.hunhepan.com/open/disk/quark
-Authorization: {{token}}
 Content-Type: application/json
 
 {
