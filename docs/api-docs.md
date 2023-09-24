@@ -126,3 +126,18 @@ outline: deep
   }
 }
 ```
+
+
+## 提交夸克资源到系统
+
+```http
+POST https://api.hunhepan.com/open/disk/quark
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "quark_ids": [
+    "57aa3c669a45"
+  ]
+}
+```
