@@ -23,6 +23,7 @@ export default defineConfig({
             { text: "使用帮助", link: "/pc/usage" },
             { text: "导入默认规则", link: "/pc/import-default-rule" },
             { text: "JS引擎说明", link: "/pc/js-engine-usage" },
+            { text: "规则模板说明", link: "/pc/rule-template" },
           ],
         },
         {
