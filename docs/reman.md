@@ -56,6 +56,8 @@ https://wwhb.lanzouw.com/iB1dS1gt9trc
 sudo docker compose up -d
 ```
 
+> docker 如何安装，请看本文附录
+
 
 ### Caddy2
 
@@ -89,10 +91,156 @@ example.com www.example.com {
 
 ## 程序运行
 
+本程序本身，只有2个文件：
 
+![](/images/reman/image.png)
+
+一个程序本体，一个配置文件
+
+### 配置文件
+
+```yml
+app:
+  mode: debug # 程序运行的模式
+  port: 4677 # 程序监听的端口
+  license: your license code # 授权码
+cors:
+  allowCredentials: true
+  allowOrigin: # 到时候需要在下面加上你的域名
+    - http://localhost:*
+    - http://127.0.0.1:*
+  maxAge: 24h
+db:
+  database: go-re-man # 数据库名称
+  dialect: mysql # 默认即可
+  host: 127.0.0.1 # 数据库地址
+  username: root # 数据库用户
+  password: 123456 # 密码
+  port: 3306 # 端口
+  autoMigrate: true # 自动迁移，即自动建立数据库表，这个目前必须为true
+
+es:
+  enable: true # 目前必须为true
+  address: http://127.0.0.1:9200 # elasticsearch的地址
+  diskIndex: reman-disk-v1 # 索引名称，可改可不改
+
+jwt:
+  secret: secret # jwt签名密钥，必须修改
+  expire: 24h # 过期时间，这里即表示，每24小时过期，即需要重新登录
+  issuer: reman
+log:
+  format: text
+  level: debug
+  linkName: current.log
+  path: ./logs
+redis:
+  addr: 127.0.0.1:6379 # redis数据库地址
+  db: 0
+  password: "" # 密码
+```
+
+需要配置的有：
+
+`db`：即mysql数据库
+
+`redis`：即redis数据库
+
+`es`：即elasticsaerch全文检索数据库，特别注意，es分词器，我们使用的是`hao`：https://github.com/tenlee2012/elasticsearch-analysis-hao
+
+还需要填写的是：`jwt.secret`，这个汲及到登录安全问题，在程序内部是强制要求修改的，15位以上的随机字符串
+
+
+### 首次运行
+
+一般，分发的程序名称类型类似：`reman_linux_amd64_v0.0.9`
+
+所以需要先改名：
+
+```sh
+mv reman_linux_amd64_v0.0.9 reman
+```
+
+> 上面的`reman_linux_amd64_v0.0.9`是例子，不是每次都是0.0.9，所以请根据实际来
+
+
+运行程序，首先需要确保程序有执行权限：
+
+
+```sh
+chmod +x ./reman
+```
+
+
+运行（配置文件已修改完毕）：
+
+```sh
+./reman
+```
+
+但是上面这种运行是会随着terminal关闭而关闭的，所以一个最简单的办法是使用 `nohup`
+
+```sh
+nohup ./reman &
+```
+
+### 程序更新
+
+程序更新需要先停掉之前的旧程序：
+
+```sh
+kill `pgrep reman` # 这一步是找到reman程序并kill掉，一般步骤可以是：`ps aux|grep reman` 找到pid，然后 `kill pid`
+```
+
+然后，按照首次运行程序时的命令：
+
+```sh
+mv reman_linux_amd64_v0.0.9 reman
+chmod +x ./reman
+nohup ./reman &
+```
 
 
 ## 附录
 
 ### Docker 安装
 
+#### Centos
+
+
+```sh
+#!/bin/bash
+
+# 安装需要的依赖包
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+
+# 添加Docker软件源
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+# 安装Docker
+sudo yum install -y docker-ce docker-ce-cli containerd.io
+
+# 启动Docker服务
+sudo systemctl start docker
+
+# 设置Docker服务开机自启
+sudo systemctl enable docker
+
+```
+
+#### ubuntu
+
+
+```sh
+sudo apt update
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+
+sudo apt install docker-ce
+
+# 启动Docker服务
+sudo systemctl start docker
+# 设置Docker服务开机自启
+sudo systemctl enable docker
+```
