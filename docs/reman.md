@@ -88,6 +88,8 @@ example.com www.example.com {
 运行示例，假设：`Caddyfile`和`caddy`在同一目录：
 
 ```sh
+chmod +x caddy # 首次执行，需要添加执行权限
+./caddy run # 不知道配置文件有没有问题，可以先使用`run`，没有报错，则之后可以使用`start`后台运行（如下）
 ./caddy start # start 就是直接后台运行
 ```
 
@@ -147,7 +149,7 @@ redis:
 
 `redis`：即redis数据库
 
-`es`：即elasticsaerch全文检索数据库，特别注意，es分词器，我们使用的是`hao`：https://github.com/tenlee2012/elasticsearch-analysis-hao
+`es`：即elasticsaerch全文检索数据库7.x版本，特别注意，es分词器，我们使用的是`hao`：https://github.com/tenlee2012/elasticsearch-analysis-hao
 
 还需要填写的是：`jwt.secret`，这个汲及到登录安全问题，在程序内部是强制要求修改的，15位以上的随机字符串
 
@@ -202,6 +204,11 @@ nohup ./reman &
 ```
 
 
+> 这种运行和更新程序的方法其实不太好，所以建议是使用`pm2`来管理和守护我们的程序
+>
+> 如何使用`pm2`请参考附录
+
+
 ## 附录
 
 ### Docker 安装
@@ -245,4 +252,69 @@ sudo apt install docker-ce
 sudo systemctl start docker
 # 设置Docker服务开机自启
 sudo systemctl enable docker
+```
+
+
+### pm2安装
+
+`PM2`是一个`node.js`程序，这又增加了复杂度，所以将其添加到附录，有能力和兴趣的可以试一试；
+
+
+你可以去：
+
+https://nodejs.org/en/download
+
+下载系统相应的版本；
+
+> 不建议使用包管理安装，因为其安装的版本太过老旧；
+
+
+---
+
+nodejs安装完毕后，会自带`npm`命令：
+
+```sh
+npm -v
+```
+
+使用npm安装pm2：
+
+```sh
+npm i -g pm2
+```
+
+---
+
+使用pm2运行程序：
+
+```sh
+pm2 start "./reman"
+```
+
+使用pm2重启程序（比如更新程序后，需要重启）：
+
+```sh
+pm2 restart id
+```
+
+\<id\>从`pm2 ls`命令中获取：
+
+```sh
+pm2 ls
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
+│ 3  │ go-mall-xxxxxxx    │ fork     │ 0    │ online    │ 0%       │ 17.0mb   │
+│ 0  │ go-yyyyyyyyyy      │ fork     │ 53   │ online    │ 0%       │ 99.2mb   │
+│ 1  │ go-xxxx            │ fork     │ 4    │ online    │ 0%       │ 12.8mb   │
+└────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
+```
+
+---
+
+设置pm2开机自启：
+
+```sh
+pm2 save # 保存现有pm2运行中的程序，以便在pm2开机自启后，能自动运行我们自己的程序
+pm2 startup
 ```
