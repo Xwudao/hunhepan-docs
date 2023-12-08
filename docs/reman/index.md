@@ -1,3 +1,9 @@
+---
+outline: deep
+---
+
+
+
 # ReMan
 
 **本文档编写中，目前并未完善**
@@ -73,7 +79,7 @@ https://caddyserver.com/download
 
 配置示例：
 
-```caddy
+```txt
 {
     email test@example.com
 }
