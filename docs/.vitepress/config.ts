@@ -72,7 +72,10 @@ export default defineConfig({
         },
         {
           text: '系统使用介绍',
-          // items: [{ text: '使用PM2管理进程', link: '/reman/pm2' }],
+          items: [
+            { text: '首页热搜影视词', link: '/reman/film' },
+            { text: '一些功能的理解', link: '/reman/cleavage' },
+          ],
         },
         {
           text: '一些教程',
