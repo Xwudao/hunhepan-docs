@@ -79,7 +79,10 @@ export default defineConfig({
         },
         {
           text: '一些教程',
-          items: [{ text: '使用PM2管理进程', link: '/reman/pm2' }],
+          items: [
+            { text: '使用PM2管理进程', link: '/reman/pm2' },
+            { text: '安装elasticsearch', link: '/reman/elasticsearch' },
+          ],
         },
       ],
     },
