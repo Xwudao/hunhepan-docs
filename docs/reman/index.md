@@ -227,6 +227,8 @@ nohup ./reman &
 ```sh
 #!/bin/bash
 
+sudo yum update
+
 # 安装需要的依赖包
 sudo yum install -y yum-utils device-mapper-persistent-data lvm2
 
