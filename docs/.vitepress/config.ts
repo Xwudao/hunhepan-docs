@@ -81,6 +81,8 @@ export default defineConfig({
         {
           text: '一些教程',
           items: [
+            { text: 'Docker安装', link: '/reman/docker' },
+            { text: 'Caddy介绍安装', link: '/reman/caddy' },
             { text: '使用PM2管理进程', link: '/reman/pm2' },
             { text: '安装elasticsearch', link: '/reman/elasticsearch' },
             { text: '运行多个网站（实例）', link: '/reman/multiple' },
