@@ -84,6 +84,7 @@ export default defineConfig({
             { text: '使用PM2管理进程', link: '/reman/pm2' },
             { text: '安装elasticsearch', link: '/reman/elasticsearch' },
             { text: '运行多个网站（实例）', link: '/reman/multiple' },
+            { text: '常见问题与解决方法', link: '/reman/problems' },
           ],
         },
       ],
