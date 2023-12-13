@@ -70,3 +70,43 @@ services:
 
 1. 程序内部使用的是 `elasticsearch` 7.x 版本，所以建议您也**必须**使用该版本
 2. 程序内部使用的是 [hao](https://github.com/tenlee2012/elasticsearch-analysis-hao) 分词器，所以您安装es的时候，也需要安装该分词器（注意es和hao版本需要对应）
+
+
+## 如何仅安装单一服务
+
+场景：`mysql` 和 `redis` 我想通过宝塔安装，但是宝塔不能安装 `elasticsearch`，怎么办？
+
+同样，你可以下载：[reman-install](https://wwhb.lanzouw.com/iB1dS1gt9trc)
+
+然后修改 `docker-compose.yml` 文件，将 `mysql` 和 `redis` 节的配置删掉，然后运行如下命令即可：
+
+```bash
+sudo docker compose up -d
+```
+
+修改后的 `docker-compose.yml` 文件如下：
+
+```yaml
+version: '3'
+
+services:
+  elasticsearch:
+    image: elasticsearch:7.17.7
+    restart: always  
+    hostname: es1
+    container_name: elasticsearch
+    volumes:
+     - ./es-data:/var/lib/elasticsearch/data
+     - ./plugins:/usr/share/elasticsearch/plugins
+     - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    environment:
+     - "ES_JAVA_OPTS=-Xms1200m -Xmx1200m"
+     - discovery.type=single-node
+    ports:
+      - '9200:9200'
+      - '9300:9300'
+    privileged: true
+```
+
+
+
