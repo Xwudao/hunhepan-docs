@@ -67,8 +67,17 @@ export default defineConfig({
       ],
       '/reman/': [
         {
-          text: '总览',
-          link: '/reman/',
+          text: '安装帮助',
+          items: [
+            {
+              text: '总览',
+              link: '/reman/',
+            },
+            {
+              text: '使用宝塔',
+              link: '/reman/bt',
+            },
+          ],
         },
         {
           text: '系统使用介绍',
