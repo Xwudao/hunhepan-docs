@@ -17,8 +17,7 @@ wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh && sudo 
 
 ![](/images/bt/image.png)
 
-之后等它安装，我们同时去上传一些文件，因为redis和mysql是可以通过宝塔安装，
-但是 elasticsearch 得用docker安装，所以我们先上传一些文件；
+
 
 
 安装redis：
@@ -29,7 +28,8 @@ wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh && sudo 
 
 ![](/images/bt/image-4.png)
 
-
+之后等它安装，我们同时去上传一些文件，因为redis和mysql是可以通过宝塔安装，
+但是 elasticsearch 得用docker安装，所以我们先上传一些文件；
 
 
 ## 上传文件
@@ -63,7 +63,7 @@ mv linux_amd64_v0.1.4.zip app #你们的压缩包的名称可能不一样，所�
 mv reman-install.zip env
 ```
 
-解压：
+解压`app`目录下的文件：
 
 ```sh
 cd ~/app
@@ -75,7 +75,7 @@ mv reman_linux_amd64_v0.1.4 reman
 chmod +x reman
 ```
 
-解压`env`目录：
+解压`env`目录下的文件：
 
 ```sh
 cd ~/env

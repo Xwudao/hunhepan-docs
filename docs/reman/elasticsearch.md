@@ -68,13 +68,15 @@ services:
 
 有几点说明：
 
-1. 程序内部使用的是 `elasticsearch` 7.x 版本，所以建议您也**必须**使用该版本
-2. 程序内部使用的是 [hao](https://github.com/tenlee2012/elasticsearch-analysis-hao) 分词器，所以您安装es的时候，也需要安装该分词器（注意es和hao版本需要对应）
+1. 程序内部使用的是 `elasticsearch` 7.x 版本，所以您也**必须**使用该版本
+2. 程序内部使用的是 [hao](https://github.com/tenlee2012/elasticsearch-analysis-hao) 分词器，所以您安装es的时候，也需要安装该分词器（**注意es和hao版本需要对应**）
 
 
 ## 如何仅安装单一服务
 
 场景：`mysql` 和 `redis` 我想通过宝塔安装，但是宝塔不能安装 `elasticsearch`，怎么办？
+
+> 实际上新版本的宝塔提供了`elastcisearch`的安装，但是其提供的是8.x版本，而我们必须使用7.x版本，所以使用宝塔安装
 
 同样，你可以下载：[reman-install](https://wwhb.lanzouw.com/iB1dS1gt9trc)
 
