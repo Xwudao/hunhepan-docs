@@ -85,6 +85,7 @@ export default defineConfig({
             { text: '首页热搜影视词', link: '/reman/film' },
             { text: '一些功能的理解', link: '/reman/cleavage' },
             { text: 'API接口使用', link: '/reman/api' },
+            { text: '配套爬虫程序', link: '/reman/crawl' },
           ],
         },
         {
