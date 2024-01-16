@@ -7,7 +7,7 @@ outline: deep
 
 ## 密码忘记
 
-ssh 登录服务器，进行到 `reman` 运行的目录，执行：
+ssh 登录服务器，进行入 `reman` 运行的目录，执行：
 
 ```sh
 ./reman reset admin
@@ -15,7 +15,7 @@ ssh 登录服务器，进行到 `reman` 运行的目录，执行：
 
 ### 黑名单设置错误
 
-如果黑名单设置错误，导致自己都无法访问，可以通过 ssh 登录服务器，进行到 `reman` 运行的目录，执行：
+如果黑名单设置错误，导致自己都无法访问，可以通过 ssh 登录服务器，进行入 `reman` 运行的目录，执行：
 
 ```sh
 ./reman reset blacklist
