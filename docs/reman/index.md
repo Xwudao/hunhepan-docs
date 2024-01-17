@@ -114,7 +114,7 @@ chmod +x caddy # 首次执行，需要添加执行权限
 
 ```yml
 app:
-  mode: debug # 程序运行的模式
+  mode: debug # 程序运行的模式,  debug 或 release
   port: 4677 # 程序监听的端口
   license: your license code # 授权码
 cors:
