@@ -48,6 +48,8 @@ Flags:
 ./rm_spider_windows_amd64_v0.0.4.exe --api https://reman.xwd.pw --token xxxxxxxx
 ```
 
-## 下载
+## 其它
 
-https://wwhb.lanzn.com/ikVfE1l2exhe
+爬虫程序支持定制化开发，如果你有特殊的需求，可以联系我们；
+
+费用另议，一般是 500 元起步，根据需求而定
