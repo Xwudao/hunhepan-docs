@@ -7,7 +7,7 @@ outline: deep
 
 这里提供一些接口说明，方便有能力的朋友，自己开发一些功能。
 
-## 导入资源接口
+---
 
 在后台【站点配置】=>【其它配置】
 
@@ -15,7 +15,9 @@ outline: deep
 
 ![](/images/api/image.png)
 
-然后，你可以使用这个token，来调用API接口，将资源导入到系统中：
+然后，你可以使用这个token
+
+## 导入资源接口
 
 ```http
 POST {api}/v1/disk/api_import?token=[token]
@@ -37,3 +39,4 @@ Content-Type: application/json
 
 - `{api}`是你的网站域名，比如：https://www.example.com
 - `disk_id` 网盘分享ID，百度网盘有点特殊：https://pan.baidu.com/s/1xxxxxxxxx 这样的，那么这个ID就是：xxxxxxxxx（把1去掉）
+- 网盘类型：BDY, ALY, QUARK, XUNLEI
