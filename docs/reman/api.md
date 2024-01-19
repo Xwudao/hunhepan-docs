@@ -40,3 +40,16 @@ Content-Type: application/json
 - `{api}`是你的网站域名，比如：https://www.example.com
 - `disk_id` 网盘分享ID，百度网盘有点特殊：https://pan.baidu.com/s/1xxxxxxxxx 这样的，那么这个ID就是：xxxxxxxxx（把1去掉）
 - 网盘类型：BDY, ALY, QUARK, XUNLEI
+
+
+## 获取搜索热词
+
+```http
+GET {{api}}/open/analysis/search_hot_key?token={{api_token}}
+```
+
+## 获取今日热词
+
+```http
+GET {{api}}/open/analysis/today_hot_key?token={{api_token}}
+```
