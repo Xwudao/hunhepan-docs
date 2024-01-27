@@ -48,15 +48,6 @@ https://reman.xwd.pw
 
 相应介绍：[点击前往](./crawl.md)
 
-## 演示环境
-
-https://reman.xwd.pw
-
-后台登录：https://reman.xwd.pw/login
-
-用户名：admin
-
-密码：Au2m1TdM
 
 ## 所需服务部署
 
