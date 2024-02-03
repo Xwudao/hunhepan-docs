@@ -53,3 +53,20 @@ GET {{api}}/open/analysis/search_hot_key?token={{api_token}}
 ```http
 GET {{api}}/open/analysis/today_hot_key?token={{api_token}}
 ```
+
+## 添加推荐词
+
+```http
+POST {{api}}/open/word/create?token={{api_token}}
+Content-Type: application/json
+
+{
+  "word": "神探驸马请接嫁",
+  "description": "小帝姬公仪音得皇上赐婚，与无数少女的梦中情人秦默喜结连理，不料大婚当夜便惨遭冷落，甚至传出驸马要和离的消息！公仪音气愤难平，女扮男装到廷尉寺当差，要跟这素未谋面的夫婿好好算账。一场他逃她追的游戏开始了……",
+  "show": [
+    "爱情"
+  ],
+  "type": "movie",
+  "image": "https://img.jisuzyimg.com/cover/89a82bfdadb7b2ee56416a986b0376ae.jpg"
+}
+```
