@@ -70,3 +70,35 @@ Content-Type: application/json
   "image": "https://img.jisuzyimg.com/cover/89a82bfdadb7b2ee56416a986b0376ae.jpg"
 }
 ```
+
+## 搜索资源
+
+```http
+### search disk
+POST {{api}}/open/search/disk?token={{api_token}}
+Content-Type: application/json
+
+{
+  "q": "1",
+  "type": "",
+  "user": "",
+  "share_time": "",
+  "format": [],
+  "page": 1,
+  "size": 2
+}
+```
+
+> `q` 搜索关键词
+>
+> `type` 资源类型: BDY, ALY, QUARK, XUNLEI
+>
+> `user` 分享人
+>
+> `share_time` 分享时间: half_year,year,month,week
+>
+> `format` 格式: [".mp4", ".mkv"]
+>
+> `page` 页码
+>
+> `size` 每页数量
