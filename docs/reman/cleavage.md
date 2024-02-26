@@ -6,7 +6,7 @@ outline: deep
 
 <!-- ![](/images/cleavage/image.png) -->
 
-## 在线重启程序
+<!-- ## 在线重启程序
 
 步骤：
 
@@ -21,7 +21,7 @@ outline: deep
 其中，【启动脚本】中，支持如下变量：
 
 - `{pwd}` 当前程序运行的目录
-- `{program_name}` 即上面的【程序名】
+- `{program_name}` 即上面的【程序名】 -->
 
 ## 其它配置
 

@@ -8,6 +8,33 @@ outline: deep
 这里提供一部分开放API，方便开发者使用。
 
 
+## 搜索系统资源
+
+```http
+### search disk
+POST https://hunhepan.com/open/search/disk
+Content-Type: application/json
+
+{
+  "q": "搜索词",
+  "page": 1,
+  "size": 10,
+  "time": "",
+  "type": "",
+  "exact": true
+}
+```
+
+说明：
+
+- `time`: week, month, three_month, year；分别表示：一周内、一个月内、三个月内、一年内；
+- `type`: 资源类型，如：BDY, ALY, QUARK, XUNLEI；
+- `exact`: 是否精确搜索，默认为`false`；
+- `page`: 页码
+- `size`: 每页数量
+
+
+
 ## 获取Tab列表
 
 
