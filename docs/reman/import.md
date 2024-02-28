@@ -9,7 +9,7 @@ outline: deep
 该功能主要用来批量导入大量的网盘资源，其余小数量，可以通过网页后台导入
 
 ```sh
-./go-reman import disk -h
+./reman import disk -h
 import disk resource from excel / csv files
 
 Usage:
@@ -23,7 +23,7 @@ Flags:
 使用：
 
 ```sh
-./go-reman import disk -f /path/to/file.csv/xlsx
+./reman import disk -f /path/to/file.csv/xlsx
 ```
 
 **注意：**
