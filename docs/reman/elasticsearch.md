@@ -76,7 +76,7 @@ services:
 
 场景：`mysql` 和 `redis` 我想通过宝塔安装，但是宝塔不能安装 `elasticsearch`，怎么办？
 
-> 实际上新版本的宝塔提供了`elastcisearch`的安装，但是其提供的是8.x版本，而我们必须使用7.x版本，所以使用宝塔安装
+> 实际上新版本的宝塔提供了`elastcisearch`的安装，但是其提供的是8.x版本，而我们必须使用7.x版本，所以 `elasticsearch` 无法使用宝塔安装
 
 同样，你可以下载：[reman-install](https://wwhb.lanzouw.com/iB1dS1gt9trc)
 
