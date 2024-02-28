@@ -16,6 +16,10 @@ outline: deep
 
 然后，你可以使用这个 token
 
+::: warning 注意
+token 权限很大，不要泄露，不要轻易给别人
+:::
+
 ## 导入资源接口
 
 ```http
@@ -41,9 +45,9 @@ Content-Type: application/json
 - `{token}`是你的 API 导入资源到系统 Token
 - `disk_id` 网盘分享 ID，百度网盘有点特殊：https://pan.baidu.com/s/1xxxxxxxxx 这样的，那么这个 ID 就是：xxxxxxxxx（把 1 去掉）
 - `disk_type` 网盘类型：BDY, ALY, QUARK, XUNLEI
-- `shared_time` 资源分享时的时间，10位时间戳
+- `shared_time` 资源分享时的时间，10 位时间戳
 - `files` 文件列表，是一个字符串，比如：`file: xxx.jpg\nfolder: xxx\nfile: xxx.mp4`
-- `weight` 资源权重，数字越大，权重越高 *已废弃*
+- `weight` 资源权重，数字越大，权重越高 _已废弃_
 - `is_mine` 是否是自己的资源，true 或 false，自己资源将增加搜索结果分数（排在前面）
 
 ## 获取搜索热词
