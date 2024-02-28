@@ -2,8 +2,7 @@
 outline: deep
 ---
 
-
-# 一些接口说明 
+# 一些接口说明
 
 这里提供一些接口说明，方便有能力的朋友，自己开发一些功能。
 
@@ -11,16 +10,16 @@ outline: deep
 
 在后台【站点配置】=>【其它配置】
 
-有一个[API导入资源到系统Token]选项，你需要先生成这个 token：
+有一个[API 导入资源到系统 Token]选项，你需要先生成这个 token：
 
 ![](/images/api/image.png)
 
-然后，你可以使用这个token
+然后，你可以使用这个 token
 
 ## 导入资源接口
 
 ```http
-POST {api}/v1/disk/api_import?token=[token]
+POST {{api}}/open/disk/api_import?token={{token}}
 Content-Type: application/json
 
 {
@@ -31,16 +30,21 @@ Content-Type: application/json
   "files": "文件列表",
   "share_user": "分享人",
   "shared_time": "10位时间戳",
-  "weight": 1
+  "weight": 1,
+  "is_mine":false
 }
 ```
 
 说明：
 
 - `{api}`是你的网站域名，比如：https://www.example.com
-- `disk_id` 网盘分享ID，百度网盘有点特殊：https://pan.baidu.com/s/1xxxxxxxxx 这样的，那么这个ID就是：xxxxxxxxx（把1去掉）
-- 网盘类型：BDY, ALY, QUARK, XUNLEI
-
+- `{token}`是你的 API 导入资源到系统 Token
+- `disk_id` 网盘分享 ID，百度网盘有点特殊：https://pan.baidu.com/s/1xxxxxxxxx 这样的，那么这个 ID 就是：xxxxxxxxx（把 1 去掉）
+- `disk_type` 网盘类型：BDY, ALY, QUARK, XUNLEI
+- `shared_time` 资源分享时的时间，10位时间戳
+- `files` 文件列表，是一个字符串，比如：`file: xxx.jpg\nfolder: xxx\nfile: xxx.mp4`
+- `weight` 资源权重，数字越大，权重越高 *已废弃*
+- `is_mine` 是否是自己的资源，true 或 false，自己资源将增加搜索结果分数（排在前面）
 
 ## 获取搜索热词
 
