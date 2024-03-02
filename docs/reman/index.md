@@ -1,5 +1,7 @@
 ---
 outline: deep
+title: ReMan 网盘搜索引擎程序源码
+keywords: ["ReMan", "网盘搜索引擎源码", "网盘资源管理", "搭建阿里云盘搜索"]
 ---
 
 # ReMan

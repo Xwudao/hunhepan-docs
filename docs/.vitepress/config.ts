@@ -3,9 +3,23 @@ import { defineConfig } from 'vitepress';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: '混合盘规则文档',
+  sitemap: {
+    hostname: 'https://docs.hunhepan.com',
+  },
   description:
     '混合盘是一个规则引擎，可以制作规则搜索资源，典型的是网盘、磁力搜索规则；本文档告诉用户如何编写规则；',
-  head: [['link', { rel: 'icon', href: '/favicon.svg' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.svg' }],
+    ['meta', { name: 'author', content: 'Xwudao' }],
+    [
+      'meta',
+      {
+        name: 'keywords',
+        content:
+          '混合盘规则文档,网盘搜索引擎源码,阿里云盘搜索引擎源码,百度网盘搜索引擎源码,夸克网盘搜索引擎源码',
+      },
+    ],
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
