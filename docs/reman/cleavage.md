@@ -89,3 +89,33 @@ outline: deep
 有一些用户将同一份资源，通过多次分享生成了不同的分享链接，但这还是属于同一份资源；
 
 开启该选项，系统会自动检测，如果发现资源名称和用户名已经存在，则不再收录；
+
+### 详情页描述模板
+
+利用该功能，可以自定义详情页的描述( description )；
+
+模板中支持的变量：
+
+<!--
+		"%site_name%":  siteName,
+		"%site_title%": siteTitle,
+		"%disk_name%":  d.DiskName,
+		"%disk_type%":  strx.GetNameByType(d.DiskType),
+		"%disk_link%":  godiskspider.GetLink(d.DiskID, d.DiskType, d.DiskPass),
+		"%disk_files%": d.Files,
+
+		"%disk_share_time%":  d.SharedTime.Format(time.DateTime),
+		"%disk_create_time%": d.CreateTime.Format(time.DateTime),
+ -->
+
+- `%site_name%`: 站点名称
+- `%site_title%`: 站点标题
+- `%disk_name%`: 资源名称
+- `%disk_type%`: 资源类型
+- `%disk_link%`: 资源链接
+- `%disk_files%`: 资源文件列表
+- `%disk_share_time%`: 资源分享时间
+- `%disk_create_time%`: 资源入库时间
+- `%disk_update_time%`: 资源更新时间
+
+**注意：** 系统会截断 150 个字符，超出部分会被截断；
