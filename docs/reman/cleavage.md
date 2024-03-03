@@ -119,3 +119,9 @@ outline: deep
 - `%disk_update_time%`: 资源更新时间
 
 **注意：** 系统会截断 150 个字符，超出部分会被截断；
+
+
+### 生成SEO的类型
+
+- `div`: 生成 div 标签，div标签的 style="display:none"；
+- `noscript`: 生成 noscript 标签，noscript是告诉浏览器/搜索引擎，当不支持JavaScript时，显示的内容；
