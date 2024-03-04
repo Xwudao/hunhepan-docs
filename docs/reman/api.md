@@ -35,7 +35,11 @@ Content-Type: application/json
   "share_user": "分享人",
   "shared_time": "10位时间戳",
   "weight": 1,
-  "is_mine":false
+  "is_mine":false,
+  "meta": {
+      "description": "长春图书馆馆藏国家珍贵古籍",
+      "posters_url": "https://img.jisuzyimg.com/cover/89a82bfdadb7b2ee56416a986b0376ae.jpg"
+  }
 }
 ```
 
@@ -49,6 +53,9 @@ Content-Type: application/json
 - `files` 文件列表，是一个字符串，比如：`file: xxx.jpg\nfolder: xxx\nfile: xxx.mp4`
 - `weight` 资源权重，数字越大，权重越高 _已废弃_
 - `is_mine` 是否是自己的资源，true 或 false，自己资源将增加搜索结果分数（排在前面）
+- `meta` 是可选的，里面有两个字段：
+  - `description` 资源描述
+  - `posters_url` 资源封面图（海报）
 
 ## 获取搜索热词
 
@@ -110,3 +117,17 @@ Content-Type: application/json
 > `page` 页码
 >
 > `size` 每页数量
+
+## 导入资源
+
+通过文案导入资源（自动提取文案中的链接信息）
+
+```http
+### import disk by task
+POST {{api}}/open/task/import_disk?token={{api_token}}
+Content-Type: application/json
+
+{
+  "text": " 「6103-教父（87集）」 https://pan.quark.cn/s/3445e4fb7cf2"
+}
+```
