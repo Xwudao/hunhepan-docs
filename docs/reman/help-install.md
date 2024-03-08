@@ -23,7 +23,7 @@ outline: deep
 
 1. 解压zip，将 `reman_xxx_xxx` 重名成 `reman`
 
-2. 将reman上传到 `/root/app` (我帮忙安装的都是这个目录，如何上传，办法太多了，scp，xftp, 宝塔的文件管理等等都可)
+2. 将 `reman` 上传到 `/root/app` (我帮忙安装的都是这个目录，如何上传，办法太多了，scp，xftp, 宝塔的文件管理等等都可)
 
 3. 终端进入到：`/root/app` ，下面两步都在这个目录执行
 
