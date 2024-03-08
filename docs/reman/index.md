@@ -1,7 +1,7 @@
 ---
 outline: deep
 title: ReMan 网盘搜索引擎程序源码
-keywords: ["ReMan", "网盘搜索引擎源码", "网盘资源管理", "搭建阿里云盘搜索"]
+keywords: ['ReMan', '网盘搜索引擎源码', '网盘资源管理', '搭建阿里云盘搜索']
 ---
 
 # ReMan
@@ -58,6 +58,11 @@ https://reman.xwd.pw
 
 相应介绍：[点击前往](./crawl.md)
 
+## 客户网站展示
+
+- https://alipanx.com
+- https://qkpanso.com
+- https://www.lzpanx.com
 
 ## 所需服务部署
 
