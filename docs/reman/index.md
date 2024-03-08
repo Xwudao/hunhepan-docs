@@ -64,6 +64,7 @@ https://reman.xwd.pw
 - https://qkpanso.com
 - https://www.lzpanx.com
 - https://so.yuneu.com
+- http://51panso.cn
 
 
 (想要添加进来列表，请联系我)
