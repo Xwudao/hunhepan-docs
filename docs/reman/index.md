@@ -63,6 +63,7 @@ https://reman.xwd.pw
 - https://alipanx.com
 - https://qkpanso.com
 - https://www.lzpanx.com
+- https://so.yuneu.com
 
 ## 所需服务部署
 
