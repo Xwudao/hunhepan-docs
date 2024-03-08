@@ -65,6 +65,9 @@ https://reman.xwd.pw
 - https://www.lzpanx.com
 - https://so.yuneu.com
 
+
+(想要添加进来列表，请联系我)
+
 ## 所需服务部署
 
 运行整套服务，最少需要服务器配置：`2c4g` 即 `2核4G`
