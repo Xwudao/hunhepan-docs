@@ -3,6 +3,12 @@ import { defineConfig } from 'vitepress';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: '混合盘规则文档',
+  markdown: {
+    externalLinks: {
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    },
+  },
   sitemap: {
     hostname: 'https://docs.hunhepan.com',
   },
