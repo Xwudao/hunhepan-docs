@@ -47,15 +47,24 @@ Flags:
       --api string     ReMan 网站地址，如：https://www.reman.com
       --code string    ReMan 授权码
   -h, --help           help for this command
-  -m, --mode int       模式：1: 全站热搜词用作爬虫；2: 今日关键词 (default 1)
+  -m, --mode int       模式：1: 全站热搜词用作爬虫；2: 今日关键词; 3: flarum 论坛模式 (default 1)
       --token string   ReMan 网站 token 请在后台设置中生成
 ```
 
 即：
 
 ```sh
-./rm_spider_windows_amd64_v0.0.4.exe --api https://reman.xwd.pw --token xxxxxxxx --code 授权码
+./rm_spider_windows_amd64_v0.0.4.exe --api https://reman.xwd.pw --token xxxxxxxx --code 授权码 --mode 1
 ```
+
+
+## 更新
+
+**2024-03-09 更新**
+
+- 添加了 `--mode` 参数，用于指定爬取flarum论坛模式
+    需要配置 config.json 里面的 `flarum` 字段
+
 
 ## 其它
 
