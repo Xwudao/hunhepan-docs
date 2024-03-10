@@ -115,7 +115,7 @@ export default defineConfig({
             { text: '一些功能的理解', link: '/reman/cleavage' },
             { text: 'API接口使用', link: '/reman/api' },
             { text: '配套爬虫程序', link: '/reman/crawl' },
-            { text: '导入资源说明', link: '/reman/import' },
+            { text: '一些命令帮助', link: '/reman/cmd-help' },
           ],
         },
         {
