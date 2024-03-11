@@ -120,8 +120,15 @@ outline: deep
 
 **注意：** 系统会截断 150 个字符，超出部分会被截断；
 
+### 生成 SEO 的类型
 
-### 生成SEO的类型
+- `div`: 生成 div 标签，div 标签的 style="display:none"；
+- `noscript`: 生成 noscript 标签，noscript 是告诉浏览器/搜索引擎，当不支持 JavaScript 时，显示的内容；
 
-- `div`: 生成 div 标签，div标签的 style="display:none"；
-- `noscript`: 生成 noscript 标签，noscript是告诉浏览器/搜索引擎，当不支持JavaScript时，显示的内容；
+### 资源重复提交检测
+
+启用后将检测资源是否已经被提交过，提交过不再入库（不管曾经是否成功入库）；
+
+用途：如果开启“游客提交资源”，但是没收录他的资源（原因很多，比如在分享黑名单内），可以通过此功能，防止他再次提交；
+
+因为他每次提交，都会去请求网盘 API，防止网盘方封禁服务器 IP；
