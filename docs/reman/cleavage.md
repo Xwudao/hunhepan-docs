@@ -132,3 +132,15 @@ outline: deep
 用途：如果开启“游客提交资源”，但是没收录他的资源（原因很多，比如在分享黑名单内），可以通过此功能，防止他再次提交；
 
 因为他每次提交，都会去请求网盘 API，防止网盘方封禁服务器 IP；
+
+
+### 迅雷联盟参数
+
+`https://pan.xunlei.com/s/VNsHuHdNO9yps5RKluFymQImA1?origin=lpss&pwd=z7sg`
+
+和
+
+`https://pan.xunlei.com/s/VNsHuHdNO9yps5RKluFymQImA1?pwd=z7sg&origin=lpss`
+
+
+是等价的，都是可以计算收益的，不要来问我说：“迅雷官方说，参数只能在密码后面”。迅雷拉新的这些官方人员，并不是技术人员；
