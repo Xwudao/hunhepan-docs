@@ -30,6 +30,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
+      { text: '流量卡合作', link: '/sim/' },
       { text: 'ReMan', link: '/reman/' },
       { text: '开放API', link: '/api-docs' },
       { text: 'Android端文档', link: '/android/' },
