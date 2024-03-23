@@ -7,7 +7,7 @@
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "vitepress": "1.0.0-rc.44"
+    "vitepress": "1.0.1"
   },
   "pnpm": {
     "peerDependencyRules": {
