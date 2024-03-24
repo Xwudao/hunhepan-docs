@@ -120,6 +120,15 @@ outline: deep
 
 **注意：** 系统会截断 150 个字符，超出部分会被截断；
 
+### 影视页标题模板
+
+利用该功能，可以自定义影视页的 h1 标题（伪）；
+
+模板中支持的变量：
+
+- `%site_name%`: 站点名称
+- `%film_name%`: 影视名称
+
 ### 生成 SEO 的类型
 
 - `div`: 生成 div 标签，div 标签的 style="display:none"；
@@ -133,7 +142,6 @@ outline: deep
 
 因为他每次提交，都会去请求网盘 API，防止网盘方封禁服务器 IP；
 
-
 ### 迅雷联盟参数
 
 `https://pan.xunlei.com/s/VNsHuHdNO9yps5RKluFymQImA1?origin=lpss&pwd=z7sg`
@@ -142,23 +150,20 @@ outline: deep
 
 `https://pan.xunlei.com/s/VNsHuHdNO9yps5RKluFymQImA1?pwd=z7sg&origin=lpss`
 
-
 是等价的，都是可以计算收益的，不要来问我说：“迅雷官方说，参数只能在密码后面，参数只能放在最后”。迅雷拉新的这些官方人员，并不是技术人员；
 
 > 遇到这些问题，不要和我犟，和我犟，只能算你赢，我也只能送你一个消息免打扰套餐
 
-
 ### 禁止搜索引擎索引详情页
 
-
-对于网站搜索网站来说，资源重复性太高了，很容易被搜索引擎K掉；
+对于网站搜索网站来说，资源重复性太高了，很容易被搜索引擎 K 掉；
 
 所以，可以通过此功能，禁止搜索引擎索引详情页；
 
-这会在html的head中，添加：
+这会在 html 的 head 中，添加：
 
 ```html
-<meta name="robots" content="noindex">
+<meta name="robots" content="noindex" />
 ```
 
 封掉详情页后，还有影视页面不会受影响；
