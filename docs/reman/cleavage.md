@@ -129,6 +129,18 @@ outline: deep
 - `%site_name%`: 站点名称
 - `%film_name%`: 影视名称
 
+### 详情页描述模板
+
+利用该功能，可以自定义详情页的描述( description )；
+
+模板中支持的变量：
+
+- `%site_name%`: 站点名称
+- `%site_title%`: 站点标题
+- `%film_name%`: 影视名称
+- `%film_desc%`: 资源描述
+
+
 ### 生成 SEO 的类型
 
 - `div`: 生成 div 标签，div 标签的 style="display:none"；
