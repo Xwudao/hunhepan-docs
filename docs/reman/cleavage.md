@@ -129,7 +129,7 @@ outline: deep
 - `%site_name%`: 站点名称
 - `%film_name%`: 影视名称
 
-### 详情页描述模板
+### 影视页描述模板
 
 利用该功能，可以自定义详情页的描述( description )；
 
