@@ -107,6 +107,10 @@ export default defineConfig({
               text: '使用宝塔',
               link: '/reman/bt',
             },
+            {
+              text: '从零开始安装Reman',
+              link: '/reman/complete-install',
+            },
           ],
         },
         {

@@ -56,3 +56,6 @@ sudo apt install docker-ce
 sudo systemctl restart docker
 sudo systemctl enable docker
 ```
+
+
+> 以上命令在 `Ubuntu 22.04` 和 `Centos 7` 上测试通过
