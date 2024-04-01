@@ -141,7 +141,8 @@ ReMan 我会给你发一个压缩包，解压后里面有一个 `reman`、一个
 
 修改 `config.yml` 文件，将里面的 `mysql`、`redis`、`elasticsearch` 的配置修改为你的配置。
 
-app项：
+app 项：
+
 ```yml
 app:
   mode: release
@@ -153,7 +154,8 @@ app:
 
 ---
 
-cors项：
+cors 项：
+
 ```yml
 cors:
   allowCredentials: true
@@ -168,7 +170,7 @@ cors:
 
 ---
 
-mysql项：
+mysql 项：
 
 ```yml
 db:
@@ -198,7 +200,7 @@ db:
 
 ---
 
-Es项：
+Es 项：
 
 ```yml
 es:
@@ -211,7 +213,7 @@ es:
 
 ---
 
-jwt项：
+jwt 项：
 
 ```yml
 jwt:
@@ -222,24 +224,26 @@ jwt:
 
 修改 `secret` 为你的 jwt 密钥，`expire` 为过期时间，`issuer` 为签发者。
 
-> 你需要将secret和修改为不少于32位的随机字符串。
+> 你需要将 secret 和修改为不少于 32 位的随机字符串。
 >
 > 不然你将得到如下错误：panic: jwt.secret must be configured and the length is greater than 10
 
 ---
 
-redis项：
+redis 项：
 
 ```yml
 redis:
   addr: 127.0.0.1:6379
   db: 0
-  password: ""
+  password: ''
 ```
 
-因为我们是在同一台服务器上，所以只需要将addr改为 `127.0.0.1:6379`即可。
+因为我们是在同一台服务器上，所以只需要将 addr 改为 `127.0.0.1:6379`即可。
 
 ### 第一次运行
+
+> 以下命令需要在 `reman` 目录下运行，即：`/root/app/`
 
 运行：
 
@@ -260,7 +264,7 @@ chmod +x reman
 
 `Admin user created, username: admin, password: r1a8O8H7`
 
-这个是你的管理员账号和密码，后面在ReMan后台我们会使用这个账号登录。
+这个是你的管理员账号和密码，后面在 ReMan 后台我们会使用这个账号登录。
 
 然后，按 `Ctrl + C` 退出。
 
@@ -269,6 +273,8 @@ chmod +x reman
 安装 pm2 参考：[/reman/pm2](/reman/pm2)
 
 安装成功后，运行：
+
+> 以下命令需要在 `reman` 目录下运行，即：`/root/app/`
 
 ```sh
 pm2 start reman
@@ -292,12 +298,10 @@ pm2 ls
 ![pm2 ls](/images/complete-install/image-6.png)
 :::
 
-
 ## Caddy/Nginx
 
-经过上面的步骤，ReMan 已经可以正常运行了，但是它是运行在本地的 4677端口，所以我们还需要一个反向代理，比如 Caddy 或者 Nginx。
+经过上面的步骤，ReMan 已经可以正常运行了，但是它是运行在本地的 4677 端口，所以我们还需要一个反向代理，比如 Caddy 或者 Nginx。
 
 对于小白，我推荐使用 Caddy，因为它配置简单，而且自带 HTTPS。
-
 
 请参考：[/reman/caddy](/reman/caddy) 安装 Caddy
