@@ -121,6 +121,7 @@ export default defineConfig({
             { text: 'API接口使用', link: '/reman/api' },
             { text: '配套爬虫程序', link: '/reman/crawl' },
             { text: '一些命令帮助', link: '/reman/cmd-help' },
+            { text: '网站的冷启动', link: '/reman/cold-start' },
             { text: 'Google Adsense', link: '/reman/ads' },
           ],
         },
