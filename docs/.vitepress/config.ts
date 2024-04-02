@@ -108,7 +108,7 @@ export default defineConfig({
               link: '/reman/bt',
             },
             {
-              text: '从零开始安装Reman',
+              text: '从零开始安装ReMan',
               link: '/reman/complete-install',
             },
           ],
