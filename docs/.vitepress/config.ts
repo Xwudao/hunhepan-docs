@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: '混合盘规则文档',
+  title: '混合盘文档',
   markdown: {
     externalLinks: {
       target: '_blank',
