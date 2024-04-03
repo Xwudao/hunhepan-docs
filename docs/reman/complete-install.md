@@ -305,3 +305,8 @@ pm2 ls
 对于小白，我推荐使用 Caddy，因为它配置简单，而且自带 HTTPS。
 
 请参考：[/reman/caddy](/reman/caddy) 安装 Caddy
+
+
+## 程序更新
+
+请参考：[/reman/help-install](/reman/help-install#更新程序)
