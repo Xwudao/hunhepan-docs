@@ -1,8 +1,13 @@
 ---
 outline: deep
+title: 通过宝塔安装ReMan
 ---
 
-# 宝塔安装
+# 通过宝塔安装ReMan
+
+这篇文章主要是通过宝塔面板来安装 ReMan，但请注意，这篇并不是那么友好，你可以同时参考 [从零开始完整安装 ReMan](/reman/complete-install) 来安装 ReMan。
+
+## 安装宝塔
 
 https://www.bt.cn/
 
@@ -31,6 +36,8 @@ wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh && sudo 
 之后等它安装，我们同时去上传一些文件，因为redis和mysql是可以通过宝塔安装，
 但是 elasticsearch 得用docker安装，所以我们先上传一些文件；
 
+> 我知道宝塔可以安装 elasticsearch，但它安装的是 8.x 版本的，在我们程序中，我们使用的是 7.x 版本的，所以我们还是得用 docker 安装
+
 
 ## 上传文件
 
@@ -44,7 +51,11 @@ wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh && sudo 
 
 一次性把`reman-install.zip`和`linux_amd64.zip`都上传上去；
 
-## 进入终端（安装es环境）
+> 不要来问我 `reman-install.zip` 在哪里，之前说过了，先把整个ReMan文档完整看一遍
+
+## 进入终端
+
+这一步来安装 elasticsearch 环境
 
 ![](/images/bt/image-3.png)
 
@@ -82,11 +93,11 @@ cd ~/env
 unzip reman-install.zip
 ```
 
-由于使用了宝塔安装了mysql,redis，所以我们需要修改一下配置文件：
+由于使用了宝塔安装的mysql,redis，所以我们需要修改一下配置文件：
 
-`docker-compose.yml`把`redis`和`mysql`的配置注释掉(删除掉)：
+`docker-compose.yml`把`redis`和`mysql`的配置注释掉(删除掉)，只保留 elasticsearch 节，也即`docker-compose.yml`最后只剩下下面展示的内容：
 
-```yml
+```yml {4}
 version: '3'
 
 services:
@@ -143,3 +154,8 @@ sudo docker compose up -d # 后台执行
 
 ![](/images/bt/image-10.png)
 
+
+
+## 安装ReMan
+
+至此，环境就好了，之后就是安装ReMan了，你可以参考 [complete-install#安装-reman](/reman/complete-install#安装-reman) 来安装 ReMan。
