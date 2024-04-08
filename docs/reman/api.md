@@ -131,3 +131,39 @@ Content-Type: application/json
   "text": " 「6103-教父（87集）」 https://pan.quark.cn/s/3445e4fb7cf2"
 }
 ```
+
+
+## 获取网盘导入任务
+
+> 预计在版本 > 0.3.4 中提供
+
+```http
+GET {{api}}/open/disk_task/pick?token={{api_token}}&disk_type=&status=
+```
+
+- `disk_type` 网盘类型: BDY, ALY, QUARK, XUNLEI
+- `status` 任务状态: pending, finished, failed, review
+
+
+## 设置网盘导入任务状态
+
+> 预计在版本 > 0.3.4 中提供
+
+```http
+### update status
+POST {{api}}/open/disk_task/update_status?token={{api_token}}
+Content-Type: application/json
+
+{
+  "ids": [
+    1,
+    2,
+    3
+  ],
+  "status": "pending",
+  "message": "错误信息，当status=failed时，可以填写错误信息"
+}
+```
+
+- `ids` 任务 ID 列表
+- `status` 任务状态: pending, finished, failed, review
