@@ -167,6 +167,16 @@ outline: deep
 
 **注意：** 系统会截断 150 个字符，超出部分会被截断；
 
+### 达人页描述模板
+
+利用该功能，可以自定义达人页的描述( description )；
+
+模板中支持的变量：
+
+- `%site_name%`: 站点名称
+- `%site_title%`: 站点标题
+- `%user%`: 用户名称
+
 ### 生成 SEO 的类型
 
 - `div`: 生成 div 标签，div 标签的 style="display:none"；
