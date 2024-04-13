@@ -86,6 +86,8 @@ https://reman.xwd.pw
 
 如果，你不想用大厂的服务器，可以雨云，这是一家小众的云服务商，价格也还能接受，主要是查IP，不会有`[中国香港香港 阿里云]`这种
 
+**当然，稳定性肯定是不如大厂的，这点要知道**
+
 
 雨云地址：[https://www.rainyun.com](https://www.rainyun.com/Mzc4MDI=_)
 
