@@ -177,6 +177,11 @@ outline: deep
 - `%site_title%`: 站点标题
 - `%user%`: 用户名称
 
+
+### 达人页标题模板
+
+支持的变量和上面 "达人页描述模板" 一致，参考上面；
+
 ### 生成 SEO 的类型
 
 - `div`: 生成 div 标签，div 标签的 style="display:none"；
