@@ -236,3 +236,25 @@ outline: deep
 - 该资源为自己的资源
 - 该资源被单独设置为可索引
 - [预计版本>0.3.5] 入库时判断资源重复性，在重复资源列表中，会将一个资源**移除**noindex（优先是自己的资源）；我将这称为“智能noindex”
+
+
+### 通过AI生成介绍文章
+
+
+你需要先配置 `Gemini` API，KEY，然后开启此功能；
+
+开启后，可以索引的资源，会自动生成介绍文章；(也即是说，想要使用该功能，你还需要开启【禁止搜索引擎索引详情页】)
+
+---
+
+gemini的Key：
+
+需要在：https://makersuite.google.com/app/apikey 申请
+
+另外 ，API地址是：https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent
+
+但是，由于众所周知的原因，这个API地址是不稳定的，所以，你需要参照这篇文章的内容，自己搭建一个：https://zhile.io/2023/12/24/gemini-pro-proxy.html
+
+当然，我是自己搭建了一个，实际上可以用我的，我不知道多人使用会不会被封，所以，你可以付费使用，￥100一次性买断（Api-Key还是需要你自己申请）。
+
+**提前说明：** 我不保证我提供的API地址可永久使用，也没有售后。要使用我的地址的话，请三思。
