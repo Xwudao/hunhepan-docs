@@ -69,10 +69,11 @@ https://reman.xwd.pw
 ## 客户网站展示
 
 - https://alipanx.com
-- https://qkpanso.com
+- https://qkpanso.com 👍
 - https://www.lzpanx.com
 - https://so.yuneu.com
 - http://51panso.cn
+- https://www.duanjuso.com 👍
 
 (想要添加进来列表，请联系我)
 
