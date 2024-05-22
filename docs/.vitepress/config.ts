@@ -122,6 +122,7 @@ export default defineConfig({
             { text: '配套爬虫程序', link: '/reman/crawl' },
             { text: '一些命令帮助', link: '/reman/cmd-help' },
             { text: '网站的冷启动', link: '/reman/cold-start' },
+            { text: '网盘工具', link: '/reman/pantools' },
             { text: 'Google Adsense', link: '/reman/ads' },
           ],
         },
