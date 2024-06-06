@@ -43,6 +43,7 @@ export default defineConfig({
           text: '混合盘',
           items: [
             { text: '混合盘文档', link: '/hunhepan/' },
+            { text: '短剧资源', link: '/hunhepan/duanju' },
             { text: '资源提交公约', link: '/hunhepan/convention' },
           ],
         },
