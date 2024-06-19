@@ -31,7 +31,7 @@ title: 网盘工具使用教程
 main.exe init -a name -c "这里填入cookies" -t quark
 ```
 
-参数说明：
+**参数说明：**
 
 - `-a`：别名，用于标识，这也代表着支持多账号；
 - `-c`：cookies，这里填入你的cookies；下面将会介绍如何获取；
@@ -40,7 +40,7 @@ main.exe init -a name -c "这里填入cookies" -t quark
 
 ---
 
-Cookies 获取方法：
+**Cookies 获取方法：**
 
 浏览器打开`https://pan.quark.cn/`，登录后，按`F12`，刷新，在`Network`中找到`https://drive-pc.quark.cn`开头的任意一个链接，然后找到`Request Headers`中的`cookie`，复制即可；
 
@@ -71,7 +71,7 @@ main.exe init -a name -c "__pus=xxxx" -t quark
 - `name.link.txt`：其他人的分享链接文件可以存于该文件内；
 - `name.pid.txt`：pid文件；
 
-说明：
+**说明：**
 
 `name-del.bat`：删除包含关键词的**文件**，该命令会找当前目录下的`dict.txt`，你可能需要新建一个，里面是敏感词，每行一个；
 
