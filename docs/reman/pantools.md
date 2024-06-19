@@ -55,9 +55,11 @@ Cookies 获取方法：
 main.exe init -a name -c "__pus=xxxx" -t quark
 ```
 
+> 如果你复制了全部的Cookies,确保你的Cookies是一行文本，否则命令会报错；
+
+
 ---
 
-> 如果你复制了全部的Cookies,确保你的Cookies是一行文本，否则命令会报错；
 
 如果执行成功，那么会在当前目录生成如下文件：
 
