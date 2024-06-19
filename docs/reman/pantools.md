@@ -88,7 +88,7 @@ main.exe init -a name -c "__pus=xxxx" -t quark
 后期，你想分享其它文件夹的资源，可以将文件夹的pid写入`name.pid.txt`中；**注意** `name.pid.txt`中只能有一行；
 
 
-找pid：
+**找pid：**
 
 夸克最新PC端中，文件夹右键，“详细信息”中有ID：
 
