@@ -35,7 +35,7 @@ outline: deep
 
     :::
 
-3. 终端进入到：`/root/app` ，下面两步都在这个目录执行
+3. 终端进入到/root/app：`cd /root/app` ，下面两步都在这个目录执行
 
 4. 给 reman 添加执行权限：`chmod +x reman` （这条命令在 terminal 终端执行）
 
