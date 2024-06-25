@@ -56,7 +56,7 @@ outline: deep
 
 在目录：`/root/app/`中有个`config.yml`文件，`cors.allowOrigin`字段添加一行：
 
-```yml
+```yml {4}
 cors:
   allowCredentials: true
   allowOrigin:
