@@ -124,3 +124,25 @@ panic: {"status":401,"code":31001,"message":"require login [guest]","req_id":"97
 也请不要将该工具分享给其他人；
 
 需要工具，请私信我；
+
+
+### dict.txt 说明 
+
+`dict.txt`是一个文本文件，里面是敏感词，每行一个；
+
+需要敏感词需要包含后缀，如：`群.png`，这样可以删除所有包含`群`且只有后缀是`.png`的文件；
+
+这样是为了避免误删；
+
+```txt
+广告.txt
+群.bmp
+流量卡.png
+红包.jpg
+红包.png
+包邮.jpg
+佣金.jpg
+购物.pdf
+省钱.pdf
+公众号.png
+```
