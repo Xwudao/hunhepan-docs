@@ -118,3 +118,8 @@ systemctl restart caddy
 
 
 特别注意：一些空格之类的，也不要乱了，比如在 `example.com {` 中间有个空格，也不要随便删掉。
+
+
+## 备份数据
+
+理论上，把 `/root/env` 目录即可，mysql 和 elasticsearch 和 redis 的数据都在这个目录下。
