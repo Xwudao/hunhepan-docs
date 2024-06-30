@@ -27,13 +27,13 @@ outline: deep
 
 2. 将 `reman` 上传到 `/root/app` (我帮忙安装的都是这个目录，如何上传，办法太多了，scp，xftp, 宝塔的文件管理等等都可以；)
 
-    ::: details 原有的 reman
+   ::: details 原有的 reman
 
-    本身在 `/root/app` 目录下有一个 `reman` 文件，如果你使用 `xftp` 的话会提示上传错误，原因是文件已经存在，你需要先删除原有的 `reman` 文件，然后再上传新的 `reman` 文件。
+   本身在 `/root/app` 目录下有一个 `reman` 文件，如果你使用 `xftp` 的话会提示上传错误，原因是文件已经存在，你需要先删除原有的 `reman` 文件，然后再上传新的 `reman` 文件。
 
-    当然，建议是将原有的 `reman` 文件重命名，如：`reman.bak.1`，这样可以保留原有的文件，以防万一你想用回旧版，可以改回 `reman`。
+   当然，建议是将原有的 `reman` 文件重命名，如：`reman.bak.1`，这样可以保留原有的文件，以防万一你想用回旧版，可以改回 `reman`。
 
-    :::
+   :::
 
 3. 终端进入到/root/app：`cd /root/app` ，下面两步都在这个目录执行
 
@@ -41,18 +41,14 @@ outline: deep
 
 5. `pm2 restart reman` （这条命令在 terminal 终端执行）
 
-
 ## 修改域名
-
 
 如果是我帮忙安装的，想要修改/添加新域名，需要改这几个地方：
 
 - config.yml
 - Caddyfile
 
-
 **config.yml**
-
 
 在目录：`/root/app/`中有个`config.yml`文件，`cors.allowOrigin`字段添加一行：
 
@@ -65,11 +61,9 @@ cors:
 
 你只需要将上面`yourdomain.com`改成你的域名即可。
 
-> 因为你可能是 https,可能带www，可能不带www，所以这里使用正则表达式，可以匹配多种情况。
-
+> 因为你可能是 https,可能带 www，可能不带 www，所以这里使用正则表达式，可以匹配多种情况。
 
 ![](/images/help-install/image.png)
-
 
 注意：
 
@@ -116,10 +110,37 @@ systemctl restart caddy
 
 添加也是依样画葫芦，复制一份原来的，然后修改域名即可。
 
-
 特别注意：一些空格之类的，也不要乱了，比如在 `example.com {` 中间有个空格，也不要随便删掉。
 
-
-## 备份数据
+## 简单备份数据
 
 理论上，把 `/root/env` 目录即可，mysql 和 elasticsearch 和 redis 的数据都在这个目录下。
+
+## 复杂数据备份
+
+
+**未完待续**
+
+其实一般而言，只需要备份 mysql 即可，elastic 和 redis 一般不需要备份，es 和 redis 数据都可以根据 mysql 数据重建。
+
+
+首先，在 `/root/env` 找到 `docker-compose.yml` 文件，然后找到 mysql 的配置，如下：
+
+```yml
+mysql:
+    environment:
+        MYSQL_ROOT_PASSWORD: "here_is_root_password" // <-- 这个是 root 密码
+```
+
+
+记住 root 密码，然后执行：
+
+```sh
+sudo docker ps 
+```
+
+找到 mysql 的 container id，然后执行：
+
+```sh
+docker exec -it <container_id> mysqldump -u root -p reman > /backup/mydatabase.sql
+```
