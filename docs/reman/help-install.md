@@ -139,8 +139,15 @@ mysql:
 sudo docker ps 
 ```
 
-找到 mysql 的 container id，然后执行：
+找到 mysql 的 container id，替换下面的 `<container_id>`，然后执行：
 
 ```sh
-docker exec -it <container_id> mysqldump -u root -p reman > /backup/mydatabase.sql
+sudo docker exec -it <container_id> mysqldump -u root -p reman > ./mydatabase.sql
 ```
+
+**注意：**
+
+1. 上面的 `reman` 是数据库名，你可以根据实际情况修改。默认就是 `reman`。
+2. 上述命令回车之后，不会有任何提示，但是你需要输入root密码，然后再次回车即可。
+
+这样，就会在当前目录下生成一个 `mydatabase.sql` 文件，这个文件就是你的数据库备份文件。
