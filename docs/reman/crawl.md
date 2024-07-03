@@ -60,6 +60,11 @@ rm_spider_windows_amd64_v0.0.4.exe --api https://reman.xwd.pw --token xxxxxxxx -
 
 ## 更新
 
+**2024-07-03 更新**
+
+- 添加了模式3，可以爬取通用站点资源，需要在 config.json 中配置 common_site 字段
+
+
 **2024-03-09 更新**
 
 - 添加了 `--mode` 参数，用于指定爬取 flarum 论坛模式
