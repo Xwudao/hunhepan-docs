@@ -137,6 +137,7 @@ export default defineConfig({
             { text: '运行多个网站（实例）', link: '/reman/multiple' },
             { text: '常见问题与解决方法', link: '/reman/problems' },
             { text: '帮忙安装后的说明', link: '/reman/help-install' },
+            { text: '(番外)有关SEO的碎碎念', link: '/reman/seo' },
           ],
         },
       ],
