@@ -169,7 +169,10 @@ outline: deep
 模板中支持的变量：
 
 - `%site_name%`: 站点名称
+- `%site_title%`: 站点标题
 - `%film_name%`: 影视名称
+- `%film_desc%`: 影视描述
+- `%film_show%`: 影视元信息
 
 ### 影视页关键词模板
 
@@ -178,6 +181,7 @@ outline: deep
 模板中支持的变量：
 
 - `%site_name%`: 站点名称
+- `%site_title%`: 站点标题
 - `%film_name%`: 影视名称
 - `%film_desc%`: 影视描述
 - `%film_show%`: 影视元信息
@@ -349,7 +353,7 @@ $bing
 
 - `%total%`: 资源总数
 - `%today%`: 今日新增资源数
-- %user_total%: 用户总数 （**预计在版本>=0.5.5添加**）
+- `%user_total%`: 用户总数 （**预计在版本>=0.5.5添加**）
 
 
 ### 找回密码内容
