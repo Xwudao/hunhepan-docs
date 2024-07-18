@@ -50,6 +50,7 @@ Usage:
 Flags:
       --api string     ReMan 网站地址，如：https://www.reman.com
       --code string    ReMan 授权码
+      --disk strings   网盘类型，支持多个，如：QUARK,ALY,XUNLEI,BDY
   -h, --help           help for this command
   -m, --mode int       模式：1: 全站热搜词用作爬虫；2: 今日关键词; 3: flarum 论坛模式 (default 1)
       --token string   ReMan 网站 token 请在后台设置中生成
@@ -62,6 +63,10 @@ rm_spider_windows_amd64_v0.0.4.exe --api https://reman.xwd.pw --token xxxxxxxx -
 ```
 
 ## 更新
+
+**2024-07-18 更新**
+
+- 添加`--disk`选项，可以指定仅爬取某些网盘资源，如：`--disk QUARK`，只爬取夸克资源；可多选，如：`--disk QUARK --disk ALY`
 
 **2024-07-04 更新**
 
