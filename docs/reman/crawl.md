@@ -64,6 +64,10 @@ rm_spider_windows_amd64_v0.0.4.exe --api https://reman.xwd.pw --token xxxxxxxx -
 
 ## 更新
 
+**2024-07-19 更新**
+
+- 现在可以保存链接到 `links.txt`
+
 **2024-07-18 更新**
 
 - 添加`--disk`选项，可以指定仅爬取某些网盘资源，如：`--disk QUARK`，只爬取夸克资源；可多选，如：`--disk QUARK --disk ALY`
