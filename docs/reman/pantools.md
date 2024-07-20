@@ -117,7 +117,7 @@ panic: {"status":401,"code":31001,"message":"require login [guest]","req_id":"97
 
 4. 双击`name-export.bat`即可导出自己的分享链接；
 
-5. [可选][新增]双击`name-del-share.bat`可能删除已分享但失效的分享；这可能有助于不被官方封号；
+5. [可选][新增]双击`name-del-share.bat`可以删除已分享但失效的分享；这可能有助于不被官方封号；
 
 
 ###  注意事项
