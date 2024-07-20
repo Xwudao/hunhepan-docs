@@ -67,6 +67,7 @@ main.exe init -a name -c "__pus=xxxx" -t quark
 - `name-export.bat`：导出自己的分享链接；
 - `name-save.bat`：保存其他人的分享链接；
 - `name-share.bat`：分享指定pid文件夹的资源；
+- `name-del-share.bat`：删除已分享但失效的分享；
 - `name.cookie.txt`：cookies文件；
 - `name.link.txt`：其他人的分享链接文件可以存于该文件内；
 - `name.pid.txt`：pid文件；
@@ -115,6 +116,8 @@ panic: {"status":401,"code":31001,"message":"require login [guest]","req_id":"97
 3. 双击`name-share.bat`即可分享指定pid文件夹的资源；
 
 4. 双击`name-export.bat`即可导出自己的分享链接；
+
+5. [可选][新增]双击`name-del-share.bat`可能删除已分享但失效的分享；这可能有助于不被官方封号；
 
 
 ###  注意事项
