@@ -149,3 +149,37 @@ panic: {"status":401,"code":31001,"message":"require login [guest]","req_id":"97
 省钱.pdf
 公众号.png
 ```
+
+
+
+## 本地执行资源导入任务
+
+在 2024/07/24日晚起，貌似国外服务器访问夸克API时，会被拦截，所以暂时开发了本工具用以在本地执行资源导入任务；
+
+
+
+```ps
+PS C:\Users\kuan\Desktop\save> .\rm-task.exe -h
+执行资源爬取任务
+
+Usage:
+  go-reman-task [flags]
+
+Flags:
+      --api string     ReMan 网站地址，如：https://www.reman.com
+  -h, --help           help for go-reman-task
+      --token string   ReMan 网站 token 请在后台设置中生成
+```
+
+
+首先，在后台关闭ReMan自带的任务系统：
+![](/images/pantools/image-4.png)
+
+然后在本地执行：
+
+```ps
+.\rm-task.exe --api https://www.reman.com --token xxx
+```
+
+这样，`rm-task.exe` 会拉取ReMan网站上的状态为 `pending` 的任务，然后执行；
+
