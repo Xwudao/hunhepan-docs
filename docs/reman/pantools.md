@@ -159,7 +159,7 @@ panic: {"status":401,"code":31001,"message":"require login [guest]","req_id":"97
 
 
 ```ps
-PS C:\Users\kuan\Desktop\save> .\rm-task.exe -h
+PS Desktop\save> .\rm-task.exe -h
 执行资源爬取任务
 
 Usage:
