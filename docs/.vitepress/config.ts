@@ -31,10 +31,15 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '流量卡合作', link: '/sim/' },
-      { text: 'ReMan', link: '/reman/' },
-      { text: '开放API', link: '/api-docs' },
-      { text: 'Android端文档', link: '/android/' },
-      { text: 'PC端文档', link: '/pc/' },
+      { text: 'ReMan', link: '/reman/', activeMatch: '^/reman/' },
+      { text: '混合盘API', link: '/api-docs' },
+      {
+        text: '混合盘规则开发',
+        items: [
+          { text: 'Android端文档', link: '/android/' },
+          { text: 'PC端文档', link: '/pc/' },
+        ],
+      },
     ],
 
     sidebar: {
