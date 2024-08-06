@@ -128,7 +128,7 @@ POST {{api}}/open/task/import_disk?token={{api_token}}
 Content-Type: application/json
 
 {
-  "text": " 「6103-教父（87集）」 https://pan.quark.cn/s/3445e4fb7cf2"
+  "text": "https://pan.quark.cn/s/3445e4fb7cf2\n\nhttps://pan.quark.cn/s/3445e4fb72323\n\thttps://pan.quark.cn/s/3445e4fb2323"
 }
 ```
 
