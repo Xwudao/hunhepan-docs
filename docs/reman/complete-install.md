@@ -162,11 +162,16 @@ cors:
   allowOrigin:
     - http://localhost:*
     - http://127.0.0.1:*
-    - https?://.+example.com
+    - https://example.com
+    - https://www.example.com
+    - http://example.com
+    - http://www.example.com
   maxAge: 24h
 ```
 
-在 `allowOrigin` 中，添加你的域名，如：`https?://.+example.com`。
+在 `allowOrigin` 中，添加你的域名，如：`https://example.com`、`https://www.example.com`、`http://example.com`、`http://www.example.com`。
+
+一般建议，把含`https`，不含`www`的域名，和含`http`，含`www`的域名都添加上。
 
 ---
 
@@ -305,7 +310,6 @@ pm2 ls
 对于小白，我推荐使用 Caddy，因为它配置简单，而且自带 HTTPS。
 
 请参考：[/reman/caddy](/reman/caddy) 安装 Caddy
-
 
 ## 程序更新
 
