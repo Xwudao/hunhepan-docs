@@ -130,6 +130,7 @@ export default defineConfig({
             { text: '网站的冷启动', link: '/reman/cold-start' },
             { text: '一些网盘工具', link: '/reman/pantools' },
             { text: '会员积分系统', link: '/reman/vip-coin' },
+            { text: '商品和支付模块', link: '/reman/pay' },
             { text: 'Google Adsense', link: '/reman/ads' },
           ],
         },
