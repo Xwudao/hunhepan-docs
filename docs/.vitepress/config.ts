@@ -31,6 +31,7 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '流量卡合作', link: '/sim/' },
+      { text: 'V2FD', link: '/v2fd/', activeMatch: '^/v2fd/' },
       { text: 'ReMan', link: '/reman/', activeMatch: '^/reman/' },
       { text: '混合盘API', link: '/api-docs' },
       {
@@ -98,6 +99,18 @@ export default defineConfig({
             { text: '网络 net', link: '/android/net' },
             { text: '编码 encode', link: '/android/encode' },
             { text: '加解密 encode', link: '/android/crypto' },
+          ],
+        },
+      ],
+      '/v2fd': [
+        {
+          text: 'V2FD',
+          items: [
+            { text: 'V2FD文档', link: '/v2fd/' },
+            {
+              text: '从零开始安装V2FD',
+              link: '/v2fd/install',
+            },
           ],
         },
       ],
