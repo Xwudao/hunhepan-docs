@@ -143,9 +143,20 @@ redis:
   password: ''
 ```
 
-实际上，只需要修改 `db.password` 和 `jwt.secret` 两个部分即可，其余部分可以不用修改，或等你熟悉了之后再修改。
+实际上，只需要修改 `db.password` 、 `jwt.secret` 及 `cors.allowOrigin` 部分即可，其余部分可以不用修改，或等你熟悉了之后再修改。
 
-`db.password`：只需要和上面`docker-compose.yml`中的 MySQL 密码一致即可。
+- `db.password`：只需要和上面`docker-compose.yml`中的 MySQL 密码一致即可。
+- `cors.allowOrigin` 需要修改为你的域名：
+  ```yml
+  cors:
+    allowCredentials: true
+    allowOrigin:
+      - http://localhost:*
+      - http://127.0.0.1:*
+      - https://yourdomain.com
+      - https://www.yourdomain.com
+    maxAge: 24h
+  ```
 
 ## 运行程序
 
