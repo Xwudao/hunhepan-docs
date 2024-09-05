@@ -104,12 +104,16 @@ export default defineConfig({
       ],
       '/v2fd': [
         {
-          text: 'V2FD',
+          text: 'V2FD介绍与安装',
           items: [
-            { text: 'V2FD文档', link: '/v2fd/' },
+            { text: 'V2FD', link: '/v2fd/' },
             {
-              text: '从零开始安装V2FD',
+              text: '安装V2FD',
               link: '/v2fd/install',
+            },
+            {
+              text: '系统功能介绍',
+              link: '/v2fd/system-introduce',
             },
           ],
         },
