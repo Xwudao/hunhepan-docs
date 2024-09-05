@@ -28,6 +28,9 @@ export default defineConfig({
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    search: {
+      provider: 'local',
+    },
     nav: [
       { text: '首页', link: '/' },
       { text: '流量卡合作', link: '/sim/' },
