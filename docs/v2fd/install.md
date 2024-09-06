@@ -50,7 +50,7 @@ services:
       - './mysql-conf/my.cnf:/etc/my.cnf'
       - './init/:/docker-entrypoint-initdb.d/'
     ports:
-      - '3307:3306'
+      - '3306:3306'
     command: --default-authentication-plugin=mysql_native_password
       --character-set-server=utf8mb4
       --collation-server=utf8mb4_general_ci
@@ -66,7 +66,7 @@ services:
       - ./redis-data:/data
       - ./redis.conf:/etc/redis/redis.conf
     ports:
-      - '6380:6379'
+      - '6379:6379'
     sysctls:
       - net.core.somaxconn=1024
     command: /bin/sh -c "echo 'vm.overcommit_memory = 1' >> /etc/sysctl.conf && redis-server /etc/redis/redis.conf --appendonly yes"
@@ -90,7 +90,7 @@ flush privileges;
 sudo docker compose up -d
 ```
 
-即可使用 docker 同时 MySQL 和 Redis。
+即可使用 docker 同时安装 MySQL 和 Redis。
 
 ---
 
