@@ -34,3 +34,7 @@ https://www.v2fd.com
 ## 安装
 
 请参考 [安装章节](/v2fd/install) 进行安装；
+
+B站视频参考：
+
+[【V2FD】导航网站程序安装教程](https://www.bilibili.com/video/BV1cGHXewEXr)

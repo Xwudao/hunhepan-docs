@@ -5,6 +5,11 @@ draft: true
 
 # 从零开始搭建 V2FD 网址导航网站
 
+
+教程视频：
+
+B站：[【V2FD】导航网站程序安装教程](https://www.bilibili.com/video/BV1cGHXewEXr)
+
 所需环境：
 
 - MySQL 5.7+
