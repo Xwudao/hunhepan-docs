@@ -38,3 +38,12 @@ https://www.v2fd.com
 B站视频参考：
 
 [【V2FD】导航网站程序安装教程](https://www.bilibili.com/video/BV1cGHXewEXr)
+
+
+## 程序
+
+用户名密码：`admin` `随机生成的`
+
+用户名密码需要在安装时候，手动运行程序时的日志中查看；
+
+登录后台：https://yourdomain.com/app
