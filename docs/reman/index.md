@@ -33,7 +33,7 @@ https://reman.xwd.pw
 
 用户名：admin
 
-密码：Au2m1TdM
+密码：密码请加微信 apkapb 备注 "演示" 获取
 :::
 
 盈利方向：
