@@ -31,9 +31,9 @@ https://reman.xwd.pw
 
 后台登录：https://reman.xwd.pw/login
 
-用户名：admin
+用户名： admin
 
-密码：密码请加微信 apkapb 备注 "演示" 获取
+密码： l2LMZ$WsNuw$2S
 :::
 
 盈利方向：
