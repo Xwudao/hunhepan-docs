@@ -121,6 +121,21 @@ export default defineConfig({
           ],
         },
       ],
+      '/reman-lite':[
+        {
+          text: 'ReMan-Lite',
+          items: [
+            {
+              text: '介绍',
+              link: '/reman-lite/',
+            },
+            {
+              text: '从零安装',
+              link: '/reman-lite/install',
+            },
+          ],
+        },
+      ],
       '/reman/': [
         {
           text: '安装帮助',
