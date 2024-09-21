@@ -12,6 +12,16 @@ title: 安装ReMan-Lite
 1. 下载最新的 ReMan-Lite 主体程序：[reman-lite](https://github.com/Xwudao/pan)
 2. 下载docker-compose依赖包：
 
+
+## 服务器
+
+推荐香港雨云服务器，[https://www.rainyun.com](https://www.rainyun.com/Mzc4MDI=_)
+
+最低配置：2c4g
+
+系统建议：Ubuntu 22.04
+
+
 ## 安装依赖环境
 
 本文将使用 Docker 来安装 MySQL 和 Redis，如果你已经有了 MySQL 和 Redis，可以跳过这一步。
@@ -40,8 +50,9 @@ sudo systemctl enable docker
 
 **使用 Docker 安装 Mysql 和 Redis**
 
-::: details docker-compose.yml
+解压上面的依赖包，修改`docker-compose.yml` 里面的 MySQL 的密码和用户名，
 
+::: details docker-compose.yml
 ```yml {9,11}
 version: '3'
 
@@ -57,53 +68,8 @@ services:
       MYSQL_DATABASE: 'reman'
     image: 'mysql:5.7.31'
     restart: always
-    volumes:
-      - './mysql-data:/var/lib/mysql'
-      - './mysql-conf/my.cnf:/etc/my.cnf'
-      - './init/:/docker-entrypoint-initdb.d/'
-    ports:
-      - '3306:3306'
-    command: 
-      --default-authentication-plugin=mysql_native_password
-      --character-set-server=utf8mb4
-      --collation-server=utf8mb4_general_ci
-      --explicit_defaults_for_timestamp=true
-      --lower_case_table_names=1
-  redis:
-    image: redis:6.2.6-alpine
-    container_name: redis
-    restart: always
-    environment:
-      - TZ=Asia/Shanghai
-    volumes:
-      - ./redis-data:/data
-      - ./redis.conf:/etc/redis/redis.conf
-    ports:
-      - '6379:6379'
-    sysctls:
-      - net.core.somaxconn=1024
-    command: /bin/sh -c "echo 'vm.overcommit_memory = 1' >> /etc/sysctl.conf && redis-server /etc/redis/redis.conf --appendonly yes"
-  elasticsearch:
-    image: elasticsearch:7.17.7
-    restart: always  
-    hostname: es1
-    container_name: elasticsearch
-    volumes:
-     - ./es-data:/var/lib/elasticsearch/data
-     - ./plugins:/usr/share/elasticsearch/plugins
-     - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
-    environment:
-     - "ES_JAVA_OPTS=-Xms1200m -Xmx1200m"
-     - discovery.type=single-node
-    ports:
-      - '9200:9200'
-      - '9300:9300'
-    privileged: true
 ```
-
 :::
-
-将上面的内容保存为 `docker-compose.yml`，修改 MySQL 的密码和用户名，
 
 并在同`docker-compose.yml`同级目录，建立 `./init/init.sql` 目录和文件，内容如下：
 
