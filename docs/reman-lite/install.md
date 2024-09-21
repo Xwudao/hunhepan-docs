@@ -9,13 +9,14 @@ title: 安装ReMan-Lite
 ## 准备工作
 
 
-1. 下载最新的 ReMan-Lite 主体程序：[reman-lite](https://github.com/Xwudao/pan)
-2. 下载docker-compose依赖包：
+1. 下载最新的 ReMan-Lite 主体程序：https://github.com/Xwudao/pan/releases
+2. 下载环境依赖包（docker-compose）：https://wwhb.lanzn.com/iR4g32aj1brg
+
 
 
 ## 服务器
 
-推荐香港雨云服务器，[https://www.rainyun.com](https://www.rainyun.com/Mzc4MDI=_)
+推荐雨云香港服务器，[https://www.rainyun.com](https://www.rainyun.com/Mzc4MDI=_)
 
 最低配置：2c4g
 
