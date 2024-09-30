@@ -311,6 +311,97 @@ pm2 ls
 
 请参考：[/reman/caddy](/reman/caddy) 安装 Caddy
 
+简单步骤与命令参考如下（汇总）：
+
+
+::: details 使用systemd管理caddy
+```sh
+sudo groupadd --system caddy
+
+sudo useradd --system \
+    --gid caddy \
+    --create-home \
+    --home-dir /var/lib/caddy \
+    --shell /usr/sbin/nologin \
+    --comment "Caddy web server" \
+    caddy
+
+
+# 假设在当前目录下，有一个叫 caddy_linux_amd64 的文件
+mv caddy_linux_amd64 /usr/local/sbin/caddy
+chmod +x /usr/local/sbin/caddy
+mkdir /etc/caddy
+touch /etc/caddy/Caddyfile
+
+
+cd /etc/systemd/system
+vim caddy.service
+```
+:::
+
+
+::: details caddy.service
+```txt
+# caddy.service
+#
+# For using Caddy with a config file.
+#
+# Make sure the ExecStart and ExecReload commands are correct
+# for your installation.
+#
+# See https://caddyserver.com/docs/install for instructions.
+#
+# WARNING: This service does not use the --resume flag, so if you
+# use the API to make changes, they will be overwritten by the
+# Caddyfile next time the service is restarted. If you intend to
+# use Caddy's API to configure it, add the --resume flag to the
+# `caddy run` command or use the caddy-api.service file instead.
+
+[Unit]
+Description=Caddy
+Documentation=https://caddyserver.com/docs/
+After=network.target network-online.target
+Requires=network-online.target
+
+[Service]
+Type=notify
+User=caddy
+Group=caddy
+ExecStart=/usr/local/sbin/caddy run --environ --config /etc/caddy/Caddyfile
+ExecReload=/usr/local/sbin/caddy reload --config /etc/caddy/Caddyfile --force
+TimeoutStopSec=5s
+LimitNOFILE=1048576
+LimitNPROC=512
+PrivateTmp=true
+ProtectSystem=full
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target
+```
+:::
+
+::: details Caddyfile
+
+以下内容保存在：`/etc/caddy/Caddyfile`
+
+```txt
+{
+    email test@example.com
+}
+
+example.com www.example.com {
+    reverse_proxy http://127.0.0.1:4677
+}
+```
+:::
+
+启动并开机自启：
+```sh
+sudo systemctl daemon-reload
+sudo systemctl enable --now caddy
+```
+
 ## 程序更新
 
 请参考：[/reman/help-install](/reman/help-install#更新程序)
