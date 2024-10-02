@@ -123,7 +123,7 @@ export default defineConfig({
       ],
       '/reman-lite':[
         {
-          text: 'ReMan-Lite',
+          text: 'ReMan-Lite程序',
           items: [
             {
               text: '介绍',
@@ -132,6 +132,10 @@ export default defineConfig({
             {
               text: '从零安装',
               link: '/reman-lite/install',
+            },
+            {
+              text: 'API接口',
+              link: '/reman-lite/api',
             },
           ],
         },
