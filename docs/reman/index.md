@@ -81,6 +81,7 @@ https://reman.xwd.pw
 - https://so.yuneu.com
 - http://51panso.cn
 - https://www.duanjuso.com 👍
+- https://www.kuufuu.com
 
 (想要添加进来列表，请联系我)
 
