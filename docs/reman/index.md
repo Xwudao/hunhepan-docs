@@ -27,9 +27,9 @@ keywords: ['ReMan', '网盘搜索引擎源码', '网盘资源管理', '搭建阿
 更多功能，在下面的演示环境中体验吧！
 
 ::: details 点击查演示环境
-https://reman.xwd.pw
+<https://reman.xwd.pw>
 
-后台登录：https://reman.xwd.pw/login
+后台登录：<https://reman.xwd.pw/login>
 
 用户名： admin
 
@@ -43,9 +43,19 @@ https://reman.xwd.pw
 
 ## 购买
 
-<!-- ￥ 999 / 套， -->程序永久使用，并**包 1 年更新**，<!-- 进内部群，和其他人交流， -->可以帮忙安装（服务器、域名提前解析好）
+<!-- ￥ 999 / 套， -->
+
+程序永久使用，并**包 1 年更新**，<!-- 进内部群，和其他人交流， -->可以帮忙安装（服务器、域名提前解析好）
 
 **同**服务器**不限**建站数量，不同服务器也提供增值帮助，参考：[运行多个网站](/reman/multiple)
+
+:::details 授权宽松
+我们只会在程序启动时，验证授权码及是否是正版用户。
+
+对于授权更是无比宽松，我们不会限制同服务器的建站数量，更不会限制域名数量。
+
+只限制服务器IP，且服务器IP可以自助在线更改10次。
+:::
 
 购买请加微信：apkapb 备注：reman
 
@@ -75,13 +85,13 @@ https://reman.xwd.pw
 
 ## 客户网站展示
 
-- https://alipanx.com
-- https://qkpanso.com 👍
-- https://www.lzpanx.com
-- https://so.yuneu.com
-- http://51panso.cn
-- https://www.duanjuso.com 👍
-- https://www.kuufuu.com
+- <https://alipanx.com>
+- <https://qkpanso.com> 👍
+- <https://www.lzpanx.com>
+- <https://so.yuneu.com>
+- <http://51panso.cn>
+- <https://www.duanjuso.com> 👍
+- <https://www.kuufuu.com>
 
 (想要添加进来列表，请联系我)
 
@@ -124,7 +134,7 @@ https://reman.xwd.pw
 
 可以使用我为大家准备的`docker compose`文件，一键运行上述 3 个服务
 
-https://wwhb.lanzouw.com/iB1dS1gt9trc
+<https://wwhb.lanzouw.com/iB1dS1gt9trc>
 
 ```sh
 sudo docker compose up -d
@@ -140,7 +150,7 @@ sudo docker compose up -d
 
 下载：
 
-https://caddyserver.com/download
+<https://caddyserver.com/download>
 
 配置示例：
 
@@ -220,7 +230,7 @@ redis:
 
 `redis`：即 redis 数据库
 
-`es`：即 elasticsaerch 全文检索数据库 7.x 版本，特别注意，es 分词器，我们使用的是`hao`：https://github.com/tenlee2012/elasticsearch-analysis-hao
+`es`：即 elasticsaerch 全文检索数据库 7.x 版本，特别注意，es 分词器，我们使用的是`hao`：<https://github.com/tenlee2012/elasticsearch-analysis-hao>
 
 还需要填写的是：`jwt.secret`，这个汲及到登录安全问题，在程序内部是强制要求修改的，15 位以上的随机字符串
 
@@ -335,7 +345,7 @@ sudo systemctl enable docker
 
 你可以去：
 
-https://nodejs.org/en/download
+<https://nodejs.org/en/download>
 
 下载系统相应的版本；
 
