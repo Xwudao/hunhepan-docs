@@ -121,7 +121,7 @@ export default defineConfig({
           ],
         },
       ],
-      '/reman-lite':[
+      '/reman-lite': [
         {
           text: 'ReMan-Lite程序',
           items: [
@@ -139,6 +139,15 @@ export default defineConfig({
             },
           ],
         },
+        {
+          text: '使用说明',
+          items: [
+            {
+              text: '网站配置',
+              link: '/reman-lite/config'
+            },
+          ]
+        }
       ],
       '/reman/': [
         {
