@@ -155,6 +155,10 @@ export default defineConfig({
               text: '网站配置',
               link: '/reman-lite/config'
             },
+            {
+              text: '开发修改',
+              link: '/reman-lite/dev'
+            },
           ]
         }
       ],
