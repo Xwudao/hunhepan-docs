@@ -18,3 +18,29 @@ ReMan-Lite 是 ReMan 的轻量版，两者除了功能上有类似的地方，�
 <!-- <<< @/components/compare-reman.md -->
 
 <!--@include: @/components/compare-reman.md-->
+
+## 后台截图
+
+ReMan-Lite 没有演示网站，这里提供后台截图：
+
+![后台首页](/images/index/image-2.png)
+
+![网盘资源列表](/images/index/image-3.png)
+
+![TG资源列表](/images/index/image-4.png)
+
+![数据管理](/images/index/image-5.png)
+
+包含：友情链接、顶部导航链接、首页推荐搜索词。
+
+![数据分析](/images/index/image-6.png)
+
+数据分析包含：搜索词、搜索IP、热门影视。
+
+![后台设置-站点配置](/images/index/image-7.png)
+
+![后台设置-SEO配置](/images/index/image-8.png)
+
+![后台设置-页面配置](/images/index/image-9.png)
+
+![后台设置-其它杂类](/images/index/image-10.png)

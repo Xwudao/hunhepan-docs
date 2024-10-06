@@ -35,7 +35,16 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '流量卡合作', link: '/sim/' },
       { text: 'V2FD', link: '/v2fd/', activeMatch: '^/v2fd/' },
-      { text: 'ReMan', link: '/reman/', activeMatch: '^/reman/' },
+      {
+        text: 'ReMan', items: [
+          {
+            link: '/reman/', activeMatch: '^/reman/', text: 'ReMan'
+          },
+          {
+            link: '/reman-lite/', activeMatch: '^/reman-lite/', text: 'ReMan-Lite'
+          }
+        ]
+      },
       { text: '混合盘API', link: '/api-docs' },
       {
         text: '混合盘规则开发',
