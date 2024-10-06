@@ -1,18 +1,16 @@
 ---
 outline: deep
-title: 安装ReMan-Lite
 ---
 
 
 # 安装 ReMan-Lite
 
+视频教程：<https://www.bilibili.com/video/BV1gR1fYgEuE/>
+
 ## 准备工作
 
-
-1. 下载最新的 ReMan-Lite 主体程序：https://github.com/Xwudao/pan/releases
-2. 下载环境依赖包（docker-compose）：https://wwhb.lanzn.com/iR4g32aj1brg
-
-
+1. 下载最新的 ReMan-Lite 主体程序：<https://github.com/Xwudao/pan/releases>
+2. 下载环境依赖包（docker-compose）：<https://wwhb.lanzn.com/iR4g32aj1brg>
 
 ## 服务器
 
@@ -22,13 +20,11 @@ title: 安装ReMan-Lite
 
 系统建议：Ubuntu 22.04
 
-
 ## 安装依赖环境
 
 本文将使用 Docker 来安装 MySQL 和 Redis，如果你已经有了 MySQL 和 Redis，可以跳过这一步。
 
 如果你使用了 宝塔 之类的面板，可以直接在面板中安装 MySQL 和 Redis。请注意，MySQL 的版本需要在 5.7 以上，Redis 的版本需要在 6 以上。
-
 
 ::: details 简单的列举ubuntu安装docker的命令
 
@@ -54,6 +50,7 @@ sudo systemctl enable docker
 解压上面的依赖包，修改`docker-compose.yml` 里面的 MySQL 的密码和用户名，
 
 ::: details docker-compose.yml
+
 ```yml {9,11}
 version: '3'
 
@@ -70,6 +67,7 @@ services:
     image: 'mysql:5.7.31'
     restart: always
 ```
+
 :::
 
 并在同`docker-compose.yml`同级目录，建立 `./init/init.sql` 目录和文件，内容如下：
@@ -100,11 +98,10 @@ sudo docker compose up -d
 │   └── init.sql
 ```
 
-
 ## 修改程序配置文件
 
-
 ::: details config.yml
+
 ```yml
 app:
   mode: release
@@ -150,14 +147,13 @@ redis:
 
 ```
 
-
 :::
-
 
 实际上，只需要修改 `db.password` 、 `jwt.secret` 及 `cors.allowOrigin` 部分即可，其余部分可以不用修改，或等你熟悉了之后再修改。
 
 - `db.password`：只需要和上面`docker-compose.yml`中的 MySQL 密码一致即可。
 - `cors.allowOrigin` 需要修改为你的域名：
+
   ```yml
   cors:
     allowCredentials: true
@@ -169,9 +165,7 @@ redis:
     maxAge: 24h
   ```
 
-
 ## 运行程序
-
 
 **手动运行**
 
@@ -206,8 +200,6 @@ pm2 startup # 生成开机启动命令，这样程序就会在开机时自动启
 
 安装`pm2`参考：[/reman/pm2](/reman/pm2)
 
-
-
 ## 配置反向代理
 
 **nginx**或者**caddy**都可以，推荐新手使用**caddy**。
@@ -217,6 +209,7 @@ pm2 startup # 生成开机启动命令，这样程序就会在开机时自动启
 Caddyfile 配置如下：
 
 ::: details Caddyfile
+
 ```txt
 {
     email admin@yourdomain.com
@@ -230,8 +223,8 @@ yourdomain.com {
     redir https://www.yourdomain.com 301
 }
 ```
-:::
 
+:::
 
 解释：上述内容保存为 `Caddyfile`，然后执行 `caddy run` 即可。
 
@@ -242,7 +235,6 @@ yourdomain.com {
 ```bash
 caddy run
 ```
-
 
 ::: details 更进一步
 
@@ -308,11 +300,13 @@ sudo systemctl enable --now caddy
 
 :::
 
+---
 
+一切完毕之后，访问：<https://yourdomain.com/app> 即可登录后台。
 
 ## 更新程序
 
-之后更新程序，请在 Github 下载：https://github.com/Xwudao/pan ，里面有程序本体和配置文件，一般而言不需要管配置文件，只需要将程序本体替换即可。
+之后更新程序，里面有程序本体和配置文件，一般而言不需要管配置文件，只需要将程序本体替换即可。
 
 > 一般而言，程序名是`reman_xxx`，你需要先重命名为`reman`，然后替换原有的`reman`。
 
