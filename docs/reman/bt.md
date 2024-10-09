@@ -34,6 +34,8 @@ mysql, redis就都通过宝塔安装了，只有elasticsearch是通过docker安�
 所以`~`代表的意思是`/home/用户名`或者`/root`。
 :::
 
+安装视频教程：<https://www.bilibili.com/video/BV1aE2AYHEuq/>
+
 ## 服务器
 
 推荐雨云香港服务器，[https://www.rainyun.com](https://www.rainyun.com/Mzc4MDI=_)
