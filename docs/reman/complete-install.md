@@ -1,11 +1,12 @@
 ---
 outline: deep
-title: 从零开始完整安装ReMan
 ---
 
 # 从零开始完整安装 ReMan
 
 我尝试在这篇文章里面，从零开始，完整的安装 ReMan，将需要注意的地方都写出来，希望能帮助到你。
+
+视频教程：https://www.bilibili.com/video/BV1iR2NYeE51/
 
 ## 准备工作
 
