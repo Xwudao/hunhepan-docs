@@ -11,7 +11,7 @@ title: 从零开始完整安装ReMan
 
 ### 下载组件包
 
-下载组件包：https://wwhb.lanzouw.com/iB1dS1gt9trc
+下载组件包：<https://wwhb.lanzouw.com/iB1dS1gt9trc>
 
 下载后解压，里面包含了以下文件：
 
@@ -288,7 +288,8 @@ pm2 start reman
 然后运行：
 
 ```sh
-pm2 save
+pm2 save # 保存当前进程
+pm2 startup # 开机自启
 ```
 
 这样，ReMan 就会在后台运行了。
@@ -313,8 +314,8 @@ pm2 ls
 
 简单步骤与命令参考如下（汇总）：
 
-
 ::: details 使用systemd管理caddy
+
 ```sh
 sudo groupadd --system caddy
 
@@ -337,10 +338,11 @@ touch /etc/caddy/Caddyfile
 cd /etc/systemd/system
 vim caddy.service
 ```
+
 :::
 
-
 ::: details caddy.service
+
 ```txt
 # caddy.service
 #
@@ -379,6 +381,7 @@ AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 [Install]
 WantedBy=multi-user.target
 ```
+
 :::
 
 ::: details Caddyfile
@@ -394,9 +397,11 @@ example.com www.example.com {
     reverse_proxy http://127.0.0.1:4677
 }
 ```
+
 :::
 
 启动并开机自启：
+
 ```sh
 sudo systemctl daemon-reload
 sudo systemctl enable --now caddy

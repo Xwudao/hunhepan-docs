@@ -36,7 +36,9 @@ export default defineConfig({
       { text: '流量卡合作', link: '/sim/' },
       { text: 'V2FD', link: '/v2fd/', activeMatch: '^/v2fd/' },
       {
-        text: 'ReMan', items: [
+        text: 'ReMan',
+        activeMatch: '^/reman/',
+        items: [
           {
             link: '/reman/', activeMatch: '^/reman/', text: 'ReMan'
           },
