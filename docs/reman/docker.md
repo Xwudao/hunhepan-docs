@@ -11,51 +11,70 @@ outline: deep
 
 不要买`arm`架构的服务器，虽然也能用，但是没必要
 
-
 ## Centos7
 
+::: details Centos7官方源
 
 ```sh
-# 更新yum源
 sudo yum update
-
-# 安装需要的依赖包
 sudo yum install -y yum-utils device-mapper-persistent-data lvm2
-
-# 添加Docker软件源
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-
-# 安装Docker
 sudo yum install -y docker-ce docker-ce-cli containerd.io
 
-# 启动Docker服务
 sudo systemctl start docker
-
-# 重启 Docker 服务使配置生效
 sudo systemctl restart docker
-
-# 设置Docker服务开机自启
 sudo systemctl enable docker
 ```
 
+:::
+
+::: details Centos7国内阿里源
+
+```sh
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+sudo wget -O /etc/yum.repos.d/docker-ce.repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+sudo yum -y install docker-ce
+
+sudo systemctl start docker
+sudo systemctl restart docker
+sudo systemctl enable docker
+```
+
+:::
 
 ## Ubuntu
 
+::: details Ubuntu官方源
+
 ```sh
-
 sudo apt update
-
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
-
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-
 sudo apt install docker-ce
-
 sudo systemctl restart docker
 sudo systemctl enable docker
 ```
 
+:::
 
-> 以上命令在 `Ubuntu 22.04` 和 `Centos 7` 上测试通过
+::: details Ubuntu国内阿里源
+
+```sh
+sudo apt-get update
+sudo apt-get -y install ca-certificates curl
+
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] http://mirrors.aliyun.com/docker-ce/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt update
+
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+```
+
+:::

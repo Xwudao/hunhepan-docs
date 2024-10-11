@@ -8,10 +8,11 @@ outline: deep
 
 > pm2需要nodejs环境，所以需要先安装nodejs
 
-
 > 不建议使用包管理安装，因为其安装的版本太过老旧；
 
-在 https://nodejs.org/en/download 下载系统相应的版本；
+在 <https://nodejs.org/zh-cn/download/prebuilt-binaries> 下载系统相应的版本；
+
+![下载Nodejs](/images/pm2/image.png)
 
 配置好相应的环境变量，以便在任意目录下都可以使用nodejs命令：
 
@@ -42,7 +43,6 @@ pm2 start "./reman"
 
 然后使用下面的命令重启程序：
 
-
 ::: details 一般我帮忙安装的话
 
 一般我帮忙安装的话，程序运行在家目录的app目录下，即：`~/app`
@@ -58,7 +58,6 @@ pm2 restart "./reman"
 
 :::
 
-
 ```sh
 pm2 restart id
 ```
@@ -67,15 +66,4 @@ pm2 restart id
 
 ```sh
 pm2 ls
-┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
-│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
-├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
-│ 3  │ go-mall-xxxxxxx    │ fork     │ 0    │ online    │ 0%       │ 17.0mb   │
-│ 0  │ go-yyyyyyyyyy      │ fork     │ 53   │ online    │ 0%       │ 99.2mb   │
-│ 1  │ go-xxxx            │ fork     │ 4    │ online    │ 0%       │ 12.8mb   │
-└────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
 ```
-
-
-
-
