@@ -3,12 +3,12 @@ import {
   toValue,
   tryOnScopeDispose,
   unrefElement
-} from "./chunk-OL62FZNA.js";
+} from "./chunk-IUYXZWRX.js";
 import {
   computed,
   ref,
   watch
-} from "./chunk-4Q2F7FTO.js";
+} from "./chunk-Q56VL3NH.js";
 
 // node_modules/.pnpm/tabbable@6.2.0/node_modules/tabbable/dist/index.esm.js
 var candidateSelectors = ["input:not([inert])", "select:not([inert])", "textarea:not([inert])", "a[href]:not([inert])", "button:not([inert])", "[tabindex]:not(slot):not([inert])", "audio[controls]:not([inert])", "video[controls]:not([inert])", '[contenteditable]:not([contenteditable="false"]):not([inert])', "details>summary:first-of-type:not([inert])", "details:not([inert])"];
@@ -341,7 +341,15 @@ var isFocusable = function isFocusable2(node, options) {
   return isNodeMatchingSelectorFocusable(options, node);
 };
 
-// node_modules/.pnpm/focus-trap@7.5.4/node_modules/focus-trap/dist/focus-trap.esm.js
+// node_modules/.pnpm/focus-trap@7.6.0/node_modules/focus-trap/dist/focus-trap.esm.js
+function _defineProperty(e, r, t) {
+  return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
+    value: t,
+    enumerable: true,
+    configurable: true,
+    writable: true
+  }) : e[r] = t, e;
+}
 function ownKeys(e, r) {
   var t = Object.keys(e);
   if (Object.getOwnPropertySymbols) {
@@ -363,33 +371,19 @@ function _objectSpread2(e) {
   }
   return e;
 }
-function _defineProperty(obj, key, value) {
-  key = _toPropertyKey(key);
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-  return obj;
-}
-function _toPrimitive(input, hint) {
-  if (typeof input !== "object" || input === null) return input;
-  var prim = input[Symbol.toPrimitive];
-  if (prim !== void 0) {
-    var res = prim.call(input, hint || "default");
-    if (typeof res !== "object") return res;
+function _toPrimitive(t, r) {
+  if ("object" != typeof t || !t) return t;
+  var e = t[Symbol.toPrimitive];
+  if (void 0 !== e) {
+    var i = e.call(t, r || "default");
+    if ("object" != typeof i) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
-  return (hint === "string" ? String : Number)(input);
+  return ("string" === r ? String : Number)(t);
 }
-function _toPropertyKey(arg) {
-  var key = _toPrimitive(arg, "string");
-  return typeof key === "symbol" ? key : String(key);
+function _toPropertyKey(t) {
+  var i = _toPrimitive(t, "string");
+  return "symbol" == typeof i ? i : i + "";
 }
 var activeFocusTraps = {
   activateTrap: function activateTrap(trapStack, trap) {
@@ -638,25 +632,25 @@ var createFocusTrap = function createFocusTrap2(elements, userOptions) {
       throw new Error("At least one node with a positive tabindex was found in one of your focus-trap's multiple containers. Positive tabindexes are only supported in single-container focus-traps.");
     }
   };
-  var getActiveElement = function getActiveElement2(el) {
+  var _getActiveElement = function getActiveElement(el) {
     var activeElement = el.activeElement;
     if (!activeElement) {
       return;
     }
     if (activeElement.shadowRoot && activeElement.shadowRoot.activeElement !== null) {
-      return getActiveElement2(activeElement.shadowRoot);
+      return _getActiveElement(activeElement.shadowRoot);
     }
     return activeElement;
   };
-  var tryFocus = function tryFocus2(node) {
+  var _tryFocus = function tryFocus(node) {
     if (node === false) {
       return;
     }
-    if (node === getActiveElement(document)) {
+    if (node === _getActiveElement(document)) {
       return;
     }
     if (!node || !node.focus) {
-      tryFocus2(getInitialFocusNode());
+      _tryFocus(getInitialFocusNode());
       return;
     }
     node.focus({
@@ -797,9 +791,9 @@ var createFocusTrap = function createFocusTrap2(elements, userOptions) {
         });
       }
       if (nextNode) {
-        tryFocus(nextNode);
+        _tryFocus(nextNode);
       } else {
-        tryFocus(state.mostRecentlyFocusedNode || getInitialFocusNode());
+        _tryFocus(state.mostRecentlyFocusedNode || getInitialFocusNode());
       }
     }
     state.recentNavEvent = void 0;
@@ -815,17 +809,18 @@ var createFocusTrap = function createFocusTrap2(elements, userOptions) {
       if (isTabEvent(event)) {
         event.preventDefault();
       }
-      tryFocus(destinationNode);
+      _tryFocus(destinationNode);
     }
   };
-  var checkKey = function checkKey2(event) {
+  var checkTabKey = function checkTabKey2(event) {
+    if (config.isKeyForward(event) || config.isKeyBackward(event)) {
+      checkKeyNav(event, config.isKeyBackward(event));
+    }
+  };
+  var checkEscapeKey = function checkEscapeKey2(event) {
     if (isEscapeEvent(event) && valueOrHandler(config.escapeDeactivates, event) !== false) {
       event.preventDefault();
       trap.deactivate();
-      return;
-    }
-    if (config.isKeyForward(event) || config.isKeyBackward(event)) {
-      checkKeyNav(event, config.isKeyBackward(event));
     }
   };
   var checkClick = function checkClick2(e) {
@@ -848,8 +843,8 @@ var createFocusTrap = function createFocusTrap2(elements, userOptions) {
     }
     activeFocusTraps.activateTrap(trapStack, trap);
     state.delayInitialFocusTimer = config.delayInitialFocus ? delay(function() {
-      tryFocus(getInitialFocusNode());
-    }) : tryFocus(getInitialFocusNode());
+      _tryFocus(getInitialFocusNode());
+    }) : _tryFocus(getInitialFocusNode());
     doc.addEventListener("focusin", checkFocusIn, true);
     doc.addEventListener("mousedown", checkPointerDown, {
       capture: true,
@@ -863,10 +858,11 @@ var createFocusTrap = function createFocusTrap2(elements, userOptions) {
       capture: true,
       passive: false
     });
-    doc.addEventListener("keydown", checkKey, {
+    doc.addEventListener("keydown", checkTabKey, {
       capture: true,
       passive: false
     });
+    doc.addEventListener("keydown", checkEscapeKey);
     return trap;
   };
   var removeListeners = function removeListeners2() {
@@ -877,7 +873,8 @@ var createFocusTrap = function createFocusTrap2(elements, userOptions) {
     doc.removeEventListener("mousedown", checkPointerDown, true);
     doc.removeEventListener("touchstart", checkPointerDown, true);
     doc.removeEventListener("click", checkClick, true);
-    doc.removeEventListener("keydown", checkKey, true);
+    doc.removeEventListener("keydown", checkTabKey, true);
+    doc.removeEventListener("keydown", checkEscapeKey);
     return trap;
   };
   var checkDomRemoval = function checkDomRemoval2(mutations) {
@@ -888,7 +885,7 @@ var createFocusTrap = function createFocusTrap2(elements, userOptions) {
       });
     });
     if (isFocusedNodeRemoved) {
-      tryFocus(getInitialFocusNode());
+      _tryFocus(getInitialFocusNode());
     }
   };
   var mutationObserver = typeof window !== "undefined" && "MutationObserver" in window ? new MutationObserver(checkDomRemoval) : void 0;
@@ -966,7 +963,7 @@ var createFocusTrap = function createFocusTrap2(elements, userOptions) {
       var finishDeactivation = function finishDeactivation2() {
         delay(function() {
           if (returnFocus) {
-            tryFocus(getReturnFocusNode(state.nodeFocusedBeforeActivation));
+            _tryFocus(getReturnFocusNode(state.nodeFocusedBeforeActivation));
           }
           onPostDeactivate === null || onPostDeactivate === void 0 || onPostDeactivate();
         });
@@ -1021,7 +1018,7 @@ var createFocusTrap = function createFocusTrap2(elements, userOptions) {
   return trap;
 };
 
-// node_modules/.pnpm/@vueuse+integrations@11.0.3_focus-trap@7.5.4_vue@3.5.1/node_modules/@vueuse/integrations/useFocusTrap.mjs
+// node_modules/.pnpm/@vueuse+integrations@11.1.0_focus-trap@7.6.0_vue@3.5.11/node_modules/@vueuse/integrations/useFocusTrap.mjs
 function useFocusTrap(target, options = {}) {
   let trap;
   const { immediate, ...focusTrapOptions } = options;
@@ -1094,7 +1091,7 @@ tabbable/dist/index.esm.js:
 
 focus-trap/dist/focus-trap.esm.js:
   (*!
-  * focus-trap 7.5.4
+  * focus-trap 7.6.0
   * @license MIT, https://github.com/focus-trap/focus-trap/blob/master/LICENSE
   *)
 */
