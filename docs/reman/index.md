@@ -289,6 +289,10 @@ nohup ./reman &
 
 ### 程序更新
 
+请在下面地址下载最新版本：
+
+<https://github.com/Xwudao/reman-release>
+
 程序更新需要先停掉之前的旧程序：
 
 ```sh

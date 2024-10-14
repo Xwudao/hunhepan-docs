@@ -17,6 +17,10 @@ outline: deep
 
 ## 更新程序
 
+请在下面地址下载最新版本：
+
+<https://github.com/Xwudao/reman-release>
+
 一般，更新包是 zip 压缩文件，里面包括 `config.yml` 和 `reman_xxx_xxx`
 
 > 基本上，不用动 `config.yml` 文件（just ignore it），只需要更新 `reman_xxx_xxx` 文件即可。
@@ -118,11 +122,9 @@ systemctl restart caddy
 
 ## 复杂数据备份
 
-
 **未完待续**
 
 其实一般而言，只需要备份 mysql 即可，elastic 和 redis 一般不需要备份，es 和 redis 数据都可以根据 mysql 数据重建。
-
 
 首先，在 `/root/env` 找到 `docker-compose.yml` 文件，然后找到 mysql 的配置，如下：
 
@@ -131,7 +133,6 @@ mysql:
     environment:
         MYSQL_ROOT_PASSWORD: "here_is_root_password" // <-- 这个是 root 密码
 ```
-
 
 记住 root 密码，然后执行：
 
