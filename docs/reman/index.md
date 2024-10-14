@@ -1,10 +1,9 @@
 ---
 outline: deep
-title: ReMan 网盘搜索引擎程序源码
 keywords: ['ReMan', '网盘搜索引擎源码', '网盘资源管理', '搭建阿里云盘搜索']
 ---
 
-# ReMan 网盘搜索引擎程序
+# ReMan 网盘搜索引擎程序源码
 
 `ReMan`是一款拥有后台的个人网盘资源管理程序；
 
@@ -58,6 +57,18 @@ keywords: ['ReMan', '网盘搜索引擎源码', '网盘资源管理', '搭建阿
 :::
 
 购买请加微信：apkapb 备注：reman
+
+## 程序更新
+
+请在下面地址下载最新版本：
+
+<https://github.com/Xwudao/reman-release>
+
+<!-- ![下载最新版本](/images/index/image-11.png) -->
+
+请在下面地址提交建议：
+
+<https://github.com/Xwudao/reman-release/issues>
 
 ## ReMan-Lite
 
