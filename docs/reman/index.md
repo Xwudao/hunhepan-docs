@@ -58,6 +58,8 @@ keywords: ['ReMan', '网盘搜索引擎源码', '网盘资源管理', '搭建阿
 
 购买请加微信：apkapb 备注：reman
 
+商品对比：[ReMan-Lite](/reman/#reman-lite)
+
 ## 程序更新
 
 请在下面地址下载最新版本：
