@@ -44,6 +44,12 @@ mysql, redis就都通过宝塔安装了，只有elasticsearch是通过docker安�
 
 系统建议：Ubuntu 22.04
 
+## 准备工作
+
+下载组件包：<https://wwhb.lanzouw.com/iB1dS1gt9trc>
+
+下载ReMan程序：<https://github.com/Xwudao/reman-release>
+
 ## 安装宝塔
 
 <https://www.bt.cn/>
