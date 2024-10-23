@@ -173,7 +173,7 @@ export default defineConfig({
               link: '/reman/',
             },
             {
-              text: '使用宝塔',
+              text: '使用宝塔安装',
               link: '/reman/bt',
             },
             {
