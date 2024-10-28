@@ -10,6 +10,41 @@ outline: deep
 - **token**：`token`是一个必须的参数，用于验证用户身份，获取token的方法是在后台：`站点配置` -> `其它配置` -> `杂类配置`。
 - **api**：`api`是你的站点地址，比如：`https://reman-lite.xwudao.com`。
 
+## 上传网盘信息
+
+```http
+### api import by token
+POST {{api}}/v1/disk/import?token={{api_token}}
+Content-Type: application/json
+X-Name: ImportDisk
+
+{
+  "disk_id": "0d4af391245b",
+  "disk_name": "Q 企丨业强人 2024[港剧]",
+  "disk_type": "QUARK",
+  "disk_pass": "",
+  "files": "files\nfiles\nfiles",
+  "share_user": "朴素*貂熊",
+  "shared_time": "2021-01-01 00:00:00",
+  "share_user_id": "100653330911",
+  "status": "normal",
+  "is_mine": false
+}
+```
+
+说明：
+
+- `disk_id`：网盘的唯一标识符，百度盘需要去掉'1'
+- `disk_name`：网盘的名称
+- `disk_type`：网盘的类型，目前支持`QUARK`、`DBY`、`XUNLEI`、`ALY`、`UC`
+- `disk_pass`：网盘的提取码，没有为空字符串
+- `files`：文件列表，每个文件之间用换行符分隔
+- `share_user`：分享者的名称
+- `shared_time`：分享的时间，10位时间戳
+- `share_user_id`：分享者的唯一标识符
+- `status`：入库 使用`normal`
+- `is_mine`：是否是自己的资源，是为`true`，否为`false`
+
 ## 上传Tg信息
 
 ```http
