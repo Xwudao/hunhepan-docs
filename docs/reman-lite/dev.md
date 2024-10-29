@@ -12,7 +12,7 @@ outline: deep
 ```txt
 ├── config.yml
 ├── current.log -> logs/current.log
-├── go-hunheso
+├── reman-lite
 ├── logs
 └── web
     ├── front
