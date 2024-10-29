@@ -70,7 +70,6 @@ Content-Type: application/json
 
 ```json
 {
-  "id": 1,
   "text": "名称：直到破坏了丈夫的家庭 夫の家庭を壊すまで (2024) 更新11【日剧】\n\n描述：　　本剧改编自同名漫画，讲述了贯彻从学生开始的纯爱而结婚再拥有幸福家庭的美典，发现了丈夫有着15年的婚外情。她决定向丈夫和小三复仇。作为复仇计划，美典利用了小三的高中生儿子，带着对他的愧疚感和意想不到沸腾起来的感情，丈夫多年来的出轨计划开始慢慢被揭穿… 爱情与背叛的四角关系，各自未来的新人生是…\n\n链接：https://pan.quark.cn/s/ead41078bebd\n\n\uD83D\uDCC1 大小：T\n\uD83C\uDFF7 标签：#直到破坏了丈夫的家庭 #quark\n\uD83D\uDCE2 频道：@yunpanshare\n\uD83D\uDC65 群组：@yunpangroup",
   "channel_id": 1762530683,
   "channel_msg_id": 74969,
