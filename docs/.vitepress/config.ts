@@ -28,9 +28,16 @@ export default defineConfig({
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    search: {
-      provider: 'local',
+    lastUpdated: {
+      text: '上次更新',
+      formatOptions: {
+        dateStyle: 'short',
+        timeStyle: 'short'
+      }
     },
+    // search: {
+    //   provider: 'local',
+    // },
     nav: [
       { text: '首页', link: '/' },
       { text: '流量卡合作', link: '/sim/' },
@@ -160,6 +167,10 @@ export default defineConfig({
             {
               text: '开发修改',
               link: '/reman-lite/dev'
+            },
+            {
+              text: '一些帮助',
+              link: '/reman-lite/help'
             },
           ]
         }
