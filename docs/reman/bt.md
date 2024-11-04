@@ -50,6 +50,10 @@ mysql, redis就都通过宝塔安装了，只有elasticsearch是通过docker安�
 
 下载ReMan程序：<https://github.com/Xwudao/reman-release>
 
+## 注意
+
+下面步骤仅供参考，具体详细步骤请参考上面给出的视频教程，或者参考[从零开始完整安装 ReMan](/reman/complete-install)这篇文章。
+
 ## 安装宝塔
 
 <https://www.bt.cn/>
