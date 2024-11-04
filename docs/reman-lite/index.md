@@ -27,7 +27,11 @@ ReMan-Lite 是 ReMan 的轻量版，两者除了功能上有类似的地方，�
 
 <!--@include: @/components/compare-reman.md-->
 
-**购买联系微信：apkapb 备注：ReMan-Lite**
+**购买联系微信：apkapb**
+
+## 网站参考
+
+- <https://hunheso.cc>
 
 ## 后台截图
 
