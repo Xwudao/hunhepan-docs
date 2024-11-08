@@ -8,22 +8,17 @@ title: 网盘工具使用教程
 
 这里提供了一些网盘工具的使用教程，包括：批量转存夸克链接的方法工具
 
-
-
 ## 批量转存夸克/UC
 
 我自己写了一个脚本，可以转存别人的夸克链接，然后分享出来并导入分享链接，然后再将自己的链接入库；
 
-
 是一个单文件，可以直接运行，不需要安装任何依赖；
-
 
 ### 初始化
 
 在该文件(main.exe)所有目录，打开cmd：
 
 ![](/images/pantools/image.png)
-
 
 运行如下命令：
 
@@ -37,7 +32,6 @@ main.exe init -a name -c "这里填入cookies" -t quark
 - `-c`：cookies，这里填入你的cookies；下面将会介绍如何获取；
 - `-t`：类型，这里填入`quark`，代表夸克；`uc`即UC网盘；
 
-
 ---
 
 **Cookies 获取方法：**
@@ -48,7 +42,6 @@ main.exe init -a name -c "这里填入cookies" -t quark
 
 ![alt text](/images/pantools/image-3.png)
 
-
 所以找到Cookies后，我们的命令就是：
 
 ```bat
@@ -57,9 +50,7 @@ main.exe init -a name -c "__pus=xxxx" -t quark
 
 > 如果你复制了全部的Cookies,确保你的Cookies是一行文本，否则命令会报错；
 
-
 ---
-
 
 如果执行成功，那么会在当前目录生成如下文件：
 
@@ -88,13 +79,11 @@ main.exe init -a name -c "__pus=xxxx" -t quark
 
 后期，你想分享其它文件夹的资源，可以将文件夹的pid写入`name.pid.txt`中；**注意** `name.pid.txt`中只能有一行；
 
-
 **找pid：**
 
 夸克最新PC端中，文件夹右键，“详细信息”中有ID：
 
 ![](/images/pantools/image-2.png)
-
 
 ---
 
@@ -105,7 +94,6 @@ panic: {"status":401,"code":31001,"message":"require login [guest]","req_id":"97
 ```
 
 说明你的cookies有问题；
-
 
 ### 使用流程
 
@@ -119,8 +107,7 @@ panic: {"status":401,"code":31001,"message":"require login [guest]","req_id":"97
 
 5. [可选][新增]双击`name-del-share.bat`可以删除已分享但失效的分享；这可能有助于不被官方封号；
 
-
-###  注意事项
+### 注意事项
 
 该工具是免费分享（仅限购买了ReMan的用户），所以有问题请仔细研究文档，除了程序bug，不要找我；
 
@@ -128,8 +115,7 @@ panic: {"status":401,"code":31001,"message":"require login [guest]","req_id":"97
 
 需要工具，请私信我；
 
-
-### dict.txt 说明 
+### dict.txt 说明
 
 `dict.txt`是一个文本文件，里面是敏感词，每行一个；
 
@@ -150,13 +136,9 @@ panic: {"status":401,"code":31001,"message":"require login [guest]","req_id":"97
 公众号.png
 ```
 
-
-
 ## 本地执行资源导入任务
 
 在 2024/07/24日晚起，貌似国外服务器访问夸克API时，会被拦截，所以暂时开发了本工具用以在本地执行资源导入任务；
-
-
 
 ```ps
 PS Desktop\save> .\rm-task.exe -h
@@ -171,7 +153,6 @@ Flags:
       --token string   ReMan 网站 token 请在后台设置中生成
 ```
 
-
 首先，在后台关闭ReMan自带的任务系统：
 ![](/images/pantools/image-4.png)
 
@@ -183,3 +164,22 @@ Flags:
 
 这样，`rm-task.exe` 会拉取ReMan网站上的状态为 `pending` 的任务，然后执行；
 
+## 本地网盘链接导入工具
+
+近期有不少用户反馈想要大量导入资源，本身为了限流，也为了不被封IP，ReMan本身的导入功能1天导入的量是有限的；
+
+另一方面，如果被封服务器IP了，那么只能使用该工具导入。
+
+> **注意** 本工具不免费
+
+使用方法：
+
+```ps
+.\local-task.exe run --api https://yourdomain.com --token tokeninadmin --file .\link.txt
+```
+
+- `api`：你的ReMan网站地址
+- `token`：你的ReMan网站token（后台生成）
+- `file`：文本文件，里面是网盘链接，一行一个
+
+> 如有密码，需要密码是在链接上，如：`https://pan.baidu.com/s/1348348?pwd=1234`
