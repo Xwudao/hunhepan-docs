@@ -172,6 +172,21 @@ Flags:
 
 > **注意** 本工具不免费
 
+
+```ps
+PS C:\Users\save> .\local-task.exe run -h
+执行任务
+
+Usage:
+  go-local-task run [flags]
+
+Flags:
+      --api string     ReMan 网站地址，如：https://www.reman.com
+      --file string    包含网盘链接的文本文件路径
+  -h, --help           help for run
+      --token string   ReMan 网站 token 请在后台设置中生成
+```
+
 使用方法：
 
 ```ps
