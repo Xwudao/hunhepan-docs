@@ -183,6 +183,7 @@ Flags:
       --api string     ReMan 网站地址，如：https://www.reman.com
       --file string    包含网盘链接的文本文件路径
   -h, --help           help for run
+      --interval int   执行间隔时间，单位秒
       --token string   ReMan 网站 token 请在后台设置中生成
 ```
 
