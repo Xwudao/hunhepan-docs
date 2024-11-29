@@ -12,7 +12,7 @@ outline: deep
 
 有一个[API 导入资源到系统 Token]选项，你需要先生成这个 token：
 
-![](/images/api/image.png)
+![api 生成说明](/images/api/image.png)
 
 然后，你可以使用这个 token
 
@@ -45,9 +45,9 @@ Content-Type: application/json
 
 说明：
 
-- `{api}`是你的网站域名，比如：https://www.example.com
+- `{api}`是你的网站域名，比如：<https://www.example.com>
 - `{token}`是你的 API 导入资源到系统 Token
-- `disk_id` 网盘分享 ID，百度网盘有点特殊：https://pan.baidu.com/s/1xxxxxxxxx 这样的，那么这个 ID 就是：xxxxxxxxx（把 1 去掉）
+- `disk_id` 网盘分享 ID，百度网盘有点特殊：<https://pan.baidu.com/s/1xxxxxxxxx> 这样的，那么这个 ID 就是：xxxxxxxxx（把 1 去掉）
 - `disk_type` 网盘类型：BDY, ALY, QUARK, XUNLEI
 - `shared_time` 资源分享时的时间，10 位时间戳
 - `files` 文件列表，是一个字符串，比如：`file: xxx.jpg\nfolder: xxx\nfile: xxx.mp4`
@@ -56,6 +56,33 @@ Content-Type: application/json
 - `meta` 是可选的，里面有两个字段：
   - `description` 资源描述
   - `posters_url` 资源封面图（海报）
+
+## 更新网盘资源信息
+
+> 在ReMan版本 > v0.8.15 中提供
+
+```http
+### update disk partial by id type
+POST {{api}}/open/disk/update_id_type?token={{api_token}}
+Content-Type: application/json
+
+{
+  "disk_id": "VNkdBx69f34LBe1QqSdFwUdCa1",
+  "disk_type": "XUNLEI",
+  "disk_name": "mei女合集",
+  "disk_pass": "qvif",
+  "files": "file:Screenrecorder-2022-06-08-00-36-15-706.mp4",
+  "share_user": "151****0380",
+  "shared_time": "2023-12-01 23:07:09",
+  "status": 1,
+  "share_user_id": "12323233",
+  "cost_coin": 12
+}
+```
+
+> 说明：`disk_id`、`disk_type` 为必填项，其他字段可选
+>
+> status: 状态：0正常, 1被举报
 
 ## 获取搜索热词
 
@@ -132,7 +159,6 @@ Content-Type: application/json
 }
 ```
 
-
 ## 获取网盘导入任务
 
 > 预计在版本 > 0.3.4 中提供
@@ -143,7 +169,6 @@ GET {{api}}/open/disk_task/pick?token={{api_token}}&disk_type=&status=
 
 - `disk_type` 网盘类型: BDY, ALY, QUARK, XUNLEI
 - `status` 任务状态: pending, finished, failed, review
-
 
 ## 设置网盘导入任务状态
 
