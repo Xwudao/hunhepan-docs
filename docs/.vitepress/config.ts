@@ -221,6 +221,15 @@ export default defineConfig({
             { text: '(番外)有关SEO的碎碎念', link: '/reman/seo' },
           ],
         },
+        {
+          text: '版本问题',
+          items: [
+            {
+              text: '版本更新',
+              link: '/reman/version'
+            }
+          ]
+        }
       ],
     },
 
