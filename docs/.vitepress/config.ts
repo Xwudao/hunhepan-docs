@@ -196,12 +196,12 @@ export default defineConfig({
         {
           text: '系统使用介绍',
           items: [
-            { text: '首页热搜影视词', link: '/reman/film' },
+            // { text: '首页热搜影视词', link: '/reman/film' },
             { text: '一些功能的理解', link: '/reman/cleavage' },
             { text: 'API接口使用', link: '/reman/api' },
             // { text: '配套爬虫程序', link: '/reman/crawl' },
             { text: '一些命令帮助', link: '/reman/cmd-help' },
-            { text: '网站的冷启动', link: '/reman/cold-start' },
+            // { text: '网站的冷启动', link: '/reman/cold-start' },
             // { text: '一些网盘工具', link: '/reman/pantools' },
             { text: '会员积分系统', link: '/reman/vip-coin' },
             { text: '商品和支付模块', link: '/reman/pay' },
