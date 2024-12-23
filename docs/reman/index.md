@@ -104,7 +104,7 @@ keywords: ['ReMan', '网盘搜索引擎源码', '网盘资源管理', '搭建阿
 
 相应介绍：[点击前往](./crawl.md) -->
 
-## 客户网站展示
+<!-- ## 客户网站展示
 
 - <https://alipanx.com>
 - <https://qkpanso.com> 👍
@@ -112,7 +112,7 @@ keywords: ['ReMan', '网盘搜索引擎源码', '网盘资源管理', '搭建阿
 - <https://so.yuneu.com>
 - <http://51panso.cn>
 - <https://www.duanjuso.com> 👍
-- <https://www.kuufuu.com>
+- <https://www.kuufuu.com> -->
 
 (想要添加进来列表，请联系我)
 
