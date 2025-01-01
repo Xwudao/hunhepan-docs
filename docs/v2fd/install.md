@@ -5,7 +5,6 @@ draft: true
 
 # 从零开始搭建 V2FD 网址导航网站
 
-
 教程视频：
 
 B站：[【V2FD】导航网站程序安装教程](https://www.bilibili.com/video/BV1cGHXewEXr)
@@ -152,6 +151,7 @@ redis:
 
 - `db.password`：只需要和上面`docker-compose.yml`中的 MySQL 密码一致即可。
 - `cors.allowOrigin` 需要修改为你的域名：
+
   ```yml
   cors:
     allowCredentials: true
@@ -226,7 +226,7 @@ yourdomain.com {
 
 ## 更新程序
 
-之后更新程序，请在 Github 下载：https://github.com/Xwudao/v2fd-release ，里面有程序本体和配置文件，一般而言不需要管配置文件，只需要将程序本体替换即可。
+之后更新程序，请在 Github 下载：<https://github.com/Xwudao/v2fd-release> ，里面有程序本体和配置文件，一般而言不需要管配置文件，只需要将程序本体替换即可。
 
 > 一般而言，程序名是`v2fd_xxx`，你需要先重命名为`v2fd`，然后替换原有的`v2fd`。
 
@@ -237,3 +237,22 @@ pm2 restart v2fd
 ```
 
 即可。
+
+## 重启程序
+
+首先，使用 `pm2 ls` 获取运行ID，然后使用 `pm2 restart ID` 即可。
+
+```bash
+pm2 ls
+pm2 restart <id>
+```
+
+:::details 其它重启方法
+如果你的程序名是遵循文档，重命名为`v2fd`，那么可以使用下面的命令：
+
+```bash
+pm2 restart v2fd
+```
+:::
+
+如果想更改页面模板，建议将配置文件中的`app.mode`改为`debug`，这样每次修改页面模板后，刷新页面即可看到效果。（第一次修改config.yml后，需要重启程序）
