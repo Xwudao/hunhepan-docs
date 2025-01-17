@@ -217,9 +217,6 @@ npm run build
 
 ```js
 hun.events.onSearch = async (ctx) => { };
-hun.events.onInfo = async (ctx) => { };
-hun.events.onTab = async (ctx) => { };
-hun.events.onList = async (ctx) => { };
 ```
 
 然后终端运行：`npm run build -w`，这样就可以实时编译js文件。
@@ -243,9 +240,6 @@ hun.events.onSearch = async (ctx) => {
   console.log('🚀 ~ hun.events.onSearch= ~ query:', query);
   console.log('🚀 ~ hun.events.onSearch= ~ page:', page);
 };
-hun.events.onInfo = async (ctx) => {};
-hun.events.onTab = async (ctx) => {};
-hun.events.onList = async (ctx) => {};
 ```
 
 重新点击“加载”，然后在搜索框输入内容，点击搜索，就可以看到终端输出了搜索内容。
@@ -274,9 +268,6 @@ hun.events.onSearch = async (ctx) => {
     },
   ];
 };
-hun.events.onInfo = async (ctx) => {};
-hun.events.onTab = async (ctx) => {};
-hun.events.onList = async (ctx) => {};
 
 ```
 
