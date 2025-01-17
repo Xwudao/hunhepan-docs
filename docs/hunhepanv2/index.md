@@ -230,7 +230,7 @@ const md5 = (str: string): string => {
 ```
 
 ::: warning
-这也是想表达的，由于程序已经自带了CryptoJS，所以像md5,base64等常用的加密方式，可以基于CryptoJS来实现。不必再引入其他库。而增加规则文件的大小及影响性能。
+这也是想表达的，由于程序已经自带了CryptoJS，所以像md5,base64等常用的加密方式，可以基于CryptoJS来实现。不必再引入其他库。不必要增加规则文件的大小以影响性能。
 :::
 
 ### html解析
