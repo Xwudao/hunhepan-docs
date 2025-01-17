@@ -56,11 +56,9 @@ export default defineConfig({
       },
       { text: '混合盘API', link: '/api-docs' },
       {
-        text: '混合盘规则开发',
-        items: [
-          { text: 'Android端文档', link: '/android/' },
-          { text: 'PC端文档', link: '/pc/' },
-        ],
+        text: '混合盘规则开发(v2)',
+        activeMatch: '^/hunhepanv2/',
+        link: '/hunhepanv2/'
       },
     ],
 
@@ -231,6 +229,15 @@ export default defineConfig({
           ]
         }
       ],
+      '/hunhepanv2/':[
+        {
+          text: '混合盘规则开发(v2)',
+          items: [
+            { text: '基本语法说明', link: '/hunhepanv2/' },
+            { text: '规则开发指南', link: '/hunhepanv2/guide' },
+          ],
+        },
+      ]
     },
 
     socialLinks: [

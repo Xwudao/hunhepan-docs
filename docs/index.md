@@ -8,14 +8,14 @@ hero:
   tagline: 网盘搜索、磁力搜索
   actions:
     - theme: brand
-      text: PC端规则编写文档
-      link: /pc/
-    - theme: brand
-      text: Android端规则编写文档
-      link: /android/
-    - theme: alt
-      text: 软件下载
-      link: /download
+      text: PC端规则编写文档(v2)
+      link: /hunhepanv2/
+    # - theme: brand
+    #   text: Android端规则编写文档
+    #   link: /android/
+    # - theme: alt
+    #   text: 软件下载
+    #   link: /download
 
 features:
   - title: 灵活
