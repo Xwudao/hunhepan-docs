@@ -96,7 +96,7 @@ hun.events.onSearch = async (ctx) => {
   "json": {
     "key": "value"
   },
-  "origin": "47.245.113.85",
+  "origin": "1.1.1.1",
   "url": "https://httpbin.org/post"
 }
 ```
@@ -165,7 +165,7 @@ hun.events.onSearch = async (ctx) => {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     "X-Amzn-Trace-Id": "Root=1-6789eb02-3be80a1a455cd7e146700f3f"
   },
-  "origin": "47.245.113.85",
+  "origin": "1.1.1.1",
   "url": "https://httpbin.org/get?action=search&q=3434&page=1"
 }
 ```
