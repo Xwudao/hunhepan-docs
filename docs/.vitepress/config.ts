@@ -189,6 +189,10 @@ export default defineConfig({
               text: '从零开始安装ReMan',
               link: '/reman/complete-install',
             },
+            {
+              text: '构建安卓客户端',
+              link: '/reman/android',
+            },
           ],
         },
         {
