@@ -19,7 +19,7 @@ ReMan自 2025/2/20 起，支持安卓端；特点：
 打开 Github : <https://github.com/Xwudao/reman-app-release>
 
 创建issue：
-标题为`[BUILD] 这里任意填`，
+标题为`[BUILD] 这里写网站名称`，
 内容为：
 
 ```markdown
@@ -35,6 +35,8 @@ app_name: 懒盘搜索
 - app_name 为 APP 名称，例如 ReMan
 - 中间冒号为英文冒号，不要使用中文冒号
 - 标题中的`[BUILD]`不要修改
+
+**严格按照要求来，不要乱写标题之类的**
 
 若队列中无其它任务，会立即构建，否则会排队等待。
 
