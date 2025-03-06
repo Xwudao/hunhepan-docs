@@ -57,6 +57,27 @@ Content-Type: application/json
   - `description` 资源描述
   - `posters_url` 资源封面图（海报）
 
+
+---
+
+**2025/03/06 更新**：（实验性）添加通过API导入磁链、ED2K链接功能
+
+注意：
+
+- 磁力：disk_type: MAGNET
+- ED2K：disk_type: ED2K
+
+disk_id例子如下：
+
+```txt
+magnet:?xt=urn:btih:3a4f5e6d7f8g9h0i1j2k3l4m5n6o7p8q9r0s1t2u
+disk_id: 3a4f5e6d7f8g9h0i1j2k3l4m5n6o7p8q9r0s1t2u
+
+
+ed2k://|file|cn_windows_10_enterprise_version_1703_updated_june_2017_x86_dvd_10721462.iso|3737954304|9DF7203BD15FF86CD381D9C998462C78|
+disk_id: |file|cn_windows_10_enterprise_version_1703_updated_june_2017_x86_dvd_10721462.iso|3737954304|9DF7203BD15FF86CD381D9C998462C78|
+```
+
 ## 更新网盘资源信息
 
 > 在ReMan版本 > v0.8.15 中提供
