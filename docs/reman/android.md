@@ -23,14 +23,14 @@ ReMan自 2025/2/20 起，支持安卓端；特点：
 内容为：
 
 ```markdown
-app_id: com.lzpanx.com
-api_url: https://www.lzpanx.com
-app_name: 懒盘搜索
+app_id: com.xx.com
+api_url: https://www.xx.com
+app_name: 网站名称
 ```
 
 注意：
 
-- app_id 为包名，例如 com.tencent.mm
+- app_id 为包名，例如 com.tencent.mm，不要在.分隔的部分有全数字，例如 com.123.qq
 - api_url 为网站首页，末尾不要带/，例如 <https://weixin.qq.com>  
 - app_name 为 APP 名称，例如 ReMan
 - 中间冒号为英文冒号，不要使用中文冒号
