@@ -190,6 +190,10 @@ export default defineConfig({
               link: '/reman/complete-install',
             },
             {
+              text: '新手常见问题',
+              link: '/reman/newbie',
+            },
+            {
               text: '构建安卓客户端',
               link: '/reman/android',
             },
