@@ -13,7 +13,7 @@ outline: deep
 我们是建议使用我们提供的`docker`版本，因为这样可以避免很多问题
 
 
-可以直接下载 [reman-install](https://wwhb.lanzouw.com/iB1dS1gt9trc)
+可以直接下载 [reman-install](https://wwhb.lanzn.com/iLyLF2qj0adg)
 
 解压之后，可以看到 `docker-compose.yml` 文件，直接在和 `docker-compose.yml` 同级目录运行如下命令即可同时启动 `mysql`、`redis`、`elasticsearch`：
 
@@ -78,7 +78,7 @@ services:
 
 > 实际上新版本的宝塔提供了`elastcisearch`的安装，但是其提供的是8.x版本，而我们必须使用7.x版本，所以 `elasticsearch` 无法使用宝塔安装
 
-同样，你可以下载：[reman-install](https://wwhb.lanzouw.com/iB1dS1gt9trc)
+同样，你可以下载：[reman-install](https://wwhb.lanzn.com/iLyLF2qj0adg)
 
 然后修改 `docker-compose.yml` 文件，将 `mysql` 和 `redis` 节的配置删掉，然后运行如下命令即可：
 

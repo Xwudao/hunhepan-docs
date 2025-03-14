@@ -46,7 +46,7 @@ mysql, redis就都通过宝塔安装了，只有elasticsearch是通过docker安�
 
 ## 准备工作
 
-下载组件包：<https://wwhb.lanzouw.com/iB1dS1gt9trc>
+下载组件包：<https://wwhb.lanzn.com/iLyLF2qj0adg>
 
 下载ReMan程序：<https://github.com/Xwudao/reman-release>
 
@@ -93,7 +93,7 @@ wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh && sudo 
 
 一次性把`reman-install.zip`和`linux_amd64.zip`都上传上去；
 
-> `reman-install.zip` 下载：<https://wwhb.lanzouw.com/iB1dS1gt9trc>
+> `reman-install.zip` 下载：<https://wwhb.lanzn.com/iLyLF2qj0adg>
 
 ## 进入终端
 

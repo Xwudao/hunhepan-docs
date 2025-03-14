@@ -12,7 +12,7 @@ outline: deep
 
 ### 下载组件包
 
-下载组件包：<https://wwhb.lanzouw.com/iB1dS1gt9trc>
+下载组件包：<https://wwhb.lanzn.com/iLyLF2qj0adg>
 
 下载后解压，里面包含了以下文件：
 
