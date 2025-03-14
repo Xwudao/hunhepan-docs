@@ -156,8 +156,7 @@ services:
      - "ES_JAVA_OPTS=-Xms1200m -Xmx1200m"
      - discovery.type=single-node
     ports:
-      - '9200:9200'
-      - '9300:9300'
+      - '127.0.0.1:9200:9200'
     privileged: true
 ```
 

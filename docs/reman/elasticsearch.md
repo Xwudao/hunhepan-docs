@@ -12,7 +12,6 @@ outline: deep
 
 我们是建议使用我们提供的`docker`版本，因为这样可以避免很多问题
 
-
 可以直接下载 [reman-install](https://wwhb.lanzn.com/iLyLF2qj0adg)
 
 解压之后，可以看到 `docker-compose.yml` 文件，直接在和 `docker-compose.yml` 同级目录运行如下命令即可同时启动 `mysql`、`redis`、`elasticsearch`：
@@ -44,8 +43,7 @@ services:
      - "ES_JAVA_OPTS=-Xms1200m -Xmx1200m"
      - discovery.type=single-node
     ports:
-      - '9200:9200'
-      - '9300:9300'
+      - '127.0.0.1:9200:9200'
     privileged: true
 ```
 
@@ -105,8 +103,7 @@ services:
      - "ES_JAVA_OPTS=-Xms1200m -Xmx1200m"
      - discovery.type=single-node
     ports:
-      - '9200:9200'
-      - '9300:9300'
+      - '127.0.0.1:9200:9200'
     privileged: true
 ```
 

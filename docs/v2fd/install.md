@@ -54,7 +54,7 @@ services:
       - './mysql-conf/my.cnf:/etc/my.cnf'
       - './init/:/docker-entrypoint-initdb.d/'
     ports:
-      - '3306:3306'
+      - '127.0.0.1:3306:3306'
     command: --default-authentication-plugin=mysql_native_password
       --character-set-server=utf8mb4
       --collation-server=utf8mb4_general_ci
@@ -70,7 +70,7 @@ services:
       - ./redis-data:/data
       - ./redis.conf:/etc/redis/redis.conf
     ports:
-      - '6379:6379'
+      - '127.0.0.1:6379:6379'
     sysctls:
       - net.core.somaxconn=1024
     command: /bin/sh -c "echo 'vm.overcommit_memory = 1' >> /etc/sysctl.conf && redis-server /etc/redis/redis.conf --appendonly yes"
