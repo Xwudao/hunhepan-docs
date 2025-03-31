@@ -82,6 +82,8 @@ meta标签验证：
 
 将文件放在reman同级目录下的`static`目录下，这样就可以通过`https://你的域名/xxx.txt`之类的链接访问；
 
+> reman同级目录指：二进制文件reman的目录，比如说是：`/root/app/` ，那么`static`目录就是`/root/app/static/`；
+
 ## 缓存问题
 
 > 发生错误啦~~，也许这是个临时错误，可以尝试刷新一下
