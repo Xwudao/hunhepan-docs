@@ -17,6 +17,8 @@ outline: deep
 
 ## 更新程序
 
+视频教程：<https://www.bilibili.com/video/BV1z2Z8YKEwP/>
+
 请在下面地址下载最新版本：
 
 <https://github.com/Xwudao/reman-release>
