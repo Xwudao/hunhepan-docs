@@ -234,6 +234,9 @@ jwt:
 >
 > 不然你将得到如下错误：panic: jwt.secret must be configured and the length is greater than 10
 
+
+expire: 登录过期时间，单位是小时，默认 24 小时，过期后需要重新登录。
+
 ---
 
 redis 项：
