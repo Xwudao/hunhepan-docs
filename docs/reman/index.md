@@ -76,9 +76,9 @@ keywords: ['ReMan', '网盘搜索引擎源码', '网盘资源管理', '搭建阿
 
 <https://github.com/Xwudao/reman-release/issues>
 
-## ReMan-Lite
+<!-- ## ReMan-Lite
 
-在2024国庆期间，我们推出了`ReMan-Lite`，这是一个更加轻量级的程序，当然功能也相对较少，但是对于一些要求不高的用户来说，这是一个不错的选择；
+在2024国庆期间，我们推出了`ReMan-Lite`，这是一个更加轻量级的程序，当然功能也相对较少，但是对于一些要求不高的用户来说，这是一个不错的选择； -->
 
 <!--@include: @/components/compare-reman.md-->
 
