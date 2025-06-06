@@ -48,6 +48,12 @@ check-tool -a https://api.example.com -t your_token -c your_license_code -p prox
 - HTTP 代理：`http://ip:port`
 - SOCKS5 代理：`socks5://ip:port`
 
+**使用说明：**
+
+不会直接删除文档，可以通过后台的过滤条件筛选，手动进行隐藏：
+
+![使用说明](/images/plugins/image.png)
+
 ## 注意
 
 以上插件均只可保证一段时间内可用，可能会因各种原因失效，且不保证长期维护。购买前请务必确认插件的可用性和适用性。
