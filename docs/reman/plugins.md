@@ -39,6 +39,7 @@ check-tool -a https://api.example.com -t your_token -c your_license_code -p prox
 - `--token, -t`: ReMan API 令牌（必需）
 - `--code, -c`: ReMan 插件授权码（必需）
 - `--proxy-file, -p`: 代理文件路径（可选）,里面一行一个代理地址
+- `--proxy-api, -r`: 代理 API 地址（可选，访问该地址会返回一个代理IP）
 - `--parallel, -n`: 并行工作线程数（默认：1）
 - `--start-last-id, -s`: 起始 last_id（默认：0）
 - `--size, -z`: 每次请求获取的项目数量（默认：50）
