@@ -71,6 +71,7 @@ check-tool -a https://api.example.com -t your_token -c your_license_code -p prox
 - 支持并发处理以提高效率
 - 支持断点续传和错误重试
 - 支持从文件批量导入关键词
+- 支持热门关键词自动搜索
 
 **使用方法：**
 
@@ -80,6 +81,9 @@ pansou-spider --spider-url https://spider.example.com --api https://api.example.
 
 # 批量关键词（文件每行一个关键词）
 pansou-spider -s https://spider.example.com -a https://api.example.com -t your_token -c license_code -f keywords.txt -p 10
+
+# 使用热门关键词搜索
+pansou-spider -s https://spider.example.com -a https://api.example.com -t your_token -c license_code --hot -p 10
 ```
 
 **参数说明：**
@@ -88,8 +92,9 @@ pansou-spider -s https://spider.example.com -a https://api.example.com -t your_t
 - `--api, -a`: ReMan API 地址（必需）
 - `--token, -t`: ReMan API 令牌（必需）
 - `--code, -c`: ReMan 插件授权码（必需）
-- `--query, -q`: 搜索关键词（与 --file 互斥，二选一）
-- `--file, -f`: 包含搜索关键词的文本文件路径（每行一个关键词，与 --query 互斥）
+- `--query, -q`: 搜索关键词（与 --file 和 --hot 互斥，三选一）
+- `--file, -f`: 包含搜索关键词的文本文件路径（每行一个关键词，与 --query 和 --hot 互斥）
+- `--hot, -h`: 使用热门搜索关键词进行搜索（与 --query 和 --file 互斥）
 - `--parallel, -p`: 并行工作线程数（默认：1）
 
 ## 注意
