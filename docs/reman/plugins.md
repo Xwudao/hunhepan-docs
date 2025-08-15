@@ -55,6 +55,43 @@ check-tool -a https://api.example.com -t your_token -c your_license_code -p prox
 
 ![使用说明](/images/plugins/image.png)
 
+## 盘搜网盘资源爬虫工具
+
+**限制**: 仅限 ReMan 版本 >= 1.6.0
+
+**价格：** ￥99 / 套
+
+**功能描述：** 从盘搜网站批量搜索网盘资源并导入到 ReMan 系统，支持关键词批量搜索、自动解析、并发处理等。
+
+**主要特性：**
+
+- 从盘搜网站搜索指定关键词的网盘资源
+- 自动解析网盘链接并获取详细信息
+- 批量导入资源到 ReMan 系统
+- 支持并发处理以提高效率
+- 支持断点续传和错误重试
+- 支持从文件批量导入关键词
+
+**使用方法：**
+
+```bash
+# 基本用法（单关键词）
+pansou-spider --spider-url https://spider.example.com --api https://api.example.com --token your_token --code license_code --query "电影" --parallel 5
+
+# 批量关键词（文件每行一个关键词）
+pansou-spider -s https://spider.example.com -a https://api.example.com -t your_token -c license_code -f keywords.txt -p 10
+```
+
+**参数说明：**
+
+- `--spider-url, -s`: 盘搜爬虫服务地址（默认：https://so.252035.xyz/api/search）
+- `--api, -a`: ReMan API 地址（必需）
+- `--token, -t`: ReMan API 令牌（必需）
+- `--code, -c`: ReMan 插件授权码（必需）
+- `--query, -q`: 搜索关键词（与 --file 互斥，二选一）
+- `--file, -f`: 包含搜索关键词的文本文件路径（每行一个关键词，与 --query 互斥）
+- `--parallel, -p`: 并行工作线程数（默认：1）
+
 ## 注意
 
 以上插件均只可保证一段时间内可用，可能会因各种原因失效，且不保证长期维护。购买前请务必确认插件的可用性和适用性。
