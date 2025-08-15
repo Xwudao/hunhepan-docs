@@ -94,7 +94,7 @@ pansou-spider -s https://spider.example.com -a https://api.example.com -t your_t
 - `--code, -c`: ReMan 插件授权码（必需）
 - `--query, -q`: 搜索关键词（与 --file 和 --hot 互斥，三选一）
 - `--file, -f`: 包含搜索关键词的文本文件路径（每行一个关键词，与 --query 和 --hot 互斥）
-- `--hot, -h`: 使用热门搜索关键词进行搜索（与 --query 和 --file 互斥）
+- `--hot`: 使用热门搜索关键词进行搜索（与 --query 和 --file 互斥）
 - `--parallel, -p`: 并行工作线程数（默认：1）
 
 ## 注意
