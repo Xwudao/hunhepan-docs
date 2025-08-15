@@ -59,6 +59,8 @@ check-tool -a https://api.example.com -t your_token -c your_license_code -p prox
 
 **限制**: 仅限 ReMan 版本 >= 1.6.0
 
+(`--hot`指令需要>1.7.2)
+
 **价格：** ￥99 / 套
 
 **功能描述：** 从盘搜网站批量搜索网盘资源并导入到 ReMan 系统，支持关键词批量搜索、自动解析、并发处理等。
