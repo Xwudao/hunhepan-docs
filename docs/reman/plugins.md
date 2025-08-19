@@ -90,7 +90,7 @@ pansou-spider -s https://spider.example.com -a https://api.example.com -t your_t
 
 **参数说明：**
 
-- `--spider-url, -s`: 盘搜爬虫服务地址（默认：https://so.252035.xyz/api/search）
+- `--spider-url, -s`: 盘搜爬虫服务地址（默认：<https://so.252035.xyz/api/search>）
 - `--api, -a`: ReMan API 地址（必需）
 - `--token, -t`: ReMan API 令牌（必需）
 - `--code, -c`: ReMan 插件授权码（必需）
