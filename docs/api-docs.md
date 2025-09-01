@@ -27,7 +27,7 @@ outline: deep
 
 ```http
 ### search disk
-POST https://hunhepan.com/open/search/disk
+POST https://hunhepan.com/open/search/disk?token=<your_api_token>
 Content-Type: application/json
 
 {
