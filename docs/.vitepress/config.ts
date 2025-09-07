@@ -144,15 +144,15 @@ export default defineConfig({
           items: [
             { text: 'Pansearch', link: '/pansearch/' },
             {
-              text: '安装Pansearch',
+              text: '安装教程',
               link: '/pansearch/install',
             },
             {
-              text: '安装Elasticsearch',
+              text: 'Elasticsearch 碎碎念',
               link: '/pansearch/elasticsearch',
             },
             {
-              text: '安装MySQL',
+              text: 'MySQL 碎碎念',
               link: '/pansearch/mysql',
             },
             {

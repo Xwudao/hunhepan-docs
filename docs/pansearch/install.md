@@ -27,6 +27,10 @@ outline: deep
         └── utils.css
 ```
 
+- config.yml: 程序配置文件
+- go-pansearch_linux_amd64_v0.1.0: 程序主体文件(二进制)
+- templates: 前端模板文件
+
 ## 配置详情
 
 :::details 点击查看配置文件 config.yml 示例
@@ -139,7 +143,6 @@ redis:
 
 > 请根据你的 Redis 配置进行修改。
 
-
 ### 用环境变量覆盖
 
 你可以使用环境变量覆盖配置文件中的设置，环境变量格式为 `PAN_<SECTION>_<KEY>`，例如：
@@ -166,13 +169,28 @@ export PAN_CORS_ALLOWORIGIN=http://example.com http://another.com
 
 程序支持elasticsearch 7.x 及 elasticsearch 8.x 版本
 
-更多介绍请参考：
+更多介绍请参考：[Es安装介绍说明](./elasticsearch.md)
 
-[Es安装介绍说明](./elasticsearch.md)
+主要想表达的是：要使ES支持中文搜索，必须安装`IK`分词插件或`hao`分词插件，然后这两个插件的版本必须和你的ES版本对应，否则会报错。
 
+使用`IK`分词插件时，配置文件中的`indexAnalyzer`和`searchAnalyzer`必须分别设置为`ik_max_word`和`ik_smart`。
+
+```yml
+es:
+  # ... other settings ...
+  indexAnalyzer: "ik_max_word"
+  searchAnalyzer: "ik_smart"
+```
+
+使用`hao`分词插件时，配置文件中的`indexAnalyzer`和`searchAnalyzer`必须分别设置为`hao_max_word`和`hao_smart`。
+
+```yml
+es:
+  # ... other settings ...
+  indexAnalyzer: "hao_index_mode"
+  searchAnalyzer: "hao_search_mode"
+```
 
 ## MySQL 安装说明
 
-更多介绍请参考：
-
-[MySQL安装介绍说明](./mysql.md)
+更多介绍请参考：[MySQL安装介绍说明](./mysql.md)

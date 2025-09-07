@@ -9,21 +9,15 @@ keywords: ['PanSearch', '网盘搜索引擎源码', '网盘资源搜索', '开�
 
 **可以帮你管理网盘资源；**
 
-特点：
-
-- 轻量级设计，支持快速搜索
-- 支持手机端和电脑端
-<!-- - 程序开源，免费使用(待准备) -->
-
 特色功能：
 
 - 支持分类
 - 更多功能正在开发中
 
-::: details 点击查看开源仓库
-<https://github.com/Xwudao/pansearch>
+::: details 点击查看下载地址
+<https://github.com/Xwudao/go-pansearch-release>
 
-**注意**：PanSearch 是免费的，开源计划中，欢迎贡献代码。
+**注意**：PanSearch 是免费的，开源计划中。
 :::
 
 ## 推荐的服务器
@@ -39,3 +33,7 @@ keywords: ['PanSearch', '网盘搜索引擎源码', '网盘资源搜索', '开�
 
 能选择纯净的镜像，我们就尽量纯净一点，不要有多余的东西
 :::
+
+## 安装教程
+
+请参考[安装说明](./install.md)
