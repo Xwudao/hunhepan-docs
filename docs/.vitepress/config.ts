@@ -42,6 +42,7 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '流量卡合作', link: '/sim/' },
       { text: 'V2FD', link: '/v2fd/', activeMatch: '^/v2fd/' },
+      { text: 'Pansearch', link: '/pansearch/', activeMatch: '^/pansearch/' },
       {
         text: 'ReMan',
         activeMatch: '^/reman/',
@@ -133,6 +134,22 @@ export default defineConfig({
             {
               text: '系统功能介绍',
               link: '/v2fd/system-introduce',
+            },
+          ],
+        },
+      ],
+      '/pansearch/': [
+        {
+          text: 'Pansearch介绍与安装',
+          items: [
+            { text: 'Pansearch', link: '/pansearch/' },
+            {
+              text: '安装Pansearch',
+              link: '/pansearch/install',
+            },
+            {
+              text: 'API接口使用',
+              link: '/pansearch/api',
             },
           ],
         },
