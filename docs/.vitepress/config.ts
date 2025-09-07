@@ -156,6 +156,10 @@ export default defineConfig({
               link: '/pansearch/mysql',
             },
             {
+              text: '开发前端样式',
+              link: '/pansearch/development',
+            },
+            {
               text: 'API接口使用',
               link: '/pansearch/api',
             },
