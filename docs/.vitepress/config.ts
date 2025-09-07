@@ -148,6 +148,14 @@ export default defineConfig({
               link: '/pansearch/install',
             },
             {
+              text: '安装Elasticsearch',
+              link: '/pansearch/elasticsearch',
+            },
+            {
+              text: '安装MySQL',
+              link: '/pansearch/mysql',
+            },
+            {
               text: 'API接口使用',
               link: '/pansearch/api',
             },
