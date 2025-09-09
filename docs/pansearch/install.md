@@ -165,6 +165,16 @@ export PAN_CORS_ALLOWORIGIN=http://example.com http://another.com
 2. 用下划线 `_` 替换点 `.` 和连字符 `-`
 3. 数组类型的值用空格分隔
 
+## 一键安装MySQL和Elasticsearch
+
+这里也是可以建议新手使用 `docker compose` 来一键安装 MySQL 和 Elasticsearch。
+
+下载`docker-compose.yml`、参考安装教程，点击：[从零开始完整安装 ReMan](reman/complete-install.md)
+
+**唯一不同的是**:
+
+`PanSearch` 多了一个`templates`目录，但是这个目录只需要放置到和二进制文件、配置文件同级目录即可。
+
 ## Elasticsearch 安装说明
 
 程序支持elasticsearch 7.x 及 elasticsearch 8.x 版本
