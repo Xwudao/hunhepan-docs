@@ -42,7 +42,7 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '流量卡合作', link: '/sim/' },
       { text: 'V2FD', link: '/v2fd/', activeMatch: '^/v2fd/' },
-      { text: 'PanSearch', link: '/pansearch/', activeMatch: '^/pansearch/' },
+      // { text: 'PanSearch', link: '/pansearch/', activeMatch: '^/pansearch/' },
       {
         text: 'ReMan',
         activeMatch: '^/reman/',
@@ -51,7 +51,7 @@ export default defineConfig({
             link: '/reman/', activeMatch: '^/reman/', text: 'ReMan'
           },
           {
-            link: '/reman-lite/', activeMatch: '^/reman-lite/', text: 'ReMan-Lite'
+            link: '/pansearch/', text: 'ReMan免费版'
           }
         ]
       },
@@ -170,42 +170,42 @@ export default defineConfig({
           ],
         },
       ],
-      '/reman-lite': [
-        {
-          text: 'ReMan-Lite程序',
-          items: [
-            {
-              text: '介绍',
-              link: '/reman-lite/',
-            },
-            {
-              text: '从零安装',
-              link: '/reman-lite/install',
-            },
-            {
-              text: 'API接口',
-              link: '/reman-lite/api',
-            },
-          ],
-        },
-        {
-          text: '使用说明',
-          items: [
-            {
-              text: '网站配置',
-              link: '/reman-lite/config'
-            },
-            {
-              text: '开发修改',
-              link: '/reman-lite/dev'
-            },
-            {
-              text: '一些帮助',
-              link: '/reman-lite/help'
-            },
-          ]
-        }
-      ],
+      // '/reman-lite': [
+      //   {
+      //     text: 'ReMan-Lite程序',
+      //     items: [
+      //       {
+      //         text: '介绍',
+      //         link: '/reman-lite/',
+      //       },
+      //       {
+      //         text: '从零安装',
+      //         link: '/reman-lite/install',
+      //       },
+      //       {
+      //         text: 'API接口',
+      //         link: '/reman-lite/api',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     text: '使用说明',
+      //     items: [
+      //       {
+      //         text: '网站配置',
+      //         link: '/reman-lite/config'
+      //       },
+      //       {
+      //         text: '开发修改',
+      //         link: '/reman-lite/dev'
+      //       },
+      //       {
+      //         text: '一些帮助',
+      //         link: '/reman-lite/help'
+      //       },
+      //     ]
+      //   }
+      // ],
       '/reman/': [
         {
           text: '安装帮助',
