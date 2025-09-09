@@ -163,6 +163,10 @@ export default defineConfig({
               text: 'API接口使用',
               link: '/pansearch/api',
             },
+            {
+              text: '一些相关工具',
+              link: '/pansearch/tools',
+            },
           ],
         },
       ],
