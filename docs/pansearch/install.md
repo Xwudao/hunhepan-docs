@@ -169,7 +169,7 @@ export PAN_CORS_ALLOWORIGIN=http://example.com http://another.com
 
 这里也是可以建议新手使用 `docker compose` 来一键安装 MySQL 和 Elasticsearch。
 
-下载`docker-compose.yml`、参考安装教程，点击：[从零开始完整安装 ReMan](reman/complete-install.md)
+下载`docker-compose.yml`、参考安装教程，点击：[从零开始完整安装 ReMan](/reman/complete-install.md)
 
 **唯一不同的是**:
 
