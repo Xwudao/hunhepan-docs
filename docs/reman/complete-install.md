@@ -4,158 +4,150 @@ outline: deep
 
 # 从零开始完整安装 ReMan
 
-我尝试在这篇文章里面，从零开始，完整的安装 ReMan，将需要注意的地方都写出来，希望能帮助到你。
+本文将详细介绍如何从零开始完整安装 ReMan，包含所有关键配置和注意事项。
 
-视频教程：<https://www.bilibili.com/video/BV1iR2NYeE51/>
+📺 **视频教程**：<https://www.bilibili.com/video/BV1iR2NYeE51/>
 
-## 准备工作
+## 系统要求
 
-### 下载组件包
+- **最低配置**：2核4G内存
+- **推荐系统**：Ubuntu 22.04
+- **必需组件**：Docker、Docker Compose
 
-下载组件包：<https://wwhb.lanzn.com/iLyLF2qj0adg>
+## 第一步：准备组件包
 
-下载后解压，里面包含了以下文件：
+### 下载必需文件
 
-- docker-compose.yml
-- redis.conf
-- elasticsearch.yml
-- plugins/
+📥 **组件包下载**：<https://wwhb.lanzn.com/iLyLF2qj0adg>
 
-通过 `docker-compose.yml` 我们可以一键运行 mysql, redis, elasticsearch。
+解压后包含以下文件：
 
-通过 `redis.conf` 和 `elasticsearch.yml` 我们可以配置 redis 和 elasticsearch。
-但是这两个文件可以保持默认，不需要修改。
+- `docker-compose.yml` - 一键部署配置文件
+- `redis.conf` - Redis配置文件
+- `elasticsearch.yml` - Elasticsearch配置文件
+- `plugins/` - Elasticsearch插件目录
 
-需要修改的是，`docker-compose.yml` 文件中的 `MYSQL_ROOT_PASSWORD` 和 `MYSQL_PASS` 和 `MYSQL_USER`，这两 3 个参数，分别是 mysql 的 root 密码、普通用户密码和用户名。
+### 配置数据库密码
+
+编辑 `docker-compose.yml`，修改MySQL相关配置：
 
 ```yml {5-7}
 services:
   mysql:
     network_mode: 'bridge'
     environment:
-      MYSQL_ROOT_PASSWORD: '123456'
-      MYSQL_USER: 'tim'
-      MYSQL_PASS: '123456'
+      MYSQL_ROOT_PASSWORD: '123456'  # 设置MySQL root密码
+      MYSQL_USER: 'tim'              # 普通用户名
+      MYSQL_PASS: '123456'           # 普通用户密码
 ```
 
-> 普通用户其实没用，但也需要修改，待会我们会通过 root 用户专门来新建 reman 的数据库和用户。
+> ⚠️ **重要**：请将密码修改为强密码，确保系统安全性
 
-### 安装 docker
+## 第二步：安装Docker环境
 
-请参考 [/reman/docker](/reman/docker) 安装 docker。
+### 安装Docker
 
-安装成功后，可以通过以下 2 个命令查看版本：
+详细安装步骤请参考：[Docker安装指南](/reman/docker)
+
+### 验证安装
+
+执行以下命令验证安装成功：
 
 ```sh
 docker -v
-
 docker compose version
 ```
 
-这两个命令都能查看版本，如果有输出，说明安装成功。
-
-:::details 输出参考
+:::details 正确输出示例
 ![docker version](/images/complete-install/image-7.png)
 :::
 
-## 运行组件
+## 第三步：部署基础服务
 
-docker 安装完成后，将组件包解压到一个目录，然后进入该目录，运行以下命令：
+### 启动服务容器
 
-**为了统一文档，建议是解压到`/root/env`**
+将组件包解压到 `/root/env` 目录（推荐路径），然后执行：
 
 ```sh
+cd /root/env
 sudo docker compose up -d
 ```
 
-:::details 输出参考
-docker 正在拉取镜像:
-
+:::details 部署过程参考
+Docker拉取镜像中：
 ![docker正在拉取镜像](/images/complete-install/image.png)
 
-拉取完毕，启动了：
+部署完成：
 ![拉取完毕，启动了](/images/complete-install/image-1.png)
 :::
 
-创建数据库和用户：
+### 配置MySQL数据库
 
-首先找到 mysql 的容器 id：
+#### 1. 进入MySQL容器
 
 ```sh
+# 查看容器状态
 sudo docker ps
+
+# 进入MySQL容器（替换为实际容器ID）
+sudo docker exec -it <容器ID> bash
 ```
 
-:::details 输出参考
-这就是容器 ID:
-
+:::details 容器ID查看示例
 ![这就是容器ID](/images/complete-install/image-2.png)
 :::
 
-然后进入 mysql 容器：
+#### 2. 创建数据库和用户
 
 ```sh
-sudo docker exec -it 3b19cc6bab5a bash
-# 这里的 3b19cc6bab5a 是你的容器ID
-```
-
-进入容器后，登录 mysql：
-
-```sh
+# 登录MySQL
 mysql -u root -p
 ```
 
-输入 ROOT 密码（密码是你之前修改了`docker-compose.yml`文件里面，自己设置的），然后创建数据库和用户：
+执行以下SQL语句：
 
 ```sql
+-- 创建数据库
 CREATE DATABASE `reman` CHARACTER SET 'utf8mb4' COLLATE 'utf8mb4_general_ci';
 
+-- 创建用户（替换[password]为实际密码）
 CREATE USER `reman`@`%` IDENTIFIED BY '[password]';
 
+-- 授权
 GRANT Alter, Alter Routine, Create, Create Routine, Create Temporary Tables, Create View, Delete, Drop, Event, Execute, Grant Option, Index, Insert, Lock Tables, References, Select, Show View, Trigger, Update ON `reman`.* TO `reman`@`%`;
 ```
 
-> 这里的 `[password]` 是你自己设置的密码，记得替换。
->
-> 上面会创建一个名为 `reman` 的数据库，和一个名为 `reman` 的用户，密码是你自己设置的。
+> 📝 **注意**：请将 `[password]` 替换为强密码并妥善保管
 
-:::details 输出参考
-进入 mysql 容器，并输入 root 密码:
-
-![进入mysql容器，并输入root密码](/images/complete-install/image-3.png)
-
-执行 sql 语句:
-
+:::details SQL执行参考
 ![执行sql语句](/images/complete-install/image-4.png)
 :::
 
-**至此，数据库和用户创建完成。**
+## 第四步：安装ReMan程序
 
-## 安装 ReMan
+### 上传程序文件
 
-ReMan 我会给你发一个压缩包，解压后里面有一个 `reman`、一个 `config.yml` 文件，将这个文件夹放到你的服务器上，然后进入该文件夹。
+将ReMan压缩包解压到 `/root/app` 目录：
 
-> 如果你解压后，发现是 `reman-xxxxx`，请将 `reman-xxxxx` 改名为 `reman`即可。
+- 确保目录包含 `reman` 可执行文件
+- 确保包含 `config.yml` 配置文件
 
-**为了统一文档，建议是解压到`/root/app`**
+> 💡 **提示**：如解压后目录名为 `reman-xxxxx`，请重命名为 `reman`
 
-### 修改配置文件
+### 配置文件详解
 
-修改 `config.yml` 文件，将里面的 `mysql`、`redis`、`elasticsearch` 的配置修改为你的配置。
+编辑 `config.yml` 文件，逐项配置：
 
-app 项：
+#### 应用基础配置
 
 ```yml
 app:
   mode: release
   port: 4677
-  license: your license code
+  license: your_license_code  # 替换为你的授权码
 ```
 
-修改, license 为你的授权码。
-
----
-
-cors 项：
+#### 跨域配置
 
 ```yml
 cors:
@@ -163,35 +155,14 @@ cors:
   allowOrigin:
     - http://localhost:*
     - http://127.0.0.1:*
-    - https://example.com
-    - https://www.example.com
-    - http://example.com
-    - http://www.example.com
+    - https://yourdomain.com      # 替换为你的域名
+    - https://www.yourdomain.com
+    - http://yourdomain.com
+    - http://www.yourdomain.com
   maxAge: 24h
 ```
 
-在 `allowOrigin` 中，添加你的域名，如：`https://example.com`、`https://www.example.com`、`http://example.com`、`http://www.example.com`。
-
-一般建议，把含`https`，不含`www`的域名，和含`http`，含`www`的域名都添加上。
-
----
-
-mysql 项：
-
-```yml
-db:
-  database: go-re-man
-  dialect: mysql
-  host: 192.168.1.21
-  username: root
-  password: 123456
-  port: 3306
-  autoMigrate: true
-```
-
-修改 `host`、`username`、`password` 为你的 mysql 配置。
-
-一般为：
+#### 数据库配置
 
 ```yml
 db:
@@ -199,14 +170,12 @@ db:
   dialect: mysql
   host: 127.0.0.1
   username: reman
-  password: 这里填写你的密码，在上面创建用户时设置的密码，不是root密码
+  password: 这里填写reman用户密码  # 注意：不是root密码
   port: 3306
   autoMigrate: true
 ```
 
----
-
-Es 项：
+#### Elasticsearch配置
 
 ```yml
 es:
@@ -215,31 +184,18 @@ es:
   diskIndex: reman-disk-v1
 ```
 
-修改 `address` 为你的 elasticsearch 配置，一般修改地址为 `http://127.0.0.1:9200`即可，因为我们是在同一台服务器上。
-
----
-
-jwt 项：
+#### JWT配置
 
 ```yml
 jwt:
-  secret: secret
+  secret: 至少32位的随机字符串  # 重要：必须修改
   expire: 24h
   issuer: reman
 ```
 
-修改 `secret` 为你的 jwt 密钥，`expire` 为过期时间，`issuer` 为签发者。
+> ⚠️ **安全警告**：JWT密钥长度必须大于32位，否则程序无法启动
 
-> 你需要将 secret 和修改为不少于 32 位的随机字符串。
->
-> 不然你将得到如下错误：panic: jwt.secret must be configured and the length is greater than 10
-
-
-expire: 登录过期时间，单位是小时，默认 24 小时，过期后需要重新登录。
-
----
-
-redis 项：
+#### Redis配置
 
 ```yml
 redis:
@@ -248,81 +204,71 @@ redis:
   password: ''
 ```
 
-因为我们是在同一台服务器上，所以只需要将 addr 改为 `127.0.0.1:6379`即可。
-
-### 第一次运行
-
-> 以下命令需要在 `reman` 目录下运行，即：`/root/app/`
-
-运行：
+### 首次启动
 
 ```sh
+cd /root/app
 chmod +x reman
 ./reman
 ```
 
-> 这只是暂时运行，后面我们会使用 `pm2` 来管理。
-
-:::details 输出参考
-首次成功运行参考：
-
+:::details 启动成功示例
 ![首次成功运行参考](/images/complete-install/image-5.png)
 :::
 
-你需要找到类似这个输出：
+**重要**：记录输出中的管理员账号信息：
 
-`Admin user created, username: admin, password: r1a8O8H7`
+```
+Admin user created, username: admin, password: r1a8O8H7
+```
 
-这个是你的管理员账号和密码，后面在 ReMan 后台我们会使用这个账号登录。
+启动成功后按 `Ctrl + C` 退出。
 
-然后，按 `Ctrl + C` 退出。
+## 第五步：进程管理
 
-## 使用 pm2 管理
+### 安装PM2
 
-安装 pm2 参考：[/reman/pm2](/reman/pm2)
+详细安装步骤：[PM2安装指南](/reman/pm2)
 
-安装成功后，运行：
-
-> 以下命令需要在 `reman` 目录下运行，即：`/root/app/`
+### 启动服务
 
 ```sh
+cd /root/app
+
+# 启动ReMan服务
 pm2 start reman
+
+# 保存进程列表
+pm2 save
+
+# 设置开机自启
+pm2 startup
 ```
 
-然后运行：
-
-```sh
-pm2 save # 保存当前进程
-pm2 startup # 开机自启
-```
-
-这样，ReMan 就会在后台运行了。
-
-查询状态：
+### 查看状态
 
 ```sh
 pm2 ls
 ```
 
-:::details 输出参考
+:::details PM2状态示例
 ![pm2 ls](/images/complete-install/image-6.png)
 :::
 
-## Caddy/Nginx
+## 第六步：配置反向代理
 
-经过上面的步骤，ReMan 已经可以正常运行了，但是它是运行在本地的 4677 端口，所以我们还需要一个反向代理，比如 Caddy 或者 Nginx。
+### 推荐使用Caddy
 
-对于小白，我推荐使用 Caddy，因为它配置简单，而且自带 HTTPS。
+对于新手推荐使用Caddy，配置简单且自动HTTPS。
 
-请参考：[/reman/caddy](/reman/caddy) 安装 Caddy
+详细配置：[Caddy配置指南](/reman/caddy)
 
-简单步骤与命令参考如下（汇总）：
+#### 快速配置步骤
 
-::: details 使用systemd管理caddy
+1. **创建用户和目录**
 
 ```sh
 sudo groupadd --system caddy
-
 sudo useradd --system \
     --gid caddy \
     --create-home \
@@ -330,42 +276,102 @@ sudo useradd --system \
     --shell /usr/sbin/nologin \
     --comment "Caddy web server" \
     caddy
-
-
-# 假设在当前目录下，有一个叫 caddy_linux_amd64 的文件
-mv caddy_linux_amd64 /usr/local/sbin/caddy
-chmod +x /usr/local/sbin/caddy
-mkdir /etc/caddy
-touch /etc/caddy/Caddyfile
-
-
-cd /etc/systemd/system
-vim caddy.service
 ```
 
-:::
+2. **安装二进制文件**
 
-::: details caddy.service
+```sh
+# 移动Caddy二进制文件
+mv caddy_linux_amd64 /usr/local/sbin/caddy
+chmod +x /usr/local/sbin/caddy
 
-```txt
-# caddy.service
-#
-# For using Caddy with a config file.
-#
-# Make sure the ExecStart and ExecReload commands are correct
-# for your installation.
-#
-# See https://caddyserver.com/docs/install for instructions.
-#
-# WARNING: This service does not use the --resume flag, so if you
-# use the API to make changes, they will be overwritten by the
-# Caddyfile next time the service is restarted. If you intend to
-# use Caddy's API to configure it, add the --resume flag to the
-# `caddy run` command or use the caddy-api.service file instead.
+# 创建配置目录
+mkdir /etc/caddy
+touch /etc/caddy/Caddyfile
+```
 
+3. **创建系统服务**
+
+创建 `/etc/systemd/system/caddy.service`：
+
+```ini
 [Unit]
 Description=Caddy
 Documentation=https://caddyserver.com/docs/
+After=network.target network-online.target
+Requires=network-online.target
+
+[Service]
+Type=notify
+User=caddy
+Group=caddy
+ExecStart=/usr/local/sbin/caddy run --environ --config /etc/caddy/Caddyfile
+ExecReload=/usr/local/sbin/caddy reload --config /etc/caddy/Caddyfile --force
+TimeoutStopSec=5s
+LimitNOFILE=1048576
+LimitNPROC=512
+PrivateTmp=true
+ProtectSystem=full
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target
+```
+
+4. **配置Caddyfile**
+
+编辑 `/etc/caddy/Caddyfile`：
+
+```txt
+{
+    email your-email@example.com
+}
+
+yourdomain.com www.yourdomain.com {
+    reverse_proxy http://127.0.0.1:4677
+}
+```
+
+5. **启动服务**
+
+```sh
+sudo systemctl daemon-reload
+sudo systemctl enable --now caddy
+```
+
+## 维护和更新
+
+### 程序更新
+
+详细更新步骤：[更新指南](/reman/help-install#更新程序)
+
+### 日常维护
+
+- 定期检查服务状态：`pm2 ls`
+- 查看日志：`pm2 logs reman`
+- 重启服务：`pm2 restart reman`
+
+## 故障排除
+
+### 常见问题
+
+1. **数据库连接失败**：检查MySQL服务状态和用户权限
+2. **端口占用**：使用 `netstat -tulpn | grep 4677` 检查端口
+3. **权限问题**：确保文件具有执行权限
+
+### 获取帮助
+
+如遇到问题，请查看日志文件或联系技术支持。
+
+
+### 文件参考
+
+::: details caddy.service
+
+```ini
+[Unit]
+Description=Caddy
+Documentation=<https://caddyserver.com/docs/>
 After=network.target network-online.target
 Requires=network-online.target
 

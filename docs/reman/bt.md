@@ -2,144 +2,127 @@
 outline: deep
 ---
 
-# 通过宝塔安装ReMan
+# 宝塔面板安装ReMan指南
 
-这篇文章主要是通过宝塔面板来安装 ReMan，但请注意，这篇并不是那么友好，你可以同时参考 [从零开始完整安装 ReMan](/reman/complete-install) 来安装 ReMan。
+本文介绍如何通过宝塔面板安装ReMan。建议同时参考 [完整安装指南](/reman/complete-install) 获得更详细的技术细节。
 
-我们是非常建议使用干净环境并使用`docker compose`来安装所需服务的，然后**非要使用**宝塔的话，且又要自己安装的话，请仔细先阅读目前ReMan所有文档，不要来问一些傻瓜问题。
+📺 **视频教程**：<https://www.bilibili.com/video/BV1aE2AYHEuq/>
 
-::: details 简述使用宝塔安装的流程
+## 重要说明
 
-1. 首先，你要使用了宝塔 ，那么大概率你之前是使用宝塔来安装mysql的，所以和[从零开始完整安装 ReMan](/reman/complete-install)这篇文章不同，
-mysql, redis就都通过宝塔安装了，只有elasticsearch是通过docker安装的。
+:::warning 安装方式对比
+我们**强烈推荐**使用干净环境和 `docker compose` 来部署所需服务。
 
-2. 所以本篇文章主要目的，是告诉你：
+如果坚持使用宝塔面板，请：
 
-- mysql, redis是使用宝塔来安装，然后`elasticsearch`是通过docker安装的。
-- 然后，要安装`elasticsearch`，你需要上传一些文件，然后解压，然后再通过`docker compose`来启动elasticsearch。
-- 并且，在上传 elasticsearch 文件的同时，把ReMan的地二进制文件和配置文件也上传上去了。
-
-3. 之后就是安装ReMan，这个就和[安装ReMan](/reman/complete-install#安装-reman)这篇文章这一章节一样了。
+1. 仔细阅读所有ReMan文档
+2. 理解技术原理后再操作
+3. 具备基础的Linux和Docker知识
 :::
 
-::: details 还有就是目录问题
-整个ReMan文档，其实都在强调，第三方服务均放在 `~/env` 目录下，ReMan 本身的程序和配置文件是放在 `~/app` 目录下的
+### 安装架构差异
 
-所以，一些命令在什么地方执行，在哪个目录下上传文件、执行命令，需要注意（**思考**）一下。
+| 服务 | 推荐方式 | 宝塔方式 |
+|------|----------|----------|
+| MySQL | Docker Compose | 宝塔安装 |
+| Redis | Docker Compose | 宝塔安装 |
+| Elasticsearch | Docker Compose | Docker安装（宝塔版本不兼容） |
+| ReMan | 二进制部署 | 二进制部署 |
 
----
+### 目录结构说明
 
-`~`在linux系统下，代表的是家目录，普通用户是：`/home/用户名`，root用户比较特殊，是`/root`
+```txt
+/root/                    # 家目录（root用户）
+├── env/                  # 第三方服务配置
+└── app/                  # ReMan程序目录
+    ├── reman            # 可执行文件
+    └── config.yml       # 配置文件
+```
 
-所以`~`代表的意思是`/home/用户名`或者`/root`。
-:::
+> 💡 **提示**：`~` 符号代表家目录，root用户为 `/root`，普通用户为 `/home/用户名`
 
-安装视频教程：<https://www.bilibili.com/video/BV1aE2AYHEuq/>
+## 系统要求
 
-## 服务器
+- **最低配置**：2核4G内存
+- **推荐系统**：Ubuntu 22.04
+- **推荐服务器**：雨云香港服务器 -> [https://www.rainyun.com](https://www.rainyun.com/Mzc4MDI=_)
 
-推荐雨云香港服务器，[https://www.rainyun.com](https://www.rainyun.com/Mzc4MDI=_)
+## 准备资源
 
-最低配置：2c4g
+### 下载必需文件
 
-系统建议：Ubuntu 22.04
+1. **组件包**：<https://wwhb.lanzn.com/iLyLF2qj0adg>
+2. **ReMan程序**：<https://github.com/Xwudao/reman-release>
 
-## 准备工作
+## 第一步：安装宝塔面板
 
-下载组件包：<https://wwhb.lanzn.com/iLyLF2qj0adg>
-
-下载ReMan程序：<https://github.com/Xwudao/reman-release>
-
-## 注意
-
-下面步骤仅供参考，具体详细步骤请参考上面给出的视频教程，或者参考[从零开始完整安装 ReMan](/reman/complete-install)这篇文章。
-
-## 安装宝塔
-
-<https://www.bt.cn/>
-
-Ubuntu的是：
+### 安装命令
 
 ```sh
 wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh && sudo bash install.sh ed8484bec
 ```
 
-进行web面板后，选择安装：mysql, nginx：
+### 安装基础软件
 
-![](/images/bt/image.png)
+登录宝塔Web面板后，安装以下软件：
 
-安装redis：
+1. **MySQL** - 数据库服务
+   ![MySQL安装](/images/bt/image.png)
 
-![](/images/bt/image-11.png)
+2. **Nginx** - Web服务器
 
-还得通过宝塔安装`docker`：
+3. **Redis** - 缓存服务
+   ![Redis安装](/images/bt/image-11.png)
 
-![](/images/bt/image-4.png)
+4. **Docker** - 容器服务（用于Elasticsearch）
+   ![Docker安装](/images/bt/image-4.png)
 
-之后等它安装，我们同时去上传一些文件，因为redis和mysql是可以通过宝塔安装，
-但是 elasticsearch 得用docker安装，所以我们先上传一些文件；
+> ⚠️ **注意**：宝塔的Elasticsearch是8.x版本，与ReMan不兼容，必须用Docker安装7.x版本
 
-> 我知道宝塔可以安装 elasticsearch，但它安装的是 8.x 版本的，在我们程序中，我们使用的是 7.x 版本的，所以我们还是得用 docker 安装
+## 第二步：上传和解压文件
 
-## 上传文件
+### 文件上传
 
-找到家目录，然后上传文件：
+1. 进入宝塔文件管理器
+2. 导航到家目录（通常是 `/root`）
+   ![家目录导航](/images/bt/image-1.png)
 
-![](/images/bt/image-1.png)
+3. 上传以下文件：
+   - `reman-install.zip`（组件包）
+   - `linux_amd64.zip`（ReMan程序）
+   ![文件上传](/images/bt/image-2.png)
 
-我上面演示的家目录是 `/home/tim`，但是你们的话可能是 `/root`
+### 创建目录结构
 
-![](/images/bt/image-2.png)
-
-一次性把`reman-install.zip`和`linux_amd64.zip`都上传上去；
-
-> `reman-install.zip` 下载：<https://wwhb.lanzn.com/iLyLF2qj0adg>
-
-## 进入终端
-
-这一步来安装 elasticsearch 环境
-
-![](/images/bt/image-3.png)
-
-因为我演示环境无法通过密码登录，所以我就在本地登录，你们是可以通过上面截图的方式登录的；
-
-先建立两个目录，一个是`env`，一个是`app`
+通过宝塔终端或SSH执行：
 
 ```sh
-mkdir env app
+# 创建目录
+mkdir ~/env ~/app
+
+# 移动文件到对应目录
+mv reman-install.zip ~/env/
+mv linux_amd64_v*.zip ~/app/  # 根据实际文件名调整
 ```
 
-移动之前上传的文件到`app`和`env`目录：
+## 第三步：部署Elasticsearch
+
+### 解压和配置
 
 ```sh
-mv linux_amd64_v0.1.4.zip app #你们的压缩包的名称可能不一样，所以你们要改一下
-mv reman-install.zip env
-```
-
-解压`app`目录下的文件：
-
-```sh
-cd ~/app
-sudo apt install unzip # 如果没有安装unzip的话，先安装，如果你是centos, 那么就是 `sudo yum install unzip``
-
-unzip linux_amd64_v0.1.4.zip
-
-mv reman_linux_amd64_v0.1.4 reman
-chmod +x reman
-```
-
-解压`env`目录下的文件：
-
-```sh
+# 解压组件包
 cd ~/env
+sudo apt install unzip  # 如果未安装
 unzip reman-install.zip
+
+# 修改docker-compose.yml，只保留Elasticsearch配置
 ```
 
-由于使用了宝塔安装的mysql,redis，所以我们需要修改一下配置文件：
+### 编辑docker-compose.yml
 
-`docker-compose.yml`把`redis`和`mysql`的配置注释掉(删除掉)，只保留 elasticsearch 节，也即`docker-compose.yml`最后只剩下下面展示的内容：
+删除MySQL和Redis配置，只保留：
 
-```yml {4}
+```yml
 version: '3'
 
 services:
@@ -160,54 +143,136 @@ services:
     privileged: true
 ```
 
-下面这一步的话，你得等到宝塔把docker安装完毕之后，再执行：
+### 启动Elasticsearch
 
 ```sh
-sudo docker compose up #验证，因为是在前台执行的，
-# 上条命令没有明显报错，就可以按 ctrl+c 退出，然后执行下面的命令
-sudo docker compose up -d # 后台执行
+cd ~/env
+
+# 测试启动（前台运行）
+sudo docker compose up
+
+# 无错误后，后台启动
+sudo docker compose up -d
 ```
 
-> 如果 docker 会自启的话，理论上 docker compose 也会自启。
+![ES部署成功](/images/bt/image-5.png)
 
-![](/images/bt/image-5.png)
+## 第四步：解压ReMan程序
 
----
+```sh
+cd ~/app
 
-到比，我们的es环境就安装好了，接下来就是新建站点了；
+# 解压ReMan程序
+unzip linux_amd64_v*.zip
 
-![](/images/bt/image-6.png)
+# 重命名并设置权限
+mv reman_linux_amd64_v* reman
+chmod +x reman
+```
 
-## 新建站点
+## 第五步：创建网站和数据库
 
-:::details 新建站点的目的
+### 新建站点
 
-1. 为了让 ReMan 能够通过域名访问，我们需要新建一个站点，然后添加反向代理。
-2. 同时，也创建了一个数据库，用于存储 ReMan 的数据。（记住数据库名和密码，之后在在`config.yml`里面配置）
+在宝塔面板中创建新站点：
+
+![新建站点](/images/bt/image-6.png)
+
+**创建站点的目的**：
+
+1. 提供域名访问入口
+2. 自动创建MySQL数据库
+3. 配置反向代理
+
+### 配置反向代理
+
+1. 进入站点设置
+   ![站点设置](/images/bt/image-8.png)
+
+2. 添加反向代理
+   ![反向代理配置](/images/bt/image-9.png)
+
+3. 配置代理参数：
+   - **代理名称**：reman
+   - **目标URL**：`http://127.0.0.1:4677`
+   - **发送域名**：`$host`
+
+   ![代理详细配置](/images/bt/image-10.png)
+
+:::warning HTTPS证书注意事项
+如果反向代理影响SSL证书申请：
+
+1. 临时关闭反向代理
+2. 申请SSL证书
+3. 重新开启反向代理
 :::
 
-:::warning 关于https
-如果你使用的反向代理功能，宝塔提示不能申请https证书，
-解决方法是：先关闭反向代理，然后申请https证书，然后再开启反向代理。
-:::
+## 第六步：配置和启动ReMan
 
-![](/images/bt/image-7.png)
+### 配置文件修改
 
-设置,添加反向代理：
+编辑 `~/app/config.yml`，参考 [完整安装指南的配置部分](/reman/complete-install#配置文件详解)：
 
-![](/images/bt/image-8.png)
+**关键配置项**：
 
-内容：
+```yml
+# 数据库配置（使用宝塔创建的数据库信息）
+db:
+  database: 宝塔创建的数据库名
+  host: 127.0.0.1
+  username: 数据库用户名
+  password: 数据库密码
+  port: 3306
 
-![](/images/bt/image-9.png)
+# Redis配置（宝塔Redis默认配置）
+redis:
+  addr: 127.0.0.1:6379
+  db: 0
+  password: ''
 
-其中，`4677`是reman程序监听的端口：
+# 其他配置项参考完整安装指南
+```
 
-![](/images/bt/image-10.png)
+### 启动ReMan
 
-## 安装ReMan
+```sh
+cd ~/app
 
-至此，环境就好了，之后就是安装ReMan了，你可以参考 [complete-install#安装-reman](/reman/complete-install#安装-reman) 来安装 ReMan。
+# 首次启动测试
+./reman
 
+# 记录管理员账号信息后，按Ctrl+C退出
+# 然后使用PM2管理（参考完整安装指南）
+```
+
+## 后续步骤
+
+完成以上配置后，继续参考 [完整安装指南](/reman/complete-install) 完成：
+
+1. **PM2进程管理**
+2. **系统监控配置**
+3. **日常维护**
+
+## 故障排除
+
+### 常见问题
+
+1. **端口冲突**：检查4677端口是否被占用
+2. **数据库连接**：确认宝塔MySQL服务正常运行
+3. **Redis连接**：检查宝塔Redis服务状态
+4. **ES连接**：确认Docker容器正常运行
+
+### 检查命令
+
+```sh
+# 检查服务状态
+sudo docker ps                    # Docker容器状态
+netstat -tulpn | grep 4677       # ReMan端口状态
+pm2 ls                           # PM2进程状态
+
+# 查看日志
+pm2 logs reman                   # ReMan日志
+sudo docker logs elasticsearch   # ES日志
+```
 
 <!-- @include: @/components/firewall.md -->
