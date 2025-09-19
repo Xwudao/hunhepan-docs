@@ -42,9 +42,9 @@ app:
   host: true
 cors:
   allowCredentials: true
-  allowOrigin:
-    - http://localhost:*
-    - http://127.0.0.1:*
+  domains:
+    - example.com
+    - test.com
   maxAge: 24h
 db:
   database: go-pansearch
@@ -95,10 +95,10 @@ redis:
 
 - **cors**: 跨域资源共享设置。
   - `allowCredentials`: 是否允许发送凭据。
-  - `allowOrigin`: 允许的源地址列表，支持通配符。
+  - `domains`: 允许的源地址列表。
   - `maxAge`: 预检请求缓存时间。
 
-> 你需要将你的域名地址添加到 `allowOrigin` 列表中。
+> 你需要将你的域名地址添加到 `domains` 列表中。
 
 - **db**: 数据库配置。
   - `database`: 数据库名称。
@@ -156,7 +156,7 @@ export PAN_APP_PORT=8080
 添加允许的跨域地址：
 
 ```bash
-export PAN_CORS_ALLOWORIGIN=http://example.com http://another.com
+export PAN_CORS_DOMAINS=http://example.com http://another.com
 ```
 
 从上可以看出，规则是：
