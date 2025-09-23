@@ -31,6 +31,12 @@ outline: deep
 - go-pansearch_linux_amd64_v0.1.0: 程序主体文件(二进制)
 - templates: 前端模板文件
 
+::: warning 注意
+从版本v0.2.4起，二进制文件中已内嵌templates目录，无需单独放置。
+
+若有自定义需求，可以将templates目录放置到和二进制文件、配置文件同级目录。
+:::
+
 ## 配置详情
 
 :::details 点击查看配置文件 config.yml 示例
