@@ -85,6 +85,7 @@ redis:
   addr: 192.168.1.21:6379
   db: 0
   password: ""
+  prefix: ""
 
 ```
 
@@ -146,6 +147,7 @@ redis:
   - `addr`: Redis 服务器地址和端口。
   - `db`: Redis 数据库编号。
   - `password`: Redis 密码（可选）。
+  - `prefix`: Redis 键前缀（可选，若多个实例共用一个 Redis 服务器时需要指定）。
 
 > 请根据你的 Redis 配置进行修改。
 
