@@ -6,6 +6,8 @@ outline: deep
 
 该文档介绍如何安装和配置 PanSearch。
 
+视频教程：<https://www.bilibili.com/video/BV1EBxRzKECG>
+
 ## 程序主体介绍
 
 ```txt
