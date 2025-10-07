@@ -148,6 +148,10 @@ export default defineConfig({
               link: '/pansearch/install',
             },
             {
+              text: '一些命令帮助',
+              link: '/pansearch/command',
+            },
+            {
               text: 'Elasticsearch 碎碎念',
               link: '/pansearch/elasticsearch',
             },
