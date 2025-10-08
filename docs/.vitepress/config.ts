@@ -152,6 +152,10 @@ export default defineConfig({
               link: '/pansearch/command',
             },
             {
+              text: '自定义前端模板',
+              link: '/pansearch/custom',
+            },
+            {
               text: 'Elasticsearch 碎碎念',
               link: '/pansearch/elasticsearch',
             },
