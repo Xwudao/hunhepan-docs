@@ -156,6 +156,10 @@ export default defineConfig({
               link: '/pansearch/custom',
             },
             {
+              text: '视频教程汇总',
+              link: '/pansearch/videos',
+            },
+            {
               text: 'Elasticsearch 碎碎念',
               link: '/pansearch/elasticsearch',
             },
