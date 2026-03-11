@@ -15,6 +15,49 @@ outline: deep
 - `app` 目录是程序的安装目录，一般是程序的二进制文件和配置文件，如：`reman`，`config.yml` 等等
 - `env` 目录是程序的第三方依赖目录，如：`mysql`, `redis`, `elasticsearch` 等等
 
+
+## 更新程序 v2 版本
+
+在较新版本的 reman 中，可以通过后台上传 zip 包在线更新程序。
+
+更新前请先确认以下条件：
+
+1. 系统为 Linux
+2. reman 版本 >= v1.11.10
+3. 程序由 `pm2` 管理
+
+先确认 Linux 上正在运行的程序文件名，通常是 `reman`。如果不确定，可在 `/root/app` 目录执行 `ls` 查看。
+
+> 如果是我帮忙安装，且**只安装了一个网站**，那基本就是 `reman` 这个文件。
+
+
+![reman 在linux下的名称](/images/help-install/image-1.png)
+
+> 上图示例为 `go-reman`，`ls` 命令中显示为绿色的可执行文件，就是 Linux 下的 reman 程序文件。
+
+
+然后准备更新包（通常是 zip 压缩包），包内一般包含 `config.yml` 和 `reman_xxx_xxx` 文件。
+
+更新包可在 GitHub 下载，或在混合盘授权页面下载：<https://hunhepan.com/my_license>
+
+![授权页面](/images/help-install/image-2.png)
+
+准备好这 2 样东西即可：
+
+1. 程序名
+2. 更新 zip 包
+
+----
+
+接下来进入后台配置页面，按以下顺序操作：
+
+1. 点击“升级程序”
+2. 上传 zip 包
+3. 输入程序名
+4. 点击“升级”
+
+![后台上传文件，输入名称升级](/images/help-install/image-3.png)
+
 ## 更新程序
 
 视频教程：<https://www.bilibili.com/video/BV1z2Z8YKEwP/>
