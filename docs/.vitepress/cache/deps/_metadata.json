@@ -1,40 +1,40 @@
 {
-  "hash": "d1aa55db",
-  "configHash": "fe50c684",
-  "lockfileHash": "ba6babdb",
-  "browserHash": "af15183f",
+  "hash": "147ce099",
+  "configHash": "e228aae8",
+  "lockfileHash": "e1eba85a",
+  "browserHash": "aefb9985",
   "optimized": {
     "vue": {
-      "src": "../../../../node_modules/.pnpm/vue@3.5.13/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "src": "../../../../node_modules/.pnpm/vue@3.5.30/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "6a11fdc9",
+      "fileHash": "0220d5d3",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
-      "src": "../../../../node_modules/.pnpm/@vue+devtools-api@7.7.0/node_modules/@vue/devtools-api/dist/index.js",
+      "src": "../../../../node_modules/.pnpm/@vue+devtools-api@7.7.9/node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "a4e9a8c4",
+      "fileHash": "038c749d",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
-      "src": "../../../../node_modules/.pnpm/@vueuse+core@11.3.0_vue@3.5.13/node_modules/@vueuse/core/index.mjs",
+      "src": "../../../../node_modules/.pnpm/@vueuse+core@12.8.2/node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "6dedf43e",
+      "fileHash": "b0eed9ea",
       "needsInterop": false
     },
     "@theme/index": {
-      "src": "../../../../node_modules/.pnpm/vitepress@1.5.0_@algolia+client-search@5.19.0_postcss@8.5.1_search-insights@2.17.1/node_modules/vitepress/dist/client/theme-default/index.js",
+      "src": "../../../../node_modules/.pnpm/vitepress@1.6.4_@algolia+cl_c1d06c7a21becf96f2a2a7ebf705430b/node_modules/vitepress/dist/client/theme-default/index.js",
       "file": "@theme_index.js",
-      "fileHash": "afa7aaca",
+      "fileHash": "1ee8d15c",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-4TX7K7HG": {
-      "file": "chunk-4TX7K7HG.js"
+    "chunk-S4SWK2YF": {
+      "file": "chunk-S4SWK2YF.js"
     },
-    "chunk-JN5NFW2R": {
-      "file": "chunk-JN5NFW2R.js"
+    "chunk-N6POSVQF": {
+      "file": "chunk-N6POSVQF.js"
     }
   }
 }
