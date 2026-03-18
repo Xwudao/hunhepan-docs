@@ -65,6 +65,13 @@ keywords: ['ReMan', '网盘搜索引擎源码', '网盘资源管理', '搭建阿
 
 **注意**：ReMan所有功能你都可以在演示网站、用ReMan建立的网站上及本文档中找到，请有购买意愿后再加微信，不要浪费彼此的时间；
 
+## 客户网站
+
+- <https://panso.pro>
+- <https://www.lzpanx.com>
+- <https://qkpanso.com>
+- <https://melost.cn>
+
 ## 免费版本
 
 ReMan开放了一个免费版本，SEO功能相对较好一点：
