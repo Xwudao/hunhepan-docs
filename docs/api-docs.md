@@ -8,20 +8,12 @@ outline: deep
 
 ## API Token (Api Keys) 获取
 
-目前提供以下几种API Token套餐：
-
-| 价格 | 每日调用次数 | 有效期 |
-|------|-------------|--------|
-| 10元 | 100次 | 1个月 |
-| 20元 | 300次 | 1个月 |
-| 50元 | 1000次 | 1个月 |
-
-> **注意：** 目前API服务处于试运行阶段，可能以后会取消或保持，请知悉。
-
 购买方式：
 
 1. 首先注册混合盘账号，登录后在 [https://hunhepan.com/my_api_keys](https://hunhepan.com/my_api_keys) 可查询自己的API Token。
-2. 之后添加微信: timnottom 购买（须告知你的用户ID）。
+2. 开通会员后，可自助生成API Token，生成后会显示在 [https://hunhepan.com/my_api_keys](https://hunhepan.com/my_api_keys) 页面上。
+
+添加微信: timnottom 购买会员
 
 ## 搜索系统资源
 
