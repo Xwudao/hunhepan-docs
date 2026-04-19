@@ -57,7 +57,6 @@ Content-Type: application/json
   - `description` 资源描述
   - `posters_url` 资源封面图（海报）
 
-
 ---
 
 **2025/03/06 更新**：（实验性）添加通过API导入磁链、ED2K链接功能
@@ -78,7 +77,6 @@ ed2k://|file|cn_windows_10_enterprise_version_1703_updated_june_2017_x86_dvd_107
 disk_id: |file|cn_windows_10_enterprise_version_1703_updated_june_2017_x86_dvd_10721462.iso|3737954304|9DF7203BD15FF86CD381D9C998462C78|
 ```
 
-
 ## 获取资源详情
 
 > 在ReMan版本 > v1.5.9 中提供
@@ -87,8 +85,8 @@ disk_id: |file|cn_windows_10_enterprise_version_1703_updated_june_2017_x86_dvd_1
 GET {{api}}/open/disk/doc?token={{api_token}}&doc_id=clpnxgck90004r4o7ngp8ls7d
 ```
 
-
 :::details 返回举例
+
 ```json
 {
   "code": 200,
@@ -107,18 +105,61 @@ GET {{api}}/open/disk/doc?token={{api_token}}&doc_id=clpnxgck90004r4o7ngp8ls7d
     "shared_time": "2023-12-02T15:14:25Z",
     "enabled": true,
     "weight": 1,
-    "extensions": [
-      ".mp4"
-    ],
-    "tags": [
-      "魔方",
-      "教程",
-      "学习"
-    ],
+    "extensions": [".mp4"],
+    "tags": ["魔方", "教程", "学习"],
     "edges": {}
   }
 }
 ```
+
+:::
+
+## 列出资源（分页）
+
+```http
+GET {{api}}/open/disk/list?token={{api_token}}&page=1&size=20
+```
+
+### 查询参数
+
+| 参数      | 类型   | 必填 | 说明                                                    |
+| --------- | ------ | ---- | ------------------------------------------------------- |
+| `page`    | int    | 是   | 页码（从 1 开始）                                       |
+| `size`    | int    | 是   | 每页记录数（1-50）                                      |
+| `by_id`   | string | 否   | 排序方式：`asc`（升序）、`desc`（降序）、或空（不排序） |
+| `enabled` | bool   | 否   | 启用状态过滤（true/false）                              |
+| `status`  | int    | 否   | 网盘状态过滤（0=正常, 1=被举报）                        |
+| `last_id` | int64  | 否   | 上一条记录的 ID（用于游标分页）                         |
+
+:::details 返回举例
+
+```json
+{
+  "code": 200,
+  "msg": "请求成功",
+  "data": [
+    {
+      "id": 1,
+      "create_time": "2023-12-02T10:45:17Z",
+      "update_time": "2025-03-23T00:43:47Z",
+      "disk_id": "dccef7304ec8",
+      "disk_name": "魔方学习资料",
+      "disk_pass": "8zex",
+      "disk_type": "QUARK",
+      "files": "file:视频1.mp4\nfile:视频2.mp4",
+      "doc_id": "clpnxgck90004r4o7ngp8ls7d",
+      "share_user": "用户名",
+      "shared_time": "2023-12-02T15:14:25Z",
+      "enabled": true,
+      "status": 0,
+      "weight": 1,
+      "extensions": [".mp4"],
+      "tags": ["教程", "学习"]
+    }
+  ]
+}
+```
+
 :::
 
 ## 更新网盘资源信息
