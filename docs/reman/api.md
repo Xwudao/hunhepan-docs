@@ -187,7 +187,7 @@ Content-Type: application/json
 
 > 说明：`disk_id`、`disk_type` 为必填项，其他字段可选
 >
-> status: 状态：0正常, 1被举报
+> status: 状态：0正常, 1被举报, 2已处理, 3相似资源, 4可能失效
 
 ## 获取搜索热词
 
