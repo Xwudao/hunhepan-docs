@@ -85,28 +85,38 @@ chmod +x go-nav
 Admin user created, username: admin, password: xxxxxxxx
 ```
 
-### 5. 配置系统服务（可选）
+### 5. 使用 PM2 管理进程（可选）
 
-生产环境建议用 systemd 守护进程：
+生产环境推荐用 PM2 守护进程，自动重启、日志管理均开箱即用。
 
-```ini
-# /etc/systemd/system/go-nav.service
-[Unit]
-Description=Go-Nav
-After=network.target
+**安装 Node.js 和 PM2**
 
-[Service]
-WorkingDirectory=/opt/go-nav
-ExecStart=/opt/go-nav/go-nav
-Restart=always
-
-[Install]
-WantedBy=multi-user.target
-```
+先从 [nodejs.org](https://nodejs.org/zh-cn/download/prebuilt-binaries) 下载并安装对应平台的 Node.js，配置好环境变量后执行：
 
 ```sh
-systemctl daemon-reload
-systemctl enable --now go-nav
+npm i -g pm2
+```
+
+**启动程序**
+
+```sh
+pm2 start "./go-nav"
+```
+
+**常用命令**
+
+```sh
+pm2 ls                  # 查看所有进程状态
+pm2 logs go-nav         # 查看实时日志
+pm2 restart go-nav      # 重启进程
+pm2 stop go-nav         # 停止进程
+```
+
+**开机自启**
+
+```sh
+pm2 startup             # 生成并执行系统自启命令（按提示操作）
+pm2 save                # 保存当前进程列表
 ```
 
 ---
