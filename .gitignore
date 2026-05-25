@@ -1,2 +1,5 @@
 node_modules
 dist
+.playwright-cli
+.playwright
+.DS_Store
