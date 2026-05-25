@@ -264,6 +264,7 @@ docker中：
 
 ```sh
 docker exec -it go-nav-app ./app-linux reset admin -p newpassword123
+# go-nav-app 替换为你的容器名称
 ```
 
 ### 后台无法访问
