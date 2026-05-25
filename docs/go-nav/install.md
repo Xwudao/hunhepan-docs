@@ -39,7 +39,7 @@ CREATE DATABASE `go-nav` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 app:
   mode: release
   port: 8799
-  host: true          # 生产环境必须为 true
+  host: true # 生产环境必须为 true
 
 db:
   database: go-nav
@@ -48,16 +48,16 @@ db:
   port: 3306
   username: root
   password: your-mysql-password
-  autoMigrate: true   # 首次启动自动建表
+  autoMigrate: true # 首次启动自动建表
 
 jwt:
-  secret: your-long-random-secret   # 至少 12 位，用于登录态签名
+  secret: your-long-random-secret # 至少 12 位，用于登录态签名
   expire: 24h
   issuer: neter
 
 redis:
   addr: 127.0.0.1:6379
-  password: ''
+  password: ""
   db: 0
   prefix: nav
 
@@ -137,12 +137,12 @@ services:
     image: misiai/go-nav:latest
     container_name: go-nav-app
     ports:
-      - '8799:8799'
+      - "8799:8799"
     environment:
-      GONAV_APP_HOST: 'true'
-      GONAV_JWT_SECRET: change-me-to-a-long-random-string   # 必改
+      GONAV_APP_HOST: "true"
+      GONAV_JWT_SECRET: change-me-to-a-long-random-string # 必改
       GONAV_DB_HOST: mysql
-      GONAV_DB_PASSWORD: gonav_mysql_2024                   # 与下方 MySQL 密码保持一致
+      GONAV_DB_PASSWORD: gonav_mysql_2024 # 与下方 MySQL 密码保持一致
       GONAV_REDIS_ADDR: redis:6379
     volumes:
       - ./logs:/app/logs
@@ -167,7 +167,17 @@ services:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
     healthcheck:
-      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost', '-u', 'root', '-pgonav_mysql_2024']
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-u",
+          "root",
+          "-pgonav_mysql_2024",
+        ]
       interval: 5s
       timeout: 5s
       retries: 20
@@ -179,7 +189,7 @@ services:
     volumes:
       - redis_data:/data
     healthcheck:
-      test: ['CMD', 'redis-cli', 'ping']
+      test: ["CMD", "redis-cli", "ping"]
       interval: 5s
       timeout: 5s
       retries: 10
@@ -193,9 +203,9 @@ volumes:
 
 ### 2. 必改项
 
-| 环境变量 | 说明 |
-|---|---|
-| `GONAV_JWT_SECRET` | 登录态签名密钥，至少 12 位，不要使用默认值 |
+| 环境变量            | 说明                                                  |
+| ------------------- | ----------------------------------------------------- |
+| `GONAV_JWT_SECRET`  | 登录态签名密钥，至少 12 位，不要使用默认值            |
 | `GONAV_DB_PASSWORD` | MySQL 密码，需同时修改 `MYSQL_ROOT_PASSWORD` 保持一致 |
 
 ### 3. 启动服务
@@ -242,7 +252,19 @@ docker logs go-nav-app | grep "Admin user"
 grep "Admin user" logs/current.log
 ```
 
-如果日志已清理，可在后台用现有管理员账号重置，或直接修改数据库中的密码字段。
+---
+
+如果日志已清理，请使用命令：
+
+```sh
+./go-nav reset admin -p newpassword123
+```
+
+docker中：
+
+```sh
+docker exec -it go-nav-app ./app-linux reset admin -p newpassword123
+```
 
 ### 后台无法访问
 
