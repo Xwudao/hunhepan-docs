@@ -29,7 +29,7 @@ CREATE DATABASE `go-nav` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 ### 2. 下载二进制
 
-从 [GitHub Releases](https://github.com/Xwudao/go-nav/releases) 下载对应平台的压缩包，解压后得到可执行文件（Linux 下通常命名为 `go-nav`）。
+从 [GitHub Releases](https://github.com/Xwudao/go-nav-release/releases) 下载对应平台的压缩包，解压后得到可执行文件（Linux 下通常命名为 `go-nav`）。
 
 ### 3. 编写配置文件
 
