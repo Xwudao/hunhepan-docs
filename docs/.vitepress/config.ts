@@ -57,6 +57,10 @@ export default defineConfig({
             link: "/pansearch/",
             text: "ReMan免费版",
           },
+          {
+            link: "/rmdesk/",
+            text: "RmDesk桌面端",
+          },
         ],
       },
       { text: "混合盘API", link: "/api-docs" },
@@ -296,6 +300,14 @@ export default defineConfig({
               text: "版本更新",
               link: "/reman/version",
             },
+          ],
+        },
+      ],
+      "/rmdesk/": [
+        {
+          text: "RmDesk桌面端",
+          items: [
+            { text: "总览", link: "/rmdesk/" },
           ],
         },
       ],
