@@ -119,21 +119,3 @@ A: 暂不提供 macOS 版本，后续会考虑提供。
 **Q: ReMan 站点需要什么版本？**
 
 A: 建议使用最新版本的 ReMan 服务端，以确保 API 兼容性（V > 1.26.0）。
-
-<!-- 
-## TODO 截图清单
-
-- [ ] $TODO_SCREENSHOT_HOME — 首页快捷入口
-- [ ] $TODO_SCREENSHOT_QUARK_FILES — 夸克网盘文件浏览
-- [ ] $TODO_SCREENSHOT_QUARK_SHARES — 夸克网盘分享管理
-- [ ] $TODO_SCREENSHOT_QUARK_SETTINGS — 夸克网盘 Cookie 设置弹窗
-- [ ] $TODO_SCREENSHOT_QUARK_SAVE — 资源保存弹窗
-- [ ] $TODO_SCREENSHOT_REMAN_LIST — ReMan 资源列表
-- [ ] $TODO_SCREENSHOT_REMAN_HOT — ReMan 热门资源
-- [ ] $TODO_SCREENSHOT_REMAN_CONFIG — ReMan 站点配置弹窗
-- [ ] $TODO_SCREENSHOT_REMAN_TRANSFER — ReMan 转存管理弹窗
-- [ ] $TODO_SCREENSHOT_THEME — 主题与强调色设置
-- [ ] $TODO_SCREENSHOT_LIGHT_THEME — 浅色模式预览
-- [ ] $TODO_SCREENSHOT_ACCENT_COLORS — 强调色选择
-- [ ] $TODO_SCREENSHOT_ACTIVATION — 授权激活弹窗
--->
