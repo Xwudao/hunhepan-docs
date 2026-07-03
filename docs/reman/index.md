@@ -26,7 +26,7 @@ keywords: ['ReMan', '网盘搜索引擎源码', '网盘资源管理', '搭建阿
 
 转存功能：
 
-- 参考 [RmDesk](/rmdesk)
+- 参考 [RmDesk](/rmdesk/)
 
 更多功能，在下面的演示环境中体验吧！
 

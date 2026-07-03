@@ -9,13 +9,5 @@
   },
   "devDependencies": {
     "vitepress": "2.0.0-alpha.17"
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "@algolia/client-search",
-        "search-insights"
-      ]
-    }
   }
 }
