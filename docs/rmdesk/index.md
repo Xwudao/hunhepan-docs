@@ -63,7 +63,11 @@ keywords: ['RmDesk', 'Tauri桌面应用', '夸克网盘管理', 'ReMan管理']
 
 请从以下地址下载对应平台的安装包：
 
-> todo: 补充下载地址
+<https://github.com/Xwudao/rmdesk-release/releases>
+
+注意：
+
+由于没有签名，Windows 可能会提示「未知发布者」，请点击「更多信息」->「仍要运行」即可。
 
 **支持平台：**
 
