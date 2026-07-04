@@ -13,6 +13,24 @@ keywords: ['RmDesk', 'Tauri桌面应用', '夸克网盘管理', 'ReMan管理']
 - **ReMan 管理** — 连接 ReMan 站点，查看资源列表、热门资源、转存管理等
 - **多账户支持** — 夸克网盘和 ReMan 均支持多账户切换
 
+
+
+
+## 下载与安装
+
+请从以下地址下载对应平台的安装包：
+
+<https://github.com/Xwudao/rmdesk-release/releases>
+
+注意：
+
+由于没有签名，Windows 可能会提示「未知发布者」，请点击「更多信息」->「仍要运行」即可。
+
+**支持平台：**
+
+- Windows（x64）
+
+
 ## 使用说明
 
 ### 夸克网盘
@@ -58,20 +76,6 @@ keywords: ['RmDesk', 'Tauri桌面应用', '夸克网盘管理', 'ReMan管理']
 3. 支持按状态、网盘类型筛选资源
 4. 查看热门资源排行
 5. 支持资源转存管理
-
-## 下载与安装
-
-请从以下地址下载对应平台的安装包：
-
-<https://github.com/Xwudao/rmdesk-release/releases>
-
-注意：
-
-由于没有签名，Windows 可能会提示「未知发布者」，请点击「更多信息」->「仍要运行」即可。
-
-**支持平台：**
-
-- Windows（x64）
 
 ## 系统截图
 
