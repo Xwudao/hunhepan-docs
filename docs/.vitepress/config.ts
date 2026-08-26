@@ -63,6 +63,7 @@ export default defineConfig({
           },
         ],
       },
+      { text: "Quark Saver", link: "/quark-saver/", activeMatch: "^/quark-saver/" },
       { text: "混合盘API", link: "/api-docs" },
       {
         text: "混合盘规则开发(v2)",
@@ -308,6 +309,14 @@ export default defineConfig({
           text: "RmDesk桌面端",
           items: [
             { text: "总览", link: "/rmdesk/" },
+          ],
+        },
+      ],
+      "/quark-saver/": [
+        {
+          text: "Quark Saver桌面端",
+          items: [
+            { text: "总览", link: "/quark-saver/" },
           ],
         },
       ],
