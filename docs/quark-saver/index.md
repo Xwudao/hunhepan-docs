@@ -20,13 +20,16 @@ keywords: ['Quark Saver', 'Tauri桌面应用', '夸克网盘', '转存', '分享
 
 请从以下地址下载对应平台的安装包：
 
-<https://github.com/Xwudao/quark-saver/releases>
+<https://github.com/Xwudao/quark-saver-release/releases>
 
-Windows 安装包：
+Windows（x64）安装包：
 
+- `quark-saver_*_portable.zip` — **免安装便携版（推荐）**，解压后双击 `quark-saver.exe` 即可直接运行，内含 WebView2 引导程序
 - `quark-saver.exe` — 独立可执行文件（免安装）
 - `quark-saver_*.msi` — MSI Windows 安装包
 - `quark-saver_*_setup.exe` — NSIS 安装程序
+
+> 💡 便携版同时镜像到 Cloudflare R2，下载链接会写在对应 Release 的描述中。
 
 ::: tip 提示
 由于没有签名，Windows 可能会提示「未知发布者」，请点击「更多信息」->「仍要运行」即可。
